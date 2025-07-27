@@ -1,54 +1,57 @@
 import { type Skill } from '@shared/schema';
+import { 
+  SiReact, 
+  SiRedux, 
+  SiAngular, 
+  SiTypescript, 
+  SiJavascript, 
+  SiHtml5, 
+  SiCss3, 
+  SiJenkins, 
+  SiGit, 
+  SiMysql,
+  SiJest
+} from 'react-icons/si';
+import { FaCode, FaDatabase, FaCog } from 'react-icons/fa';
 
 export function Skills() {
   const skillCategories = [
     {
       title: 'Frontend Technologies',
-      icon: '⚛️',
+      icon: <FaCode className="w-8 h-8 text-primary-solid" />,
       color: 'primary',
       skills: [
-        { name: 'React', level: 95 },
-        { name: 'Redux Toolkit', level: 90 },
-        { name: 'Angular', level: 85 },
-        { name: 'TypeScript', level: 88 },
+        { name: 'React', icon: <SiReact className="w-6 h-6 text-[#61DAFB]" /> },
+        { name: 'Redux Toolkit', icon: <SiRedux className="w-6 h-6 text-[#764ABC]" /> },
+        { name: 'Angular', icon: <SiAngular className="w-6 h-6 text-[#DD0031]" /> },
+        { name: 'TypeScript', icon: <SiTypescript className="w-6 h-6 text-[#3178C6]" /> },
       ]
     },
     {
       title: 'Core Technologies',
-      icon: '🗄️',
+      icon: <FaDatabase className="w-8 h-8 text-secondary-solid" />,
       color: 'secondary',
       skills: [
-        { name: 'JavaScript (ES6+)', level: 92 },
-        { name: 'HTML5/CSS3', level: 90 },
-        { name: 'RESTful APIs', level: 85 },
-        { name: 'JSON', level: 88 },
+        { name: 'JavaScript (ES6+)', icon: <SiJavascript className="w-6 h-6 text-[#F7DF1E]" /> },
+        { name: 'HTML5', icon: <SiHtml5 className="w-6 h-6 text-[#E34F26]" /> },
+        { name: 'CSS3', icon: <SiCss3 className="w-6 h-6 text-[#1572B6]" /> },
+        { name: 'RESTful APIs', icon: <FaCode className="w-6 h-6 text-primary-solid" /> },
       ]
     },
     {
       title: 'DevOps & Tools',
-      icon: '⚙️',
+      icon: <FaCog className="w-8 h-8 text-accent-solid" />,
       color: 'accent',
       skills: [
-        { name: 'Jenkins', level: 82 },
-        { name: 'GIT', level: 90 },
-        { name: 'SQL', level: 75 },
-        { name: 'Unit Testing', level: 80 },
+        { name: 'Jenkins', icon: <SiJenkins className="w-6 h-6 text-[#D33833]" /> },
+        { name: 'Git', icon: <SiGit className="w-6 h-6 text-[#F05032]" /> },
+        { name: 'SQL', icon: <SiMysql className="w-6 h-6 text-[#4479A1]" /> },
+        { name: 'Unit Testing', icon: <SiJest className="w-6 h-6 text-[#C21325]" /> },
       ]
     }
   ];
 
-  const getColorClasses = (color: string) => {
-    switch (color) {
-      case 'primary':
-        return 'text-primary bg-primary';
-      case 'secondary':
-        return 'text-secondary bg-secondary';
-      case 'accent':
-        return 'text-accent bg-accent';
-      default:
-        return 'text-primary bg-primary';
-    }
-  };
+
 
   return (
     <section className="py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-slate-800 dark:via-gray-800 dark:to-slate-900">
@@ -63,20 +66,17 @@ export function Skills() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, index) => (
             <div key={index} className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg card-hover">
-              <div className="flex items-center mb-4">
-                <span className="text-3xl mr-3">{category.icon}</span>
+              <div className="flex items-center mb-6">
+                <div className="mr-4">{category.icon}</div>
                 <h3 className="text-xl text-heading-secondary">{category.title}</h3>
               </div>
-              <div className="space-y-3">
+              <div className="grid grid-cols-2 gap-4">
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="flex items-center justify-between">
-                    <span className="text-body-primary font-medium">{skill.name}</span>
-                    <div className="w-24 bg-slate-200 dark:bg-slate-700 rounded-full h-2">
-                      <div 
-                        className={`${getColorClasses(category.color)} h-2 rounded-full transition-all duration-500`}
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
+                  <div key={skillIndex} className="flex flex-col items-center p-4 bg-slate-50 dark:bg-slate-700 rounded-lg hover:shadow-md transition-all duration-200">
+                    <div className="mb-3">
+                      {skill.icon}
                     </div>
+                    <span className="text-body-primary font-medium text-center text-sm">{skill.name}</span>
                   </div>
                 ))}
               </div>
