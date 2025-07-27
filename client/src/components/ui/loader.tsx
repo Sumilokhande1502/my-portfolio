@@ -15,31 +15,41 @@ export function Loader({ className, size = "md" }: LoaderProps) {
   return (
     <div className="fixed inset-0 bg-gradient-to-br from-white via-blue-50 to-indigo-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 flex items-center justify-center z-50">
       <div className="flex flex-col items-center space-y-6">
-        {/* Animated spinner with multiple rings */}
+        {/* Enhanced animated spinner with multiple colorful rings */}
         <div className="relative">
+          {/* Outer ring - primary color */}
           <div className={cn(
-            "animate-spin rounded-full border-4 border-slate-200 dark:border-slate-700 border-t-primary-solid",
+            "animate-spin rounded-full border-4 border-transparent border-t-blue-500",
             sizeClasses[size],
             className
-          )}></div>
+          )} style={{ animationDuration: '1s' }}></div>
+          
+          {/* Middle ring - secondary color */}
           <div className={cn(
-            "absolute inset-2 animate-spin rounded-full border-2 border-slate-100 dark:border-slate-600 border-r-secondary-solid",
-            "animate-pulse",
+            "absolute inset-1 animate-spin rounded-full border-3 border-transparent border-r-purple-500",
             className
           )} style={{ animationDuration: '1.5s', animationDirection: 'reverse' }}></div>
+          
+          {/* Inner ring - accent color */}
+          <div className={cn(
+            "absolute inset-3 animate-spin rounded-full border-2 border-transparent border-b-teal-500",
+            className
+          )} style={{ animationDuration: '2s' }}></div>
+          
+          {/* Center dot with pulse */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-3 h-3 bg-gradient-to-r from-blue-500 via-purple-500 to-teal-500 rounded-full animate-pulse"></div>
+          </div>
         </div>
         
         {/* Animated text content */}
         <div className="text-center animate-fade-in">
-          <h2 className="text-2xl font-bold text-heading-primary mb-2 animate-pulse">
-            Sumit Lokhande
-          </h2>
           <div className="flex items-center space-x-1">
-            <p className="text-body-secondary">Loading portfolio</p>
+            <p className="text-body-secondary text-lg font-medium">Loading portfolio</p>
             <div className="flex space-x-1">
-              <span className="animate-bounce" style={{ animationDelay: '0ms' }}>.</span>
-              <span className="animate-bounce" style={{ animationDelay: '150ms' }}>.</span>
-              <span className="animate-bounce" style={{ animationDelay: '300ms' }}>.</span>
+              <span className="animate-bounce text-blue-500" style={{ animationDelay: '0ms' }}>.</span>
+              <span className="animate-bounce text-purple-500" style={{ animationDelay: '150ms' }}>.</span>
+              <span className="animate-bounce text-teal-500" style={{ animationDelay: '300ms' }}>.</span>
             </div>
           </div>
         </div>

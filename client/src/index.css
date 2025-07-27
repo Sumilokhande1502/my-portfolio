@@ -431,4 +431,28 @@
     opacity: 1;
     transform: translateY(0);
   }
+
+  /* Enhanced loader animations */
+  @keyframes spin-glow {
+    0% {
+      transform: rotate(0deg);
+      filter: drop-shadow(0 0 5px currentColor);
+    }
+    50% {
+      filter: drop-shadow(0 0 15px currentColor);
+    }
+    100% {
+      transform: rotate(360deg);
+      filter: drop-shadow(0 0 5px currentColor);
+    }
+  }
+
+  .animate-spin-glow {
+    animation: spin-glow 2s linear infinite;
+  }
+
+  /* Border width utilities */
+  .border-3 {
+    border-width: 3px;
+  }
 }
