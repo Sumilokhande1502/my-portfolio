@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail } from 'lucide-react';
+import { PERSONAL_INFO, SOCIAL_LINKS } from '@shared/constants';
 
 export function Hero() {
   const scrollToProjects = () => {
@@ -26,13 +27,13 @@ export function Hero() {
             <div className="space-y-4">
               <p className="text-white/90 font-semibold text-lg">👋 Hello, I'm</p>
               <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
-                Sumit Lokhande
+                {PERSONAL_INFO.name}
               </h1>
               <h2 className="text-2xl lg:text-3xl text-white/90 font-medium">
-                Frontend Engineer
+                {PERSONAL_INFO.title}
               </h2>
               <p className="text-xl text-white/80 leading-relaxed">
-                Frontend Engineer with 5+ years of experience developing responsive web applications using React, Redux Toolkit, Angular, JavaScript, and TypeScript. Skilled in designing user-focused interfaces and integrating RESTful APIs.
+                {PERSONAL_INFO.title} with {PERSONAL_INFO.experience} years of experience developing responsive web applications using React, Redux Toolkit, Angular, JavaScript, and TypeScript. Skilled in designing user-focused interfaces and integrating RESTful APIs.
               </p>
             </div>
             
@@ -53,7 +54,7 @@ export function Hero() {
 
             <div className="flex space-x-6">
               <a 
-                href="https://github.com/sumitlokhande" 
+                href={SOCIAL_LINKS.github} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-white/70 hover:text-white transition-all duration-300 hover:scale-110"
@@ -61,7 +62,7 @@ export function Hero() {
                 <Github className="w-6 h-6" />
               </a>
               <a 
-                href="https://www.linkedin.com/in/sumit-lokhande-0a2380148/" 
+                href={SOCIAL_LINKS.linkedin} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-white/70 hover:text-white transition-all duration-300 hover:scale-110"
@@ -69,7 +70,7 @@ export function Hero() {
                 <Linkedin className="w-6 h-6" />
               </a>
               <a 
-                href="mailto:sumitlokhande53@gmail.com"
+                href={`mailto:${PERSONAL_INFO.email}`}
                 className="text-white/70 hover:text-white transition-all duration-300 hover:scale-110"
               >
                 <Mail className="w-6 h-6" />
@@ -80,8 +81,8 @@ export function Hero() {
           <div className="relative flex justify-center">
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400" 
-                alt="Sumit Lokhande - Frontend Engineer" 
+                src={PERSONAL_INFO.profileImage} 
+                alt={`${PERSONAL_INFO.name} - ${PERSONAL_INFO.title}`} 
                 className="rounded-full shadow-2xl w-80 h-80 object-cover border-4 border-white dark:border-slate-800" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-full"></div>
