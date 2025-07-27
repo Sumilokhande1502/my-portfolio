@@ -1,5 +1,5 @@
 import { Download } from 'lucide-react';
-import { PERSONAL_INFO } from '@shared/constants';
+import { PERSONAL_INFO, SCROLL_ANIMATION } from '@shared/constants';
 import { useEffect } from 'react';
 
 export function About() {
@@ -10,7 +10,10 @@ export function About() {
           entry.target.classList.add('animate');
         }
       });
-    }, { threshold: 0.1, rootMargin: '50px 0px -100px 0px' });
+    }, { 
+      threshold: SCROLL_ANIMATION.threshold, 
+      rootMargin: SCROLL_ANIMATION.rootMargin 
+    });
 
     const elements = document.querySelectorAll('.scroll-animate');
     elements.forEach((el) => observer.observe(el));
@@ -58,7 +61,7 @@ export function About() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-6 scroll-animate" style={{ animationDelay: '0.2s' }}>
+          <div className="grid grid-cols-2 gap-6 scroll-animate" style={{ animationDelay: `${SCROLL_ANIMATION.staggerDelay}s` }}>
             <img 
               src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300" 
               alt="Modern web development setup" 

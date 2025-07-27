@@ -25,6 +25,51 @@ export const UI_CONSTANTS = {
   hoverTransitionDuration: '0.2s',
 } as const;
 
+// Animation Constants
+export const ANIMATION_CONSTANTS = {
+  delays: {
+    delay100: '0.1s',
+    delay200: '0.2s',
+    delay300: '0.3s',
+    delay400: '0.4s',
+    delay500: '0.5s',
+  },
+  durations: {
+    fast: '0.2s',
+    normal: '0.3s',
+    slow: '0.5s',
+    fadeIn: '0.6s',
+    loader: '0.8s',
+    spin: '1s',
+  },
+  easing: {
+    default: 'ease-out',
+    bounce: 'cubic-bezier(0.4, 0, 0.2, 1)',
+  },
+} as const;
+
+// Loader Colors
+export const LOADER_COLORS = {
+  rings: {
+    outer: 'border-t-blue-500',
+    middle: 'border-r-purple-500', 
+    inner: 'border-b-teal-500',
+  },
+  dots: {
+    first: 'text-blue-500',
+    second: 'text-purple-500',
+    third: 'text-teal-500',
+  },
+  center: 'bg-gradient-to-r from-blue-500 via-purple-500 to-teal-500',
+} as const;
+
+// Scroll Animation Settings
+export const SCROLL_ANIMATION = {
+  threshold: 0.1,
+  rootMargin: '50px 0px -100px 0px',
+  staggerDelay: 0.2, // seconds between animations
+} as const;
+
 // Navigation Items
 export const NAVIGATION_ITEMS = [
   { id: 'home', label: 'Home' },

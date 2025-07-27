@@ -1,6 +1,7 @@
 import { type Experience } from '@shared/schema';
 import { Briefcase, Code, Laptop } from 'lucide-react';
 import { useEffect } from 'react';
+import { SCROLL_ANIMATION } from '@shared/constants';
 
 export function Experience() {
   useEffect(() => {
@@ -10,7 +11,10 @@ export function Experience() {
           entry.target.classList.add('animate');
         }
       });
-    }, { threshold: 0.1, rootMargin: '50px 0px -100px 0px' });
+    }, { 
+      threshold: SCROLL_ANIMATION.threshold, 
+      rootMargin: SCROLL_ANIMATION.rootMargin 
+    });
 
     const elements = document.querySelectorAll('.scroll-animate');
     elements.forEach((el) => observer.observe(el));
@@ -71,7 +75,7 @@ export function Experience() {
 
         <div className="space-y-8">
           {experiences.map((experience, index) => (
-            <div key={experience.id} className="relative scroll-animate" style={{ animationDelay: `${index * 0.2}s` }}>
+            <div key={experience.id} className="relative scroll-animate" style={{ animationDelay: `${index * SCROLL_ANIMATION.staggerDelay}s` }}>
               <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg card-hover border-l-4 border-primary-solid">
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
                   <div className="flex-1">

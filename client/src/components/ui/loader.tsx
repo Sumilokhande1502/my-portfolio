@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils"
+import { LOADER_COLORS, ANIMATION_CONSTANTS } from "@shared/constants"
 
 interface LoaderProps {
   className?: string
@@ -19,26 +20,26 @@ export function Loader({ className, size = "md" }: LoaderProps) {
         <div className="relative">
           {/* Outer ring - primary color */}
           <div className={cn(
-            "animate-spin rounded-full border-4 border-transparent border-t-blue-500",
+            `animate-spin rounded-full border-4 border-transparent ${LOADER_COLORS.rings.outer}`,
             sizeClasses[size],
             className
-          )} style={{ animationDuration: '1s' }}></div>
+          )} style={{ animationDuration: ANIMATION_CONSTANTS.durations.spin }}></div>
           
           {/* Middle ring - secondary color */}
           <div className={cn(
-            "absolute inset-1 animate-spin rounded-full border-3 border-transparent border-r-purple-500",
+            `absolute inset-1 animate-spin rounded-full border-3 border-transparent ${LOADER_COLORS.rings.middle}`,
             className
           )} style={{ animationDuration: '1.5s', animationDirection: 'reverse' }}></div>
           
           {/* Inner ring - accent color */}
           <div className={cn(
-            "absolute inset-3 animate-spin rounded-full border-2 border-transparent border-b-teal-500",
+            `absolute inset-3 animate-spin rounded-full border-2 border-transparent ${LOADER_COLORS.rings.inner}`,
             className
           )} style={{ animationDuration: '2s' }}></div>
           
           {/* Center dot with pulse */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-3 h-3 bg-gradient-to-r from-blue-500 via-purple-500 to-teal-500 rounded-full animate-pulse"></div>
+            <div className={cn("w-3 h-3 rounded-full animate-pulse", LOADER_COLORS.center)}></div>
           </div>
         </div>
         
@@ -47,9 +48,9 @@ export function Loader({ className, size = "md" }: LoaderProps) {
           <div className="flex items-center space-x-1">
             <p className="text-body-secondary text-lg font-medium">Loading portfolio</p>
             <div className="flex space-x-1">
-              <span className="animate-bounce text-blue-500" style={{ animationDelay: '0ms' }}>.</span>
-              <span className="animate-bounce text-purple-500" style={{ animationDelay: '150ms' }}>.</span>
-              <span className="animate-bounce text-teal-500" style={{ animationDelay: '300ms' }}>.</span>
+              <span className={cn("animate-bounce", LOADER_COLORS.dots.first)} style={{ animationDelay: '0ms' }}>.</span>
+              <span className={cn("animate-bounce", LOADER_COLORS.dots.second)} style={{ animationDelay: '150ms' }}>.</span>
+              <span className={cn("animate-bounce", LOADER_COLORS.dots.third)} style={{ animationDelay: '300ms' }}>.</span>
             </div>
           </div>
         </div>

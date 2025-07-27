@@ -14,6 +14,7 @@ import {
 } from 'react-icons/si';
 import { FaCode, FaDatabase, FaCog } from 'react-icons/fa';
 import { useEffect } from 'react';
+import { SCROLL_ANIMATION } from '@shared/constants';
 
 export function Skills() {
   useEffect(() => {
@@ -23,7 +24,10 @@ export function Skills() {
           entry.target.classList.add('animate');
         }
       });
-    }, { threshold: 0.1, rootMargin: '50px 0px -100px 0px' });
+    }, { 
+      threshold: SCROLL_ANIMATION.threshold, 
+      rootMargin: SCROLL_ANIMATION.rootMargin 
+    });
 
     const elements = document.querySelectorAll('.scroll-animate');
     elements.forEach((el) => observer.observe(el));
@@ -81,7 +85,7 @@ export function Skills() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, index) => (
-            <div key={index} className={`bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg card-hover scroll-animate`} style={{ animationDelay: `${index * 0.2}s` }}>
+            <div key={index} className={`bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg card-hover scroll-animate`} style={{ animationDelay: `${index * SCROLL_ANIMATION.staggerDelay}s` }}>
               <div className="flex items-center mb-6">
                 <div className="mr-4">{category.icon}</div>
                 <h3 className="text-xl text-heading-secondary">{category.title}</h3>
