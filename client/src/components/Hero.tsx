@@ -25,7 +25,6 @@ export function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <div className="space-y-4">
-              <p className="text-white/90 font-semibold text-lg">👋 Hello, I'm</p>
               <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
                 {PERSONAL_INFO.name}
               </h1>
