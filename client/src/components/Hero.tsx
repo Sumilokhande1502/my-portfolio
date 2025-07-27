@@ -27,13 +27,13 @@ export function Hero() {
             <div className="space-y-4">
               <p className="text-primary font-semibold text-lg">👋 Hello, I'm</p>
               <h1 className="text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white leading-tight">
-                Alex Johnson
+                Sumit S. Lokhande
               </h1>
               <h2 className="text-2xl lg:text-3xl text-slate-600 dark:text-slate-400 font-medium">
-                Frontend Developer
+                Frontend Engineer
               </h2>
               <p className="text-xl text-slate-600 dark:text-slate-400 leading-relaxed">
-                I craft beautiful, performant web experiences using React, TypeScript, and modern technologies. 5+ years of turning ideas into digital reality.
+                Frontend Engineer with 5+ years of experience developing responsive web applications using React, Redux Toolkit, Angular, JavaScript, and TypeScript. Skilled in designing user-focused interfaces and integrating RESTful APIs.
               </p>
             </div>
             
@@ -54,7 +54,7 @@ export function Hero() {
 
             <div className="flex space-x-6">
               <a 
-                href="https://github.com/alexjohnson" 
+                href="https://github.com/sumitlokhande" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors duration-200"
@@ -62,7 +62,7 @@ export function Hero() {
                 <Github className="w-6 h-6" />
               </a>
               <a 
-                href="https://linkedin.com/in/alexjohnson" 
+                href="https://linkedin.com/in/sumitlokhande" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors duration-200"
@@ -70,7 +70,7 @@ export function Hero() {
                 <Linkedin className="w-6 h-6" />
               </a>
               <a 
-                href="https://twitter.com/alexjohnson" 
+                href="https://twitter.com/sumitlokhande" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors duration-200"
@@ -78,7 +78,7 @@ export function Hero() {
                 <Twitter className="w-6 h-6" />
               </a>
               <a 
-                href="mailto:alex@example.com"
+                href="mailto:sumitlokhande53@gmail.com"
                 className="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors duration-200"
               >
                 <Mail className="w-6 h-6" />

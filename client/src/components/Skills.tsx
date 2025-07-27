@@ -3,36 +3,36 @@ import { type Skill } from '@shared/schema';
 export function Skills() {
   const skillCategories = [
     {
-      title: 'Frontend',
+      title: 'Frontend Technologies',
       icon: '⚛️',
       color: 'primary',
       skills: [
         { name: 'React', level: 95 },
-        { name: 'TypeScript', level: 90 },
-        { name: 'Next.js', level: 85 },
-        { name: 'Tailwind CSS', level: 92 },
+        { name: 'Redux Toolkit', level: 90 },
+        { name: 'Angular', level: 85 },
+        { name: 'TypeScript', level: 88 },
       ]
     },
     {
-      title: 'Backend & Tools',
+      title: 'Core Technologies',
       icon: '🗄️',
       color: 'secondary',
       skills: [
-        { name: 'Node.js', level: 80 },
-        { name: 'GraphQL', level: 75 },
-        { name: 'PostgreSQL', level: 70 },
-        { name: 'Docker', level: 78 },
+        { name: 'JavaScript (ES6+)', level: 92 },
+        { name: 'HTML5/CSS3', level: 90 },
+        { name: 'RESTful APIs', level: 85 },
+        { name: 'JSON', level: 88 },
       ]
     },
     {
-      title: 'DevOps & Design',
+      title: 'DevOps & Tools',
       icon: '⚙️',
       color: 'accent',
       skills: [
-        { name: 'Git/GitHub', level: 95 },
-        { name: 'AWS', level: 72 },
-        { name: 'Figma', level: 85 },
-        { name: 'Jest/Testing', level: 88 },
+        { name: 'Jenkins', level: 82 },
+        { name: 'GIT', level: 90 },
+        { name: 'SQL', level: 75 },
+        { name: 'Unit Testing', level: 80 },
       ]
     }
   ];

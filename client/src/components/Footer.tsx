@@ -13,9 +13,9 @@ export function Footer() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">Alex Johnson</h3>
+            <h3 className="text-xl font-bold mb-4">Sumit S. Lokhande</h3>
             <p className="text-slate-400 leading-relaxed">
-              Frontend Developer crafting exceptional web experiences with modern technologies and clean code.
+              Frontend Engineer crafting exceptional web experiences with React, Redux Toolkit, Angular, and modern technologies.
             </p>
           </div>
           <div>
@@ -59,7 +59,7 @@ export function Footer() {
             <h4 className="font-semibold mb-4">Connect</h4>
             <div className="flex space-x-4">
               <a 
-                href="https://github.com/alexjohnson" 
+                href="https://github.com/sumitlokhande" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-slate-400 hover:text-white transition-colors duration-200"
@@ -67,7 +67,7 @@ export function Footer() {
                 <Github className="w-6 h-6" />
               </a>
               <a 
-                href="https://linkedin.com/in/alexjohnson" 
+                href="https://linkedin.com/in/sumitlokhande" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-slate-400 hover:text-white transition-colors duration-200"
@@ -75,7 +75,7 @@ export function Footer() {
                 <Linkedin className="w-6 h-6" />
               </a>
               <a 
-                href="https://twitter.com/alexjohnson" 
+                href="https://twitter.com/sumitlokhande" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-slate-400 hover:text-white transition-colors duration-200"
@@ -83,7 +83,7 @@ export function Footer() {
                 <Twitter className="w-6 h-6" />
               </a>
               <a 
-                href="mailto:alex@example.com"
+                href="mailto:sumitlokhande53@gmail.com"
                 className="text-slate-400 hover:text-white transition-colors duration-200"
               >
                 <Mail className="w-6 h-6" />
@@ -92,7 +92,7 @@ export function Footer() {
           </div>
         </div>
         <div className="border-t border-slate-800 mt-8 pt-8 text-center">
-          <p className="text-slate-400">© 2024 Alex Johnson. All rights reserved. Built with React & TypeScript.</p>
+          <p className="text-slate-400">© 2025 Sumit S. Lokhande. All rights reserved. Built with React & TypeScript.</p>
         </div>
       </div>
     </footer>

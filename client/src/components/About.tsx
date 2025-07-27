@@ -4,7 +4,7 @@ export function About() {
   const handleResumeDownload = () => {
     const link = document.createElement('a');
     link.href = '/resume.pdf';
-    link.download = 'Alex_Johnson_Resume.pdf';
+    link.download = 'Sumit_Lokhande_Resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -23,14 +23,10 @@ export function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-              I'm a frontend developer with over 5 years of experience building scalable web applications. 
-              I specialize in React, TypeScript, and modern JavaScript frameworks, always staying up-to-date 
-              with the latest technologies and best practices.
+              I'm a Frontend Engineer with 5+ years of experience developing responsive web applications using React, Redux Toolkit, Angular, JavaScript, and TypeScript. I have proven expertise in designing user-focused interfaces, integrating RESTful APIs with frontend components, and working in Agile environments.
             </p>
             <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-              My journey began with a curiosity about how websites work, which led me to pursue computer science 
-              and eventually specialize in frontend development. I believe in writing clean, maintainable code 
-              and creating intuitive user interfaces that solve real problems.
+              I'm skilled in version control and DevOps practices using Jenkins and GIT to streamline deployment and maintain code integrity. I believe in creating optimized, user-centric applications that deliver exceptional performance and user experience.
             </p>
             
             <div className="flex items-center space-x-4">
@@ -41,7 +37,7 @@ export function About() {
                 <Download className="w-4 h-4 mr-2" />
                 Download Resume
               </button>
-              <span className="text-slate-500 dark:text-slate-400">• Updated December 2024</span>
+              <span className="text-slate-500 dark:text-slate-400">• Updated January 2025</span>
             </div>
           </div>
 

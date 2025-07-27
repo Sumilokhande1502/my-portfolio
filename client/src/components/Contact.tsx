@@ -74,10 +74,10 @@ export function Contact() {
                   <div>
                     <p className="text-slate-900 dark:text-white font-medium">Email</p>
                     <a 
-                      href="mailto:alex@example.com" 
+                      href="mailto:sumitlokhande53@gmail.com" 
                       className="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors duration-200"
                     >
-                      alex@example.com
+                      sumitlokhande53@gmail.com
                     </a>
                   </div>
                 </div>
@@ -88,10 +88,10 @@ export function Contact() {
                   <div>
                     <p className="text-slate-900 dark:text-white font-medium">Phone</p>
                     <a 
-                      href="tel:+1234567890" 
+                      href="tel:+919021181123" 
                       className="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors duration-200"
                     >
-                      +1 (234) 567-8900
+                      +91 9021181123
                     </a>
                   </div>
                 </div>
@@ -101,7 +101,7 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="text-slate-900 dark:text-white font-medium">Location</p>
-                    <p className="text-slate-600 dark:text-slate-400">San Francisco, CA</p>
+                    <p className="text-slate-600 dark:text-slate-400">Maharashtra, India</p>
                   </div>
                 </div>
               </div>
@@ -111,7 +111,7 @@ export function Contact() {
               <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">Follow Me</h4>
               <div className="flex space-x-4">
                 <a 
-                  href="https://github.com/alexjohnson" 
+                  href="https://github.com/sumitlokhande" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center justify-center w-12 h-12 bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-primary hover:text-white transition-all duration-200"
@@ -119,7 +119,7 @@ export function Contact() {
                   <Github className="w-6 h-6" />
                 </a>
                 <a 
-                  href="https://linkedin.com/in/alexjohnson" 
+                  href="https://linkedin.com/in/sumitlokhande" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center justify-center w-12 h-12 bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-primary hover:text-white transition-all duration-200"
@@ -127,7 +127,7 @@ export function Contact() {
                   <Linkedin className="w-6 h-6" />
                 </a>
                 <a 
-                  href="https://twitter.com/alexjohnson" 
+                  href="https://twitter.com/sumitlokhande" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center justify-center w-12 h-12 bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-primary hover:text-white transition-all duration-200"

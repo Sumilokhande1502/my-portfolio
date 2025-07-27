@@ -12,57 +12,57 @@ export function Projects() {
   const projects: Project[] = [
     {
       id: '1',
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution built with React, Node.js, and PostgreSQL. Features include user authentication, product catalog, shopping cart, and payment processing.',
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=450',
-      technologies: ['React', 'TypeScript', 'Node.js', 'PostgreSQL'],
-      githubUrl: 'https://github.com/alexjohnson/ecommerce-platform',
-      liveUrl: 'https://ecommerce-demo.alexjohnson.dev',
-      category: 'fullstack',
+      title: 'Enterprise Web Application',
+      description: 'Lead front-end development for web applications using React and Redux Toolkit at Citi. Achieved 40% reduction in page load times through optimization and increased user engagement by 30% with interactive components.',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=450',
+      technologies: ['React', 'Redux Toolkit', 'Reflux', 'TypeScript', 'Java Microservices'],
+      githubUrl: 'https://github.com/sumitlokhande/enterprise-app',
+      liveUrl: 'https://demo.sumitlokhande.dev',
+      category: 'react',
       featured: true
     },
     {
       id: '2',
-      title: 'Task Management App',
-      description: 'A collaborative task management tool with real-time updates, drag-and-drop functionality, and team collaboration features. Built with Next.js and Socket.io.',
-      image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=450',
-      technologies: ['Next.js', 'Redux', 'Socket.io', 'MongoDB'],
-      githubUrl: 'https://github.com/alexjohnson/task-manager',
-      liveUrl: 'https://tasks.alexjohnson.dev',
-      category: 'react',
+      title: 'Angular SPA Platform',
+      description: 'Created dynamic, single-page applications using Angular providing seamless experience across devices. Developed reusable UI components integrating with Java Microservices and Oracle databases via RESTful APIs.',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=450',
+      technologies: ['Angular', 'TypeScript', 'RESTful APIs', 'Oracle', 'Jenkins'],
+      githubUrl: 'https://github.com/sumitlokhande/angular-spa',
+      liveUrl: 'https://spa.sumitlokhande.dev',
+      category: 'typescript',
       featured: true
     },
     {
       id: '3',
-      title: 'Weather Dashboard',
-      description: 'Real-time weather app with location-based forecasts and beautiful animations.',
-      image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300',
-      technologies: ['React', 'API Integration'],
-      githubUrl: 'https://github.com/alexjohnson/weather-app',
-      liveUrl: 'https://weather.alexjohnson.dev',
-      category: 'react',
+      title: 'E-Learning Course Platform',
+      description: 'Developed front-end online course pages using HTML, CSS by migrating content from various sources. Built responsive and accessible educational content interfaces.',
+      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300',
+      technologies: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design'],
+      githubUrl: 'https://github.com/sumitlokhande/elearning-platform',
+      liveUrl: 'https://learning.sumitlokhande.dev',
+      category: 'fullstack',
       featured: false
     },
     {
       id: '4',
-      title: 'Expense Tracker',
-      description: 'Personal finance tracker with budget planning and expense categorization.',
+      title: 'Banking Web Dashboard',
+      description: 'Financial services dashboard with real-time data visualization and secure user interactions. Built with React and integrated with backend microservices.',
       image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300',
-      technologies: ['Vue.js', 'Charts.js'],
-      githubUrl: 'https://github.com/alexjohnson/expense-tracker',
-      liveUrl: 'https://expenses.alexjohnson.dev',
-      category: 'typescript',
+      technologies: ['React', 'Charts.js', 'TypeScript'],
+      githubUrl: 'https://github.com/sumitlokhande/banking-dashboard',
+      liveUrl: 'https://dashboard.sumitlokhande.dev',
+      category: 'react',
       featured: false
     },
     {
       id: '5',
-      title: 'Analytics Dashboard',
-      description: 'Data visualization dashboard with real-time metrics and interactive charts.',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300',
-      technologies: ['D3.js', 'Node.js'],
-      githubUrl: 'https://github.com/alexjohnson/analytics-dashboard',
-      liveUrl: 'https://analytics.alexjohnson.dev',
-      category: 'fullstack',
+      title: 'State Management System',
+      description: 'Advanced state management implementation using Redux Toolkit and Reflux for complex enterprise applications with optimized performance.',
+      image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300',
+      technologies: ['Redux Toolkit', 'Reflux', 'React'],
+      githubUrl: 'https://github.com/sumitlokhande/state-management',
+      liveUrl: 'https://state.sumitlokhande.dev',
+      category: 'react',
       featured: false
     }
   ];
@@ -220,7 +220,7 @@ export function Projects() {
 
         <div className="text-center mt-12">
           <a 
-            href="https://github.com/alexjohnson" 
+            href="https://github.com/sumitlokhande" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-flex items-center bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 px-6 py-3 rounded-lg font-semibold hover:bg-slate-800 dark:hover:bg-slate-200 transition-colors duration-200"

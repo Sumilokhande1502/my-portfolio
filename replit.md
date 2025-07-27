@@ -1,8 +1,8 @@
-# Portfolio Application
+# Portfolio Application - Sumit S. Lokhande
 
 ## Overview
 
-This is a modern portfolio web application built with a full-stack architecture featuring a React/TypeScript frontend and Express backend. The application showcases a developer's work, skills, and experience with a clean, responsive design and contact functionality.
+This is a modern portfolio web application built with a full-stack architecture featuring a React/TypeScript frontend and Express backend. The application showcases Sumit S. Lokhande's frontend engineering work, skills, and experience with a clean, responsive design and contact functionality. The portfolio highlights 5+ years of experience with React, Redux Toolkit, Angular, and modern web technologies.
 
 ## User Preferences
 

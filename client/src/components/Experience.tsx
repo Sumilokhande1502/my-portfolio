@@ -5,30 +5,39 @@ export function Experience() {
   const experiences: Experience[] = [
     {
       id: '1',
-      position: 'Senior Frontend Developer',
-      company: 'TechCorp Solutions',
-      duration: '2022 - Present',
-      description: 'Lead frontend development for enterprise web applications serving 100k+ users. Architected and implemented scalable React applications with TypeScript, Redux Toolkit, and modern tooling. Mentored junior developers and established coding standards.',
-      technologies: ['React', 'TypeScript', 'Redux Toolkit', 'Next.js', 'AWS'],
+      position: 'Apps Dev Intmd Programmer Analyst - C11',
+      company: 'Citi',
+      duration: 'Aug 2022 - Present',
+      description: 'Lead front-end development for web applications using React and Redux Toolkit, focusing on state management, performance optimization, and user-centric design. Reduced page load times by 40% through React optimization and led development of a product increasing user engagement by 30%.',
+      technologies: ['React', 'Redux Toolkit', 'Reflux', 'TypeScript', 'Java Microservices', 'Oracle', 'Jenkins', 'GIT'],
       icon: 'briefcase'
     },
     {
       id: '2',
-      position: 'Frontend Developer',
-      company: 'Digital Innovations Inc.',
-      duration: '2020 - 2022',
-      description: 'Developed responsive web applications using React, JavaScript, and modern CSS frameworks. Collaborated with design and backend teams to deliver pixel-perfect user interfaces. Optimized application performance and implemented accessibility best practices.',
-      technologies: ['React', 'JavaScript', 'Sass', 'Webpack', 'Jest'],
+      position: 'Software Engineer',
+      company: 'NeoSoft Technologies Pvt. Ltd.',
+      duration: 'Apr 2020 - Aug 2022',
+      description: 'Created dynamic, single-page applications (SPA) using Angular providing seamless experience across devices. Developed reusable UI components with Angular, collaborating with backend teams to integrate Java Microservices and Oracle databases via RESTful APIs.',
+      technologies: ['Angular', 'Java Microservices', 'Oracle', 'RESTful APIs', 'Jenkins', 'GIT'],
       icon: 'code'
     },
     {
       id: '3',
-      position: 'Junior Web Developer',
-      company: 'StartupLab',
-      duration: '2019 - 2020',
-      description: 'Built and maintained company websites and landing pages. Gained experience with HTML, CSS, JavaScript, and basic React development. Worked closely with designers to implement mockups and prototypes.',
-      technologies: ['HTML/CSS', 'JavaScript', 'React', 'Git', 'Figma'],
+      position: 'Front End Web Developer',
+      company: 'LearningMate Solutions Pvt. Ltd.',
+      duration: 'Oct 2019 - Dec 2020',
+      description: 'Developed Front End online course pages using HTML, CSS by migrating content from various sources. Oversaw technical issues and troubleshooting requests to resolve surfaced problems. Multi-tasked across multiple functions and roles to generate project results.',
+      technologies: ['HTML', 'CSS', 'JavaScript', 'Frontend Development'],
       icon: 'laptop'
+    },
+    {
+      id: '4',
+      position: 'Associate Business Developer',
+      company: 'A One Salasar Pvt. Ltd.',
+      duration: 'Mar 2019 - Jun 2019',
+      description: 'Developed and expanded business by cold calling and follow-up calls to clients. Pitched clients about company services and products while maintaining relationships. Increased customer satisfaction by resolving client issues and maintained energy in fast-paced environment.',
+      technologies: ['Business Development', 'Client Relations', 'Communication'],
+      icon: 'briefcase'
     }
   ];
 

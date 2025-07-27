@@ -40,7 +40,7 @@ export function Navbar() {
               onClick={() => scrollToSection('home')}
               className="text-2xl font-bold text-primary cursor-pointer"
             >
-              AJ
+              SSL
             </button>
           </div>
           
