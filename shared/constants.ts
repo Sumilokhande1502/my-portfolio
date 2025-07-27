@@ -6,7 +6,7 @@ export const PERSONAL_INFO = {
   location: 'Maharashtra, India',
   title: 'Frontend Developer',
   experience: '5+',
-  profileImage: 'https://media.licdn.com/dms/image/v2/D4D03AQHzSgMlrJiHQQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1683636736071?e=1740614400&v=beta&t=eIrR3mh7eHV1-0bxLJxLU-z7RKgFT8sQr_8cU-A_OwM',
+  profileImage: '/attached_assets/20231120_210945_IMG_0457_1753609330229.JPG',
 } as const;
 
 // Social Media Links (Client-safe constants)

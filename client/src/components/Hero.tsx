@@ -81,9 +81,10 @@ export function Hero() {
           <div className="relative flex justify-center">
             <div className="relative">
               <img 
-                src={PERSONAL_INFO.profileImage} 
+                src="/attached_assets/20231120_210945_IMG_0457_1753609330229.JPG" 
                 alt={`${PERSONAL_INFO.name} - ${PERSONAL_INFO.title}`} 
                 className="rounded-full shadow-2xl w-80 h-80 object-cover border-4 border-white dark:border-slate-800" 
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-full"></div>
             </div>
