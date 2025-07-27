@@ -55,7 +55,7 @@ export function Experience() {
   };
 
   const getIconColor = (index: number) => {
-    const colors = ['bg-primary', 'bg-secondary', 'bg-accent'];
+    const colors = ['gradient-primary', 'gradient-secondary', 'gradient-accent'];
     return colors[index % colors.length];
   };
 
@@ -79,11 +79,11 @@ export function Experience() {
                 <div className={`hidden md:flex items-center justify-center w-16 h-16 ${getIconColor(index)} rounded-full border-4 border-white dark:border-slate-900 relative z-10`}>
                   {getIcon(experience.icon)}
                 </div>
-                <div className="flex-1 bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg">
+                <div className="flex-1 bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg card-hover">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                     <div>
                       <h3 className="text-xl font-semibold text-slate-900 dark:text-white">{experience.position}</h3>
-                      <p className={`font-medium ${getIconColor(index).replace('bg-', 'text-')}`}>{experience.company}</p>
+                      <p className="font-medium text-primary">{experience.company}</p>
                     </div>
                     <span className="text-slate-500 dark:text-slate-400 font-medium">{experience.duration}</span>
                   </div>

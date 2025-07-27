@@ -6,7 +6,9 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import { Mail, Phone, MapPin, Github, Linkedin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Github, Linkedin, Send, Loader2 } from 'lucide-react';
+import { useMutation } from '@tanstack/react-query';
+import { apiRequest } from '@/lib/queryClient';
 
 export function Contact() {
   const { toast } = useToast();
@@ -21,21 +23,30 @@ export function Contact() {
     },
   });
 
+  const contactMutation = useMutation({
+    mutationFn: async (data: InsertContact) => {
+      const response = await apiRequest('POST', '/api/contacts', data);
+      return await response.json();
+    },
+    onSuccess: (response: any) => {
+      toast({
+        title: 'Message sent successfully!',
+        description: response.message || "I'll get back to you soon.",
+        variant: 'default',
+      });
+      form.reset();
+    },
+    onError: (error: any) => {
+      toast({
+        title: 'Failed to send message',
+        description: error.message || 'Please try again later.',
+        variant: 'destructive',
+      });
+    },
+  });
+
   const onSubmit = (data: InsertContact) => {
-    const subject = encodeURIComponent(data.subject);
-    const body = encodeURIComponent(
-      `Hi Sumit,\n\nName: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}\n\nBest regards,\n${data.name}`
-    );
-    
-    const mailtoLink = `mailto:sumitlokhande53@gmail.com?subject=${subject}&body=${body}`;
-    window.location.href = mailtoLink;
-    
-    toast({
-      title: 'Opening email client...',
-      description: 'Your default email application should open with the message pre-filled.',
-    });
-    
-    form.reset();
+    contactMutation.mutate(data);
   };
 
   return (
@@ -175,12 +186,20 @@ export function Contact() {
               </div>
               <Button 
                 type="submit" 
-                className="w-full bg-primary hover:bg-primary/90"
+                disabled={contactMutation.isPending}
+                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
               >
-                <span className="flex items-center justify-center">
-                  <Send className="w-4 h-4 mr-2" />
-                  Send Message
-                </span>
+                {contactMutation.isPending ? (
+                  <span className="flex items-center justify-center">
+                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                    Sending...
+                  </span>
+                ) : (
+                  <span className="flex items-center justify-center">
+                    <Send className="w-4 h-4 mr-2" />
+                    Send Message
+                  </span>
+                )}
               </Button>
             </form>
           </div>

@@ -62,7 +62,7 @@ export function Skills() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, index) => (
-            <div key={index} className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div key={index} className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg card-hover">
               <div className="flex items-center mb-4">
                 <span className="text-3xl mr-3">{category.icon}</span>
                 <h3 className="text-xl font-semibold text-slate-900 dark:text-white">{category.title}</h3>
