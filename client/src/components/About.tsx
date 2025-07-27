@@ -11,7 +11,7 @@ export function About() {
   };
 
   return (
-    <section id="about" className="py-20 bg-white dark:bg-slate-800">
+    <section id="about" className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">About Me</h2>

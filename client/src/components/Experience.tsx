@@ -60,7 +60,7 @@ export function Experience() {
   };
 
   return (
-    <section id="experience" className="py-20 bg-slate-50 dark:bg-slate-900">
+    <section id="experience" className="py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-gray-800 dark:via-slate-800 dark:to-gray-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">Work Experience</h2>

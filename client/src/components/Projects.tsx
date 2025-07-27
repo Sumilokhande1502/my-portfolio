@@ -81,7 +81,7 @@ export function Projects() {
   };
 
   return (
-    <section id="projects" className="py-20 bg-white dark:bg-slate-800">
+    <section id="projects" className="py-20 bg-gradient-to-br from-purple-50 via-pink-50 to-orange-50 dark:from-slate-900 dark:via-gray-900 dark:to-slate-800">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">Featured Projects</h2>

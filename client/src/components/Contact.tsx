@@ -50,7 +50,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white dark:bg-slate-800">
+    <section id="contact" className="py-20 bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 dark:from-gray-900 dark:via-slate-900 dark:to-gray-800">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">Let's Work Together</h2>

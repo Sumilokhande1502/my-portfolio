@@ -32,7 +32,7 @@ export function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md z-50 border-b border-slate-200 dark:border-slate-700">
+    <nav className="fixed top-0 w-full bg-gradient-to-r from-white/90 via-blue-50/80 to-indigo-50/80 dark:from-slate-900/90 dark:via-slate-800/80 dark:to-gray-900/80 backdrop-blur-md z-50 border-b border-slate-200/50 dark:border-slate-700/50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
@@ -60,16 +60,16 @@ export function Navbar() {
                 About
               </button>
               <button 
-                onClick={() => scrollToSection('projects')}
-                className="text-slate-700 dark:text-slate-300 hover:text-primary transition-colors duration-200 font-medium"
-              >
-                Projects
-              </button>
-              <button 
                 onClick={() => scrollToSection('experience')}
                 className="text-slate-700 dark:text-slate-300 hover:text-primary transition-colors duration-200 font-medium"
               >
                 Experience
+              </button>
+              <button 
+                onClick={() => scrollToSection('projects')}
+                className="text-slate-700 dark:text-slate-300 hover:text-primary transition-colors duration-200 font-medium"
+              >
+                Projects
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
@@ -124,16 +124,16 @@ export function Navbar() {
               About
             </button>
             <button 
-              onClick={() => scrollToSection('projects')}
-              className="block w-full text-left px-3 py-2 text-slate-700 dark:text-slate-300 hover:text-primary font-medium"
-            >
-              Projects
-            </button>
-            <button 
               onClick={() => scrollToSection('experience')}
               className="block w-full text-left px-3 py-2 text-slate-700 dark:text-slate-300 hover:text-primary font-medium"
             >
               Experience
+            </button>
+            <button 
+              onClick={() => scrollToSection('projects')}
+              className="block w-full text-left px-3 py-2 text-slate-700 dark:text-slate-300 hover:text-primary font-medium"
+            >
+              Projects
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
