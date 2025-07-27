@@ -1,6 +1,6 @@
 // Personal Information Constants
 export const PERSONAL_INFO = {
-  name: 'Sumit S. Lokhande',
+  name: 'Sumit Lokhande',
   email: 'sumitlokhande53@gmail.com',
   phone: '+91 9021181123',
   location: 'Maharashtra, India',
