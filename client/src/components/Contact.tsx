@@ -25,10 +25,16 @@ export function Contact() {
 
   const contactMutation = useMutation({
     mutationFn: async (data: InsertContact) => {
+      console.log('Sending contact form data:', data);
       const response = await apiRequest('POST', '/api/contacts', data);
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Failed to send message');
+      }
       return await response.json();
     },
     onSuccess: (response: any) => {
+      console.log('Contact form success:', response);
       toast({
         title: 'Message sent successfully!',
         description: response.message || "I'll get back to you soon.",
@@ -37,6 +43,7 @@ export function Contact() {
       form.reset();
     },
     onError: (error: any) => {
+      console.error('Contact form error:', error);
       toast({
         title: 'Failed to send message',
         description: error.message || 'Please try again later.',
@@ -46,6 +53,8 @@ export function Contact() {
   });
 
   const onSubmit = (data: InsertContact) => {
+    console.log('Form submitted with data:', data);
+    console.log('Form errors:', form.formState.errors);
     contactMutation.mutate(data);
   };
 
@@ -187,7 +196,7 @@ export function Contact() {
               <Button 
                 type="submit" 
                 disabled={contactMutation.isPending}
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none shadow-lg hover:shadow-xl"
               >
                 {contactMutation.isPending ? (
                   <span className="flex items-center justify-center">
