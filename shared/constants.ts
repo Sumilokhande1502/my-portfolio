@@ -4,7 +4,7 @@ export const PERSONAL_INFO = {
   email: 'sumitlokhande53@gmail.com',
   phone: '+91 9021181123',
   location: 'Maharashtra, India',
-  title: 'Frontend Developer',
+  title: 'Frontend Engineer',
   experience: '5+',
   profileImage: '/attached_assets/20231120_210945_IMG_0457_1753609330229.JPG',
 } as const;
