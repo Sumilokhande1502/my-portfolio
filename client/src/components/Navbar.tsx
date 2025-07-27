@@ -47,8 +47,7 @@ export function Navbar() {
                 className="w-10 h-10 rounded-full object-cover border-2 border-primary/20 group-hover:border-primary transition-all duration-200"
               />
               <span className="text-xl font-bold">
-                <span className="hidden sm:inline text-primary">{PERSONAL_INFO.name.split(' ').map(name => name[0]).join('')}</span>
-                <span className="sm:hidden bg-gradient-to-r from-blue-600 via-teal-600 to-indigo-600 bg-clip-text text-transparent font-semibold">{PERSONAL_INFO.name}</span>
+                <span className="sm:hidden text-primary font-semibold">{PERSONAL_INFO.name}</span>
               </span>
             </button>
           </div>
@@ -60,7 +59,7 @@ export function Navbar() {
                 <button 
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-slate-700 dark:text-slate-300 hover:text-primary transition-colors duration-200 font-medium"
+                  className="text-body-primary hover:text-primary-solid transition-colors duration-200 font-medium"
                 >
                   {item.label}
                 </button>
@@ -74,9 +73,9 @@ export function Navbar() {
               className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors duration-200"
             >
               {isDarkMode ? (
-                <Sun className="w-5 h-5 text-slate-600 dark:text-slate-400" />
+                <Sun className="w-5 h-5 text-body-primary" />
               ) : (
-                <Moon className="w-5 h-5 text-slate-600 dark:text-slate-400" />
+                <Moon className="w-5 h-5 text-body-primary" />
               )}
             </button>
             
@@ -86,9 +85,9 @@ export function Navbar() {
               className="md:hidden p-2 rounded-lg bg-slate-100 dark:bg-slate-800"
             >
               {isMobileMenuOpen ? (
-                <X className="w-5 h-5 text-slate-600 dark:text-slate-400" />
+                <X className="w-5 h-5 text-body-primary" />
               ) : (
-                <Menu className="w-5 h-5 text-slate-600 dark:text-slate-400" />
+                <Menu className="w-5 h-5 text-body-primary" />
               )}
             </button>
           </div>
@@ -103,7 +102,7 @@ export function Navbar() {
               <button 
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="block w-full text-left px-3 py-2 text-slate-700 dark:text-slate-300 hover:text-primary font-medium"
+                className="block w-full text-left px-3 py-2 text-body-primary hover:text-primary-solid font-medium"
               >
                 {item.label}
               </button>

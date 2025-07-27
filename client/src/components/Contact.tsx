@@ -62,8 +62,8 @@ export function Contact() {
     <section id="contact" className="py-20 bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 dark:from-gray-900 dark:via-slate-900 dark:to-gray-800">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">Let's Work Together</h2>
-          <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
+          <h2 className="text-4xl text-heading-primary mb-4">Let's Work Together</h2>
+          <p className="text-xl text-body-secondary max-w-3xl mx-auto">
             I'm always interested in new opportunities and exciting projects. 
             Let's discuss how we can bring your ideas to life.
           </p>
@@ -73,17 +73,17 @@ export function Contact() {
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-6">Get In Touch</h3>
+              <h3 className="text-2xl text-heading-secondary mb-6">Get In Touch</h3>
               <div className="space-y-4">
                 <div className="flex items-center space-x-4">
                   <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg">
-                    <Mail className="w-6 h-6 text-primary" />
+                    <Mail className="w-6 h-6 text-primary-solid" />
                   </div>
                   <div>
-                    <p className="text-slate-900 dark:text-white font-medium">Email</p>
+                    <p className="text-heading-primary font-medium">Email</p>
                     <a 
                       href={`mailto:${PERSONAL_INFO.email}`} 
-                      className="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors duration-200"
+                      className="text-body-secondary hover:text-primary-solid transition-colors duration-200"
                     >
                       {PERSONAL_INFO.email}
                     </a>
@@ -91,13 +91,13 @@ export function Contact() {
                 </div>
                 <div className="flex items-center space-x-4">
                   <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg">
-                    <Phone className="w-6 h-6 text-primary" />
+                    <Phone className="w-6 h-6 text-primary-solid" />
                   </div>
                   <div>
-                    <p className="text-slate-900 dark:text-white font-medium">Phone</p>
+                    <p className="text-heading-primary font-medium">Phone</p>
                     <a 
                       href={`tel:${PERSONAL_INFO.phone}`} 
-                      className="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors duration-200"
+                      className="text-body-secondary hover:text-primary-solid transition-colors duration-200"
                     >
                       {PERSONAL_INFO.phone}
                     </a>
@@ -105,18 +105,18 @@ export function Contact() {
                 </div>
                 <div className="flex items-center space-x-4">
                   <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg">
-                    <MapPin className="w-6 h-6 text-primary" />
+                    <MapPin className="w-6 h-6 text-primary-solid" />
                   </div>
                   <div>
-                    <p className="text-slate-900 dark:text-white font-medium">Location</p>
-                    <p className="text-slate-600 dark:text-slate-400">{PERSONAL_INFO.location}</p>
+                    <p className="text-heading-primary font-medium">Location</p>
+                    <p className="text-body-secondary">{PERSONAL_INFO.location}</p>
                   </div>
                 </div>
               </div>
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">Follow Me</h4>
+              <h4 className="text-lg text-heading-secondary mb-4">Follow Me</h4>
               <div className="flex space-x-4">
                 <a 
                   href={SOCIAL_LINKS.github} 

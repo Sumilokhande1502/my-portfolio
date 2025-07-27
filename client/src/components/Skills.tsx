@@ -54,8 +54,8 @@ export function Skills() {
     <section className="py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-slate-800 dark:via-gray-800 dark:to-slate-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">Skills & Technologies</h2>
-          <p className="text-xl text-slate-600 dark:text-slate-400">
+          <h2 className="text-4xl text-heading-primary mb-4">Skills & Technologies</h2>
+          <p className="text-xl text-body-secondary">
             The tools and technologies I work with every day
           </p>
         </div>
@@ -65,12 +65,12 @@ export function Skills() {
             <div key={index} className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg card-hover">
               <div className="flex items-center mb-4">
                 <span className="text-3xl mr-3">{category.icon}</span>
-                <h3 className="text-xl font-semibold text-slate-900 dark:text-white">{category.title}</h3>
+                <h3 className="text-xl text-heading-secondary">{category.title}</h3>
               </div>
               <div className="space-y-3">
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skillIndex} className="flex items-center justify-between">
-                    <span className="text-slate-600 dark:text-slate-400">{skill.name}</span>
+                    <span className="text-body-primary font-medium">{skill.name}</span>
                     <div className="w-24 bg-slate-200 dark:bg-slate-700 rounded-full h-2">
                       <div 
                         className={`${getColorClasses(category.color)} h-2 rounded-full transition-all duration-500`}

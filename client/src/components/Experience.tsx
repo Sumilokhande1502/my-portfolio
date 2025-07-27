@@ -63,8 +63,8 @@ export function Experience() {
     <section id="experience" className="py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-gray-800 dark:via-slate-800 dark:to-gray-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">Work Experience</h2>
-          <p className="text-xl text-slate-600 dark:text-slate-400">
+          <h2 className="text-4xl text-heading-primary mb-4">Work Experience</h2>
+          <p className="text-xl text-body-secondary">
             My professional journey in frontend development
           </p>
         </div>
@@ -82,12 +82,12 @@ export function Experience() {
                 <div className="flex-1 bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg card-hover">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                     <div>
-                      <h3 className="text-xl font-semibold text-slate-900 dark:text-white">{experience.position}</h3>
-                      <p className="font-medium text-primary">{experience.company}</p>
+                      <h3 className="text-xl text-heading-primary">{experience.position}</h3>
+                      <p className="font-semibold text-primary-solid">{experience.company}</p>
                     </div>
-                    <span className="text-slate-500 dark:text-slate-400 font-medium">{experience.duration}</span>
+                    <span className="text-body-secondary font-medium">{experience.duration}</span>
                   </div>
-                  <p className="text-slate-600 dark:text-slate-400 mb-4">
+                  <p className="text-body-primary mb-4">
                     {experience.description}
                   </p>
                   <div className="flex flex-wrap gap-2">

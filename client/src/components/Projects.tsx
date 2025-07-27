@@ -84,8 +84,8 @@ export function Projects() {
     <section id="projects" className="py-20 bg-gradient-to-br from-purple-50 via-pink-50 to-orange-50 dark:from-slate-900 dark:via-gray-900 dark:to-slate-800">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">Featured Projects</h2>
-          <p className="text-xl text-slate-600 dark:text-slate-400 mb-8">
+          <h2 className="text-4xl text-heading-primary mb-4">Featured Projects</h2>
+          <p className="text-xl text-body-secondary mb-8">
             Some of my recent work that I'm proud to share
           </p>
           
@@ -111,10 +111,10 @@ export function Projects() {
         <div className="text-center py-20">
           <div className="bg-slate-50 dark:bg-slate-900 rounded-xl p-12 shadow-lg">
             <div className="text-6xl mb-6">🚧</div>
-            <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-4">Projects Coming Soon</h3>
-            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+            <h3 className="text-2xl text-heading-primary mb-4">Projects Coming Soon</h3>
+            <p className="text-lg text-body-primary max-w-2xl mx-auto">
               I'm currently working on showcasing my best projects. Check back soon to see detailed case studies 
-              of my work at Citi, NeoSoft Technologies, and other exciting projects.
+              of my work at <span className="text-accent-emphasis">Citi</span>, <span className="text-accent-emphasis">NeoSoft Technologies</span>, and other exciting projects.
             </p>
           </div>
         </div>

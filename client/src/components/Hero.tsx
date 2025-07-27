@@ -25,13 +25,13 @@ export function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <div className="space-y-4">
-              <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
+              <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight sm:block hidden">
                 {PERSONAL_INFO.name}
               </h1>
-              <h2 className="text-2xl lg:text-3xl text-white/90 font-medium">
+              <h2 className="text-2xl lg:text-3xl text-white font-semibold">
                 {PERSONAL_INFO.title}
               </h2>
-              <p className="text-xl text-white/80 leading-relaxed">
+              <p className="text-lg lg:text-xl text-white/90 leading-relaxed font-medium">
                 {PERSONAL_INFO.title} with {PERSONAL_INFO.experience} years of experience developing responsive web applications using React, Redux Toolkit, Angular, JavaScript, and TypeScript. Skilled in designing user-focused interfaces and integrating RESTful APIs.
               </p>
             </div>
