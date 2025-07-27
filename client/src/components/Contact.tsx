@@ -1,19 +1,15 @@
-import { useState } from 'react';
-import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { insertContactSchema, type InsertContact } from '@shared/schema';
-import { apiRequest } from '@/lib/queryClient';
 import { useToast } from '@/hooks/use-toast';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import { Mail, Phone, MapPin, Github, Linkedin, Twitter, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Github, Linkedin, Send } from 'lucide-react';
 
 export function Contact() {
   const { toast } = useToast();
-  const queryClient = useQueryClient();
 
   const form = useForm<InsertContact>({
     resolver: zodResolver(insertContactSchema),
@@ -25,29 +21,21 @@ export function Contact() {
     },
   });
 
-  const contactMutation = useMutation({
-    mutationFn: async (data: InsertContact) => {
-      return await apiRequest('POST', '/api/contacts', data);
-    },
-    onSuccess: () => {
-      toast({
-        title: 'Message sent successfully!',
-        description: 'Thank you for reaching out. I\'ll get back to you soon.',
-      });
-      form.reset();
-      queryClient.invalidateQueries({ queryKey: ['/api/contacts'] });
-    },
-    onError: (error: any) => {
-      toast({
-        title: 'Failed to send message',
-        description: error.message || 'Please try again later.',
-        variant: 'destructive',
-      });
-    },
-  });
-
   const onSubmit = (data: InsertContact) => {
-    contactMutation.mutate(data);
+    const subject = encodeURIComponent(data.subject);
+    const body = encodeURIComponent(
+      `Hi Sumit,\n\nName: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}\n\nBest regards,\n${data.name}`
+    );
+    
+    const mailtoLink = `mailto:sumitlokhande53@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = mailtoLink;
+    
+    toast({
+      title: 'Opening email client...',
+      description: 'Your default email application should open with the message pre-filled.',
+    });
+    
+    form.reset();
   };
 
   return (
@@ -119,20 +107,12 @@ export function Contact() {
                   <Github className="w-6 h-6" />
                 </a>
                 <a 
-                  href="https://linkedin.com/in/sumitlokhande" 
+                  href="https://www.linkedin.com/in/sumit-lokhande-0a2380148/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center justify-center w-12 h-12 bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-primary hover:text-white transition-all duration-200"
                 >
                   <Linkedin className="w-6 h-6" />
-                </a>
-                <a 
-                  href="https://twitter.com/sumitlokhande" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center w-12 h-12 bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-primary hover:text-white transition-all duration-200"
-                >
-                  <Twitter className="w-6 h-6" />
                 </a>
               </div>
             </div>
@@ -196,19 +176,11 @@ export function Contact() {
               <Button 
                 type="submit" 
                 className="w-full bg-primary hover:bg-primary/90"
-                disabled={contactMutation.isPending}
               >
-                {contactMutation.isPending ? (
-                  <span className="flex items-center justify-center">
-                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                    Sending...
-                  </span>
-                ) : (
-                  <span className="flex items-center justify-center">
-                    <Send className="w-4 h-4 mr-2" />
-                    Send Message
-                  </span>
-                )}
+                <span className="flex items-center justify-center">
+                  <Send className="w-4 h-4 mr-2" />
+                  Send Message
+                </span>
               </Button>
             </form>
           </div>

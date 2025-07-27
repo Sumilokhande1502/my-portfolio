@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 
 export function Hero() {
   const scrollToProjects = () => {
@@ -27,7 +27,7 @@ export function Hero() {
             <div className="space-y-4">
               <p className="text-primary font-semibold text-lg">👋 Hello, I'm</p>
               <h1 className="text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white leading-tight">
-                Sumit S. Lokhande
+                Sumit Lokhande
               </h1>
               <h2 className="text-2xl lg:text-3xl text-slate-600 dark:text-slate-400 font-medium">
                 Frontend Engineer
@@ -62,20 +62,12 @@ export function Hero() {
                 <Github className="w-6 h-6" />
               </a>
               <a 
-                href="https://linkedin.com/in/sumitlokhande" 
+                href="https://www.linkedin.com/in/sumit-lokhande-0a2380148/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors duration-200"
               >
                 <Linkedin className="w-6 h-6" />
-              </a>
-              <a 
-                href="https://twitter.com/sumitlokhande" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors duration-200"
-              >
-                <Twitter className="w-6 h-6" />
               </a>
               <a 
                 href="mailto:sumitlokhande53@gmail.com"
@@ -86,13 +78,15 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="relative">
-            <img 
-              src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-              alt="Professional developer workspace" 
-              className="rounded-2xl shadow-2xl w-full h-auto object-cover" 
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-2xl"></div>
+          <div className="relative flex justify-center">
+            <div className="relative">
+              <img 
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400" 
+                alt="Sumit Lokhande - Frontend Engineer" 
+                className="rounded-full shadow-2xl w-80 h-80 object-cover border-4 border-white dark:border-slate-800" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-full"></div>
+            </div>
           </div>
         </div>
       </div>

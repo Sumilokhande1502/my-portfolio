@@ -107,127 +107,16 @@ export function Projects() {
           </div>
         </div>
 
-        {/* Featured Projects */}
-        {featuredProjects.length > 0 && (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-            {featuredProjects.map((project) => (
-              <div key={project.id} className="bg-slate-50 dark:bg-slate-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group">
-                <div className="relative overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title} 
-                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-3">
-                    <h3 className="text-xl font-semibold text-slate-900 dark:text-white">{project.title}</h3>
-                    <div className="flex space-x-2">
-                      {project.technologies.slice(0, 2).map((tech, index) => (
-                        <span key={index} className="px-2 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  <p className="text-slate-600 dark:text-slate-400 mb-4">
-                    {project.description}
-                  </p>
-                  <div className="flex items-center space-x-4">
-                    {project.githubUrl && (
-                      <a 
-                        href={project.githubUrl} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="flex items-center text-slate-600 dark:text-slate-400 hover:text-primary transition-colors duration-200"
-                      >
-                        <Github className="w-4 h-4 mr-2" />
-                        Code
-                      </a>
-                    )}
-                    {project.liveUrl && (
-                      <a 
-                        href={project.liveUrl} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="flex items-center text-slate-600 dark:text-slate-400 hover:text-primary transition-colors duration-200"
-                      >
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        Live Demo
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </div>
-            ))}
+        {/* Projects Placeholder - Content Coming Soon */}
+        <div className="text-center py-20">
+          <div className="bg-slate-50 dark:bg-slate-900 rounded-xl p-12 shadow-lg">
+            <div className="text-6xl mb-6">🚧</div>
+            <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-4">Projects Coming Soon</h3>
+            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+              I'm currently working on showcasing my best projects. Check back soon to see detailed case studies 
+              of my work at Citi, NeoSoft Technologies, and other exciting projects.
+            </p>
           </div>
-        )}
-
-        {/* Additional Projects Grid */}
-        {otherProjects.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {otherProjects.map((project) => (
-              <div key={project.id} className="bg-slate-50 dark:bg-slate-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
-                <div className="relative overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title} 
-                    className="w-full h-48 object-cover" 
-                  />
-                </div>
-                <div className="p-5">
-                  <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">{project.title}</h3>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm mb-3">
-                    {project.description}
-                  </p>
-                  <div className="flex justify-between items-center">
-                    <div className="flex space-x-1">
-                      {project.technologies.slice(0, 2).map((tech, index) => (
-                        <span key={index} className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                    <div className="flex space-x-3">
-                      {project.githubUrl && (
-                        <a 
-                          href={project.githubUrl} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="text-slate-500 hover:text-primary"
-                        >
-                          <Github className="w-4 h-4" />
-                        </a>
-                      )}
-                      {project.liveUrl && (
-                        <a 
-                          href={project.liveUrl} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="text-slate-500 hover:text-primary"
-                        >
-                          <ExternalLink className="w-4 h-4" />
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-
-        <div className="text-center mt-12">
-          <a 
-            href="https://github.com/sumitlokhande" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-flex items-center bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 px-6 py-3 rounded-lg font-semibold hover:bg-slate-800 dark:hover:bg-slate-200 transition-colors duration-200"
-          >
-            <Github className="w-4 h-4 mr-2" />
-            View All Projects on GitHub
-          </a>
         </div>
       </div>
     </section>

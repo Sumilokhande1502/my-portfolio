@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 
 export function Footer() {
   const scrollToSection = (sectionId: string) => {
@@ -13,7 +13,7 @@ export function Footer() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">Sumit S. Lokhande</h3>
+            <h3 className="text-xl font-bold mb-4">Sumit Lokhande</h3>
             <p className="text-slate-400 leading-relaxed">
               Frontend Engineer crafting exceptional web experiences with React, Redux Toolkit, Angular, and modern technologies.
             </p>
@@ -67,20 +67,12 @@ export function Footer() {
                 <Github className="w-6 h-6" />
               </a>
               <a 
-                href="https://linkedin.com/in/sumitlokhande" 
+                href="https://www.linkedin.com/in/sumit-lokhande-0a2380148/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-slate-400 hover:text-white transition-colors duration-200"
               >
                 <Linkedin className="w-6 h-6" />
-              </a>
-              <a 
-                href="https://twitter.com/sumitlokhande" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-slate-400 hover:text-white transition-colors duration-200"
-              >
-                <Twitter className="w-6 h-6" />
               </a>
               <a 
                 href="mailto:sumitlokhande53@gmail.com"
@@ -92,7 +84,7 @@ export function Footer() {
           </div>
         </div>
         <div className="border-t border-slate-800 mt-8 pt-8 text-center">
-          <p className="text-slate-400">© 2025 Sumit S. Lokhande. All rights reserved. Built with React & TypeScript.</p>
+          <p className="text-slate-400">© 2025 Sumit Lokhande. All rights reserved. Built with React & TypeScript.</p>
         </div>
       </div>
     </footer>
