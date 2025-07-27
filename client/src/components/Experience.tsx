@@ -41,69 +41,53 @@ export function Experience() {
     }
   ];
 
-  const getIcon = (iconName: string) => {
-    switch (iconName) {
-      case 'briefcase':
-        return <Briefcase className="w-6 h-6 text-white" />;
-      case 'code':
-        return <Code className="w-6 h-6 text-white" />;
-      case 'laptop':
-        return <Laptop className="w-6 h-6 text-white" />;
-      default:
-        return <Briefcase className="w-6 h-6 text-white" />;
-    }
-  };
 
-  const getIconColor = (index: number) => {
-    const colors = ['gradient-primary', 'gradient-secondary', 'gradient-accent'];
-    return colors[index % colors.length];
-  };
 
   return (
     <section id="experience" className="py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-gray-800 dark:via-slate-800 dark:to-gray-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl text-heading-primary mb-4">Work Experience</h2>
-          <p className="text-xl text-body-secondary">
-            My professional journey in frontend development
+          <p className="text-xl text-body-secondary max-w-2xl mx-auto">
+            Building exceptional digital experiences across industries with cutting-edge technologies
           </p>
         </div>
 
-        <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-primary hidden md:block"></div>
-
-          <div className="space-y-12">
-            {experiences.map((experience, index) => (
-              <div key={experience.id} className="relative flex items-start space-x-6">
-                <div className={`hidden md:flex items-center justify-center w-16 h-16 ${getIconColor(index)} rounded-full border-4 border-white dark:border-slate-900 relative z-10`}>
-                  {getIcon(experience.icon)}
+        <div className="space-y-8">
+          {experiences.map((experience, index) => (
+            <div key={experience.id} className="relative">
+              <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg card-hover border-l-4 border-primary-solid">
+                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
+                  <div className="flex-1">
+                    <h3 className="text-2xl text-heading-primary mb-2">{experience.position}</h3>
+                    <p className="text-lg font-semibold text-primary-solid mb-2">{experience.company}</p>
+                    <span className="inline-block px-4 py-1 bg-primary-solid/10 text-primary-solid rounded-full text-sm font-medium">{experience.duration}</span>
+                  </div>
+                  <div className="mt-4 lg:mt-0 lg:ml-6">
+                    <div className="w-20 h-1 bg-gradient-to-r from-primary-solid to-secondary-solid rounded-full"></div>
+                  </div>
                 </div>
-                <div className="flex-1 bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg card-hover">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                    <div>
-                      <h3 className="text-xl text-heading-primary">{experience.position}</h3>
-                      <p className="font-semibold text-primary-solid">{experience.company}</p>
-                    </div>
-                    <span className="text-body-secondary font-medium">{experience.duration}</span>
-                  </div>
-                  <p className="text-body-primary mb-4">
-                    {experience.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {experience.technologies.map((tech, techIndex) => (
-                      <span 
-                        key={techIndex} 
-                        className={`px-3 py-1 ${getIconColor(index).replace('bg-', 'bg-').replace('bg-', 'bg-').replace('primary', 'primary/10').replace('secondary', 'secondary/10').replace('accent', 'accent/10')} ${getIconColor(index).replace('bg-', 'text-')} text-sm rounded-full`}
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                <p className="text-body-primary mb-6 leading-relaxed">
+                  {experience.description}
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  {experience.technologies.map((tech, techIndex) => (
+                    <span 
+                      key={techIndex} 
+                      className="px-4 py-2 bg-slate-100 dark:bg-slate-700 text-body-primary rounded-lg text-sm font-medium hover:bg-primary-solid hover:text-white transition-all duration-200"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
               </div>
-            ))}
-          </div>
+              {index < experiences.length - 1 && (
+                <div className="flex justify-center mt-8">
+                  <div className="w-px h-8 bg-gradient-to-b from-primary-solid to-transparent"></div>
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </section>
