@@ -25,18 +25,18 @@ export function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <div className="space-y-4">
-              <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight sm:block hidden">
+              <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight sm:block hidden animate-fade-in-left animate-delay-200">
                 {PERSONAL_INFO.name}
               </h1>
-              <h2 className="text-2xl lg:text-3xl text-white font-semibold">
+              <h2 className="text-2xl lg:text-3xl text-white font-semibold animate-fade-in-left animate-delay-300">
                 {PERSONAL_INFO.title}
               </h2>
-              <p className="text-lg lg:text-xl text-white/90 leading-relaxed font-medium">
+              <p className="text-lg lg:text-xl text-white/90 leading-relaxed font-medium animate-fade-in-left animate-delay-400">
                 {PERSONAL_INFO.title} with {PERSONAL_INFO.experience} years of experience developing responsive web applications using React, Redux Toolkit, Angular, JavaScript, and TypeScript. Skilled in designing user-focused interfaces and integrating RESTful APIs.
               </p>
             </div>
             
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 animate-fade-in-up animate-delay-500">
               <button 
                 onClick={scrollToProjects}
                 className="bg-white/20 backdrop-blur-md text-white border border-white/30 px-8 py-3 rounded-xl font-semibold hover:bg-white/30 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
@@ -51,7 +51,7 @@ export function Hero() {
               </button>
             </div>
 
-            <div className="flex space-x-6">
+            <div className="flex space-x-6 animate-fade-in-up animate-delay-500">
               <a 
                 href={SOCIAL_LINKS.github} 
                 target="_blank" 
@@ -77,7 +77,7 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="relative flex justify-center">
+          <div className="relative flex justify-center animate-fade-in-right animate-delay-300">
             <div className="relative">
               <img 
                 src="/attached_assets/20231120_210945_IMG_0457_1753609330229.JPG" 

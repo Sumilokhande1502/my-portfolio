@@ -1,7 +1,23 @@
 import { type Experience } from '@shared/schema';
 import { Briefcase, Code, Laptop } from 'lucide-react';
+import { useEffect } from 'react';
 
 export function Experience() {
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '50px 0px -100px 0px' });
+
+    const elements = document.querySelectorAll('.scroll-animate');
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   const experiences: Experience[] = [
     {
       id: '1',
@@ -46,7 +62,7 @@ export function Experience() {
   return (
     <section id="experience" className="py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-gray-800 dark:via-slate-800 dark:to-gray-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 scroll-animate">
           <h2 className="text-4xl text-heading-primary mb-4">Work Experience</h2>
           <p className="text-xl text-body-secondary max-w-2xl mx-auto">
             Building exceptional digital experiences across industries with cutting-edge technologies
@@ -55,7 +71,7 @@ export function Experience() {
 
         <div className="space-y-8">
           {experiences.map((experience, index) => (
-            <div key={experience.id} className="relative">
+            <div key={experience.id} className="relative scroll-animate" style={{ animationDelay: `${index * 0.2}s` }}>
               <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg card-hover border-l-4 border-primary-solid">
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
                   <div className="flex-1">

@@ -13,8 +13,24 @@ import {
   SiJest
 } from 'react-icons/si';
 import { FaCode, FaDatabase, FaCog } from 'react-icons/fa';
+import { useEffect } from 'react';
 
 export function Skills() {
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '50px 0px -100px 0px' });
+
+    const elements = document.querySelectorAll('.scroll-animate');
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   const skillCategories = [
     {
       title: 'Frontend Technologies',
@@ -56,7 +72,7 @@ export function Skills() {
   return (
     <section className="py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-slate-800 dark:via-gray-800 dark:to-slate-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 scroll-animate">
           <h2 className="text-4xl text-heading-primary mb-4">Skills & Technologies</h2>
           <p className="text-xl text-body-secondary">
             The tools and technologies I work with every day
@@ -65,7 +81,7 @@ export function Skills() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, index) => (
-            <div key={index} className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg card-hover">
+            <div key={index} className={`bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg card-hover scroll-animate`} style={{ animationDelay: `${index * 0.2}s` }}>
               <div className="flex items-center mb-6">
                 <div className="mr-4">{category.icon}</div>
                 <h3 className="text-xl text-heading-secondary">{category.title}</h3>
