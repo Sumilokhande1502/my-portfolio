@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '@/store';
 import { toggleTheme } from '@/store/slices/themeSlice';
 import { toggleMobileMenu, closeMobileMenu } from '@/store/slices/uiSlice';
+import { NAVIGATION_ITEMS, PERSONAL_INFO } from '@shared/constants';
 import { Moon, Sun, Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'wouter';
 
@@ -40,43 +41,22 @@ export function Navbar() {
               onClick={() => scrollToSection('home')}
               className="text-2xl font-bold text-primary cursor-pointer"
             >
-              SSL
+              {PERSONAL_INFO.name.split(' ').map(name => name[0]).join('')}
             </button>
           </div>
           
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              <button 
-                onClick={() => scrollToSection('home')}
-                className="text-slate-700 dark:text-slate-300 hover:text-primary transition-colors duration-200 font-medium"
-              >
-                Home
-              </button>
-              <button 
-                onClick={() => scrollToSection('about')}
-                className="text-slate-700 dark:text-slate-300 hover:text-primary transition-colors duration-200 font-medium"
-              >
-                About
-              </button>
-              <button 
-                onClick={() => scrollToSection('experience')}
-                className="text-slate-700 dark:text-slate-300 hover:text-primary transition-colors duration-200 font-medium"
-              >
-                Experience
-              </button>
-              <button 
-                onClick={() => scrollToSection('projects')}
-                className="text-slate-700 dark:text-slate-300 hover:text-primary transition-colors duration-200 font-medium"
-              >
-                Projects
-              </button>
-              <button 
-                onClick={() => scrollToSection('contact')}
-                className="text-slate-700 dark:text-slate-300 hover:text-primary transition-colors duration-200 font-medium"
-              >
-                Contact
-              </button>
+              {NAVIGATION_ITEMS.slice(0, 6).map((item) => (
+                <button 
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className="text-slate-700 dark:text-slate-300 hover:text-primary transition-colors duration-200 font-medium"
+                >
+                  {item.label}
+                </button>
+              ))}
             </div>
           </div>
 
@@ -111,36 +91,15 @@ export function Navbar() {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-700">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            <button 
-              onClick={() => scrollToSection('home')}
-              className="block w-full text-left px-3 py-2 text-slate-700 dark:text-slate-300 hover:text-primary font-medium"
-            >
-              Home
-            </button>
-            <button 
-              onClick={() => scrollToSection('about')}
-              className="block w-full text-left px-3 py-2 text-slate-700 dark:text-slate-300 hover:text-primary font-medium"
-            >
-              About
-            </button>
-            <button 
-              onClick={() => scrollToSection('experience')}
-              className="block w-full text-left px-3 py-2 text-slate-700 dark:text-slate-300 hover:text-primary font-medium"
-            >
-              Experience
-            </button>
-            <button 
-              onClick={() => scrollToSection('projects')}
-              className="block w-full text-left px-3 py-2 text-slate-700 dark:text-slate-300 hover:text-primary font-medium"
-            >
-              Projects
-            </button>
-            <button 
-              onClick={() => scrollToSection('contact')}
-              className="block w-full text-left px-3 py-2 text-slate-700 dark:text-slate-300 hover:text-primary font-medium"
-            >
-              Contact
-            </button>
+            {NAVIGATION_ITEMS.slice(0, 6).map((item) => (
+              <button 
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="block w-full text-left px-3 py-2 text-slate-700 dark:text-slate-300 hover:text-primary font-medium"
+              >
+                {item.label}
+              </button>
+            ))}
           </div>
         </div>
       )}

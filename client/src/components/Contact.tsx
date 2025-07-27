@@ -1,6 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { insertContactSchema, type InsertContact } from '@shared/schema';
+import { PERSONAL_INFO, SOCIAL_LINKS, API_ENDPOINTS } from '@shared/constants';
 import { useToast } from '@/hooks/use-toast';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -25,8 +26,8 @@ export function Contact() {
 
   const contactMutation = useMutation({
     mutationFn: async (data: InsertContact) => {
-      console.log('Sending contact form data:', data);
-      const response = await apiRequest('POST', '/api/contacts', data);
+
+      const response = await apiRequest('POST', API_ENDPOINTS.contacts, data);
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.message || 'Failed to send message');
@@ -34,7 +35,7 @@ export function Contact() {
       return await response.json();
     },
     onSuccess: (response: any) => {
-      console.log('Contact form success:', response);
+
       toast({
         title: 'Message sent successfully!',
         description: response.message || "I'll get back to you soon.",
@@ -43,7 +44,7 @@ export function Contact() {
       form.reset();
     },
     onError: (error: any) => {
-      console.error('Contact form error:', error);
+
       toast({
         title: 'Failed to send message',
         description: error.message || 'Please try again later.',
@@ -53,8 +54,7 @@ export function Contact() {
   });
 
   const onSubmit = (data: InsertContact) => {
-    console.log('Form submitted with data:', data);
-    console.log('Form errors:', form.formState.errors);
+
     contactMutation.mutate(data);
   };
 
@@ -82,10 +82,10 @@ export function Contact() {
                   <div>
                     <p className="text-slate-900 dark:text-white font-medium">Email</p>
                     <a 
-                      href="mailto:sumitlokhande53@gmail.com" 
+                      href={`mailto:${PERSONAL_INFO.email}`} 
                       className="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors duration-200"
                     >
-                      sumitlokhande53@gmail.com
+                      {PERSONAL_INFO.email}
                     </a>
                   </div>
                 </div>
@@ -96,10 +96,10 @@ export function Contact() {
                   <div>
                     <p className="text-slate-900 dark:text-white font-medium">Phone</p>
                     <a 
-                      href="tel:+919021181123" 
+                      href={`tel:${PERSONAL_INFO.phone}`} 
                       className="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors duration-200"
                     >
-                      +91 9021181123
+                      {PERSONAL_INFO.phone}
                     </a>
                   </div>
                 </div>
@@ -109,7 +109,7 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="text-slate-900 dark:text-white font-medium">Location</p>
-                    <p className="text-slate-600 dark:text-slate-400">Maharashtra, India</p>
+                    <p className="text-slate-600 dark:text-slate-400">{PERSONAL_INFO.location}</p>
                   </div>
                 </div>
               </div>
@@ -119,7 +119,7 @@ export function Contact() {
               <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">Follow Me</h4>
               <div className="flex space-x-4">
                 <a 
-                  href="https://github.com/sumitlokhande" 
+                  href={SOCIAL_LINKS.github} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center justify-center w-12 h-12 bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-primary hover:text-white transition-all duration-200"
@@ -127,7 +127,7 @@ export function Contact() {
                   <Github className="w-6 h-6" />
                 </a>
                 <a 
-                  href="https://www.linkedin.com/in/sumit-lokhande-0a2380148/" 
+                  href={SOCIAL_LINKS.linkedin} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center justify-center w-12 h-12 bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-primary hover:text-white transition-all duration-200"

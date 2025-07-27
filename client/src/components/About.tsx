@@ -1,10 +1,11 @@
 import { Download } from 'lucide-react';
+import { PERSONAL_INFO } from '@shared/constants';
 
 export function About() {
   const handleResumeDownload = () => {
     const link = document.createElement('a');
     link.href = '/resume.pdf';
-    link.download = 'Sumit_Lokhande_Resume.pdf';
+    link.download = `${PERSONAL_INFO.name.replace(/\s+/g, '_')}_Resume.pdf`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -23,7 +24,7 @@ export function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-              I'm a Frontend Engineer with 5+ years of experience developing responsive web applications using React, Redux Toolkit, Angular, JavaScript, and TypeScript. I have proven expertise in designing user-focused interfaces, integrating RESTful APIs with frontend components, and working in Agile environments.
+              I'm a {PERSONAL_INFO.title} with {PERSONAL_INFO.experience} years of experience developing responsive web applications using React, Redux Toolkit, Angular, JavaScript, and TypeScript. I have proven expertise in designing user-focused interfaces, integrating RESTful APIs with frontend components, and working in Agile environments.
             </p>
             <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
               I'm skilled in version control and DevOps practices using Jenkins and GIT to streamline deployment and maintain code integrity. I believe in creating optimized, user-centric applications that deliver exceptional performance and user experience.

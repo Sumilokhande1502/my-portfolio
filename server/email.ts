@@ -1,4 +1,6 @@
 import nodemailer from 'nodemailer';
+import { PERSONAL_INFO } from '@shared/constants';
+import { EMAIL_CONFIG } from './constants';
 
 interface EmailData {
   name: string;
@@ -14,18 +16,18 @@ export async function sendContactEmail(data: EmailData): Promise<boolean> {
     
     // Use either real Gmail credentials or test credentials
     const transporter = nodemailer.createTransport({
-      host: process.env.EMAIL_USER ? "smtp.gmail.com" : "smtp.ethereal.email",
-      port: 587,
-      secure: false, // true for 465, false for other ports
+      host: EMAIL_CONFIG.host,
+      port: EMAIL_CONFIG.port,
+      secure: EMAIL_CONFIG.secure, // true for 465, false for other ports
       auth: {
-        user: process.env.EMAIL_USER || testAccount.user,
+        user: EMAIL_CONFIG.from || testAccount.user,
         pass: process.env.EMAIL_PASS || testAccount.pass,
       },
     });
 
     const mailOptions = {
-      from: process.env.EMAIL_USER || testAccount.user,
-      to: process.env.EMAIL_TO || 'sumitlokhande53@gmail.com',
+      from: EMAIL_CONFIG.from || testAccount.user,
+      to: EMAIL_CONFIG.to,
       subject: `Portfolio Contact: ${data.subject}`,
       text: `
 New contact form submission:
