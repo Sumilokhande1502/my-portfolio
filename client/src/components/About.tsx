@@ -1,7 +1,23 @@
 import { Download } from 'lucide-react';
 import { PERSONAL_INFO } from '@shared/constants';
+import { useEffect } from 'react';
 
 export function About() {
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '50px 0px -100px 0px' });
+
+    const elements = document.querySelectorAll('.scroll-animate');
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   const handleResumeDownload = () => {
     const link = document.createElement('a');
     link.href = '/resume.pdf';
@@ -14,7 +30,7 @@ export function About() {
   return (
     <section id="about" className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 scroll-animate">
           <h2 className="text-4xl text-heading-primary mb-4">About Me</h2>
           <p className="text-xl text-body-secondary max-w-3xl mx-auto">
             Passionate about creating exceptional user experiences through clean code and thoughtful design
@@ -22,7 +38,7 @@ export function About() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
+          <div className="space-y-6 scroll-animate">
             <p className="text-lg text-body-primary">
               I'm a <span className="text-accent-emphasis">{PERSONAL_INFO.title}</span> with <span className="text-accent-emphasis">{PERSONAL_INFO.experience} years</span> of experience developing responsive web applications using React, Redux Toolkit, Angular, JavaScript, and TypeScript. I have proven expertise in designing user-focused interfaces, integrating RESTful APIs with frontend components, and working in Agile environments.
             </p>
@@ -42,7 +58,7 @@ export function About() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 gap-6 scroll-animate" style={{ animationDelay: '0.2s' }}>
             <img 
               src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300" 
               alt="Modern web development setup" 
