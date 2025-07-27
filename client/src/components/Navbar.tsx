@@ -46,8 +46,9 @@ export function Navbar() {
                 alt={`${PERSONAL_INFO.name} Logo`}
                 className="w-10 h-10 rounded-full object-cover border-2 border-primary/20 group-hover:border-primary transition-all duration-200"
               />
-              <span className="text-xl font-bold text-primary hidden sm:block">
-                {PERSONAL_INFO.name.split(' ').map(name => name[0]).join('')}
+              <span className="text-xl font-bold text-primary">
+                <span className="hidden sm:inline">{PERSONAL_INFO.name.split(' ').map(name => name[0]).join('')}</span>
+                <span className="sm:hidden">{PERSONAL_INFO.name}</span>
               </span>
             </button>
           </div>
