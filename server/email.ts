@@ -14,7 +14,7 @@ export async function sendContactEmail(data: EmailData): Promise<boolean> {
     
     // Use either real Gmail credentials or test credentials
     const transporter = nodemailer.createTransport({
-      host: process.env.EMAIL_HOST || "smtp.ethereal.email",
+      host: process.env.EMAIL_USER ? "smtp.gmail.com" : "smtp.ethereal.email",
       port: 587,
       secure: false, // true for 465, false for other ports
       auth: {
@@ -65,10 +65,12 @@ Reply to: ${data.email}
 
     const info = await transporter.sendMail(mailOptions);
     
-    // If using test account, log the preview URL
+    // Log success message without showing test URLs in production
     if (!process.env.EMAIL_USER) {
-      console.log('Test email sent! Preview URL:', nodemailer.getTestMessageUrl(info));
-      console.log('Note: This is a test email. To send real emails, configure EMAIL_USER and EMAIL_PASS environment variables.');
+      // Using test email service
+      console.log('Email sent via test service');
+    } else {
+      console.log('Email sent successfully');
     }
     
     return true;
