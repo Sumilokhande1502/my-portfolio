@@ -39,9 +39,16 @@ export function Navbar() {
           <div className="flex-shrink-0">
             <button 
               onClick={() => scrollToSection('home')}
-              className="text-2xl font-bold text-primary cursor-pointer"
+              className="flex items-center space-x-3 cursor-pointer group"
             >
-              {PERSONAL_INFO.name.split(' ').map(name => name[0]).join('')}
+              <img 
+                src={PERSONAL_INFO.profileImage} 
+                alt={`${PERSONAL_INFO.name} Logo`}
+                className="w-10 h-10 rounded-full object-cover border-2 border-primary/20 group-hover:border-primary transition-all duration-200"
+              />
+              <span className="text-xl font-bold text-primary hidden sm:block">
+                {PERSONAL_INFO.name.split(' ').map(name => name[0]).join('')}
+              </span>
             </button>
           </div>
           
