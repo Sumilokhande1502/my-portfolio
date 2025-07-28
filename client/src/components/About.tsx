@@ -34,7 +34,8 @@ export function About() {
     <section id="about" className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 scroll-animate">
-          <h2 className="text-4xl text-heading-primary mb-4">About Me</h2>
+          <h2 className="text-4xl text-heading-primary mb-4 section-heading-decoration about">About Me</h2>
+          <div className="section-divider decorative"></div>
           <p className="text-xl text-body-secondary max-w-3xl mx-auto">
             Passionate about creating exceptional user experiences through clean code and thoughtful design
           </p>

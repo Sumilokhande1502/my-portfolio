@@ -77,7 +77,8 @@ export function Skills() {
     <section id="skills" className="py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-slate-800 dark:via-gray-800 dark:to-slate-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 scroll-animate">
-          <h2 className="text-4xl text-heading-primary mb-4">Skills & Technologies</h2>
+          <h2 className="text-4xl text-heading-primary mb-4 section-heading-decoration skills">Skills & Technologies</h2>
+          <div className="section-divider decorative"></div>
           <p className="text-xl text-body-secondary">
             The tools and technologies I work with every day
           </p>

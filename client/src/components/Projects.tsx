@@ -85,7 +85,8 @@ export function Projects() {
     <section id="projects" className="py-20 bg-gradient-to-br from-purple-50 via-pink-50 to-orange-50 dark:from-slate-900 dark:via-gray-900 dark:to-slate-800">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl text-heading-primary mb-4">Featured Projects</h2>
+          <h2 className="text-4xl text-heading-primary mb-4 section-heading-decoration projects">Featured Projects</h2>
+          <div className="section-divider decorative"></div>
           <p className="text-xl text-body-secondary mb-8">
             Some of my recent work that I'm proud to share
           </p>

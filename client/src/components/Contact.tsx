@@ -62,7 +62,8 @@ export function Contact() {
     <section id="contact" className="py-20 bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 dark:from-gray-900 dark:via-slate-900 dark:to-gray-800">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl text-heading-primary mb-4">Let's Work Together</h2>
+          <h2 className="text-4xl text-heading-primary mb-4 section-heading-decoration contact">Let's Work Together</h2>
+          <div className="section-divider decorative"></div>
           <p className="text-xl text-body-secondary max-w-3xl mx-auto">
             I'm always interested in new opportunities and exciting projects. 
             Let's discuss how we can bring your ideas to life.

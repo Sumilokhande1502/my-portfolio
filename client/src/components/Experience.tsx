@@ -67,7 +67,8 @@ export function Experience() {
     <section id="experience" className="py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-gray-800 dark:via-slate-800 dark:to-gray-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 scroll-animate">
-          <h2 className="text-4xl text-heading-primary mb-4">Work Experience</h2>
+          <h2 className="text-4xl text-heading-primary mb-4 section-heading-decoration experience">Work Experience</h2>
+          <div className="section-divider decorative"></div>
           <p className="text-xl text-body-secondary max-w-2xl mx-auto">
             Building exceptional digital experiences across industries with cutting-edge technologies
           </p>

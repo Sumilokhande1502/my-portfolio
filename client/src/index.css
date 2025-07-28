@@ -455,4 +455,89 @@
   .border-3 {
     border-width: 3px;
   }
+
+  /* Section heading decorations */
+  .section-heading-decoration {
+    position: relative;
+    display: inline-block;
+  }
+
+  .section-heading-decoration::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primary-solid), var(--color-secondary-solid));
+    border-radius: 2px;
+    animation: expandLine 0.8s ease-out forwards;
+  }
+
+  .section-heading-decoration.about::after {
+    background: linear-gradient(90deg, var(--color-primary-solid), var(--color-accent-solid));
+  }
+
+  .section-heading-decoration.skills::after {
+    background: linear-gradient(90deg, var(--color-secondary-solid), var(--color-primary-solid));
+  }
+
+  .section-heading-decoration.experience::after {
+    background: linear-gradient(90deg, var(--color-accent-solid), var(--color-secondary-solid));
+  }
+
+  .section-heading-decoration.projects::after {
+    background: linear-gradient(90deg, var(--color-primary-solid), var(--color-warm-solid));
+  }
+
+  .section-heading-decoration.contact::after {
+    background: linear-gradient(90deg, var(--color-secondary-solid), var(--color-accent-solid));
+  }
+
+  @keyframes expandLine {
+    from {
+      width: 0;
+      opacity: 0;
+    }
+    to {
+      width: 80px;
+      opacity: 1;
+    }
+  }
+
+  /* Section divider styling */
+  .section-divider {
+    margin: 2rem auto;
+    width: 200px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-primary-solid), transparent);
+    opacity: 0.3;
+  }
+
+  .section-divider.decorative {
+    position: relative;
+    height: 3px;
+    background: linear-gradient(90deg, 
+      transparent, 
+      var(--color-primary-solid) 20%, 
+      var(--color-secondary-solid) 50%, 
+      var(--color-accent-solid) 80%, 
+      transparent
+    );
+    border-radius: 2px;
+  }
+
+  .section-divider.decorative::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background: var(--color-primary-solid);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px var(--background);
+  }
 }
