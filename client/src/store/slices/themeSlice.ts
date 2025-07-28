@@ -5,7 +5,7 @@ interface ThemeState {
 }
 
 const initialState: ThemeState = {
-  isDarkMode: false,
+  isDarkMode: true,
 };
 
 const themeSlice = createSlice({
@@ -24,7 +24,8 @@ const themeSlice = createSlice({
     },
     initializeTheme: (state) => {
       const savedTheme = localStorage.getItem('darkMode');
-      state.isDarkMode = savedTheme === 'true';
+      // Default to dark mode if no saved preference
+      state.isDarkMode = savedTheme !== null ? savedTheme === 'true' : true;
       
       if (state.isDarkMode) {
         document.documentElement.classList.add('dark');
