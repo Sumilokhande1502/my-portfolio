@@ -102,20 +102,20 @@ export function Skills() {
           </p>
         </div>
 
-        <div className="skills-flex-container gap-6">
+        <div className="skills-flex-container gap-4">
           {skillCategories.map((category, index) => (
-            <div key={index} className={`flex-1 min-w-0 bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg card-hover scroll-animate h-full`} style={{ animationDelay: `${index * SCROLL_ANIMATION.staggerDelay}s` }}>
-              <div className="flex items-center mb-6">
-                <div className="mr-4">{category.icon}</div>
-                <h3 className="text-lg text-heading-secondary">{category.title}</h3>
+            <div key={index} className={`flex-1 min-w-[280px] bg-white dark:bg-slate-800 rounded-lg p-4 shadow-md hover:shadow-lg card-hover scroll-animate transition-all duration-300`} style={{ animationDelay: `${index * SCROLL_ANIMATION.staggerDelay}s` }}>
+              <div className="flex items-center mb-4">
+                <div className="mr-3">{category.icon}</div>
+                <h3 className="text-base font-semibold text-heading-secondary">{category.title}</h3>
               </div>
-              <div className="flex flex-col gap-3">
+              <div className="grid grid-cols-1 gap-2">
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="flex items-center p-3 bg-slate-50 dark:bg-slate-700 rounded-lg hover:shadow-md transition-all duration-200">
-                    <div className="mr-3 flex-shrink-0">
+                  <div key={skillIndex} className="flex items-center p-2 bg-slate-50 dark:bg-slate-700 rounded-md hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors duration-200">
+                    <div className="mr-2 flex-shrink-0">
                       {skill.icon}
                     </div>
-                    <span className="text-body-primary font-medium text-sm flex-grow">{skill.name}</span>
+                    <span className="text-body-primary font-medium text-sm">{skill.name}</span>
                   </div>
                 ))}
               </div>
