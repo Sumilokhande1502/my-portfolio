@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { createTransporter } from 'nodemailer';
+import nodemailer from 'nodemailer';
 import { insertContactSchema } from '../shared/schema';
 
 // CORS headers for all responses
@@ -29,7 +29,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const validatedData = insertContactSchema.parse(req.body);
 
     // Create transporter
-    const transporter = createTransporter({
+    const transporter = nodemailer.createTransporter({
       service: 'gmail',
       auth: {
         user: process.env.EMAIL_USER,
