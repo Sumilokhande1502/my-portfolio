@@ -10,7 +10,11 @@ import {
   SiJenkins, 
   SiGit, 
   SiMysql,
-  SiJest
+  SiJest,
+  SiSpring,
+  SiDocker,
+  SiWebpack,
+  SiVite
 } from 'react-icons/si';
 import { FaCode, FaDatabase, FaCog } from 'react-icons/fa';
 import { useEffect } from 'react';
@@ -45,28 +49,42 @@ export function Skills() {
         { name: 'Redux Toolkit', icon: <SiRedux className="w-6 h-6 text-[#764ABC]" /> },
         { name: 'Angular', icon: <SiAngular className="w-6 h-6 text-[#DD0031]" /> },
         { name: 'TypeScript', icon: <SiTypescript className="w-6 h-6 text-[#3178C6]" /> },
+        { name: 'Reflux', icon: <FaCode className="w-6 h-6 text-[#00D4FF]" /> },
+        { name: 'JavaScript (ES6+)', icon: <SiJavascript className="w-6 h-6 text-[#F7DF1E]" /> },
       ]
     },
     {
-      title: 'Core Technologies',
+      title: 'Backend & Core',
       icon: <FaDatabase className="w-8 h-8 text-secondary-solid" />,
       color: 'secondary',
       skills: [
-        { name: 'JavaScript (ES6+)', icon: <SiJavascript className="w-6 h-6 text-[#F7DF1E]" /> },
+        { name: 'Java Microservices', icon: <SiSpring className="w-6 h-6 text-[#6DB33F]" /> },
+        { name: 'RESTful APIs', icon: <FaCode className="w-6 h-6 text-secondary-solid" /> },
         { name: 'HTML5', icon: <SiHtml5 className="w-6 h-6 text-[#E34F26]" /> },
         { name: 'CSS3', icon: <SiCss3 className="w-6 h-6 text-[#1572B6]" /> },
-        { name: 'RESTful APIs', icon: <FaCode className="w-6 h-6 text-primary-solid" /> },
+        { name: 'SQL', icon: <SiMysql className="w-6 h-6 text-[#4479A1]" /> },
       ]
     },
     {
-      title: 'DevOps & Tools',
+      title: 'DevOps & Build Tools',
       icon: <FaCog className="w-8 h-8 text-accent-solid" />,
       color: 'accent',
       skills: [
+        { name: 'Docker', icon: <SiDocker className="w-6 h-6 text-[#2496ED]" /> },
         { name: 'Jenkins', icon: <SiJenkins className="w-6 h-6 text-[#D33833]" /> },
+        { name: 'CI/CD', icon: <FaCog className="w-6 h-6 text-accent-solid" /> },
         { name: 'Git', icon: <SiGit className="w-6 h-6 text-[#F05032]" /> },
-        { name: 'SQL', icon: <SiMysql className="w-6 h-6 text-[#4479A1]" /> },
-        { name: 'Unit Testing', icon: <SiJest className="w-6 h-6 text-[#C21325]" /> },
+        { name: 'Webpack', icon: <SiWebpack className="w-6 h-6 text-[#8DD6F9]" /> },
+        { name: 'Vite', icon: <SiVite className="w-6 h-6 text-[#646CFF]" /> },
+      ]
+    },
+    {
+      title: 'Testing & Quality',
+      icon: <FaCode className="w-8 h-8 text-primary-solid" />,
+      color: 'primary',
+      skills: [
+        { name: 'Jest', icon: <SiJest className="w-6 h-6 text-[#C21325]" /> },
+        { name: 'Unit Testing', icon: <FaCode className="w-6 h-6 text-primary-solid" /> },
       ]
     }
   ];
@@ -84,7 +102,7 @@ export function Skills() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {skillCategories.map((category, index) => (
             <div key={index} className={`bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg card-hover scroll-animate`} style={{ animationDelay: `${index * SCROLL_ANIMATION.staggerDelay}s` }}>
               <div className="flex items-center mb-6">
