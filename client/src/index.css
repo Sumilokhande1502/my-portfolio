@@ -540,4 +540,27 @@
     border-radius: 50%;
     box-shadow: 0 0 0 4px var(--background);
   }
+
+  /* Skills section equal height cards */
+  .skills-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+
+  @media (min-width: 1024px) {
+    .skills-flex-container {
+      flex-wrap: nowrap;
+    }
+  }
+
+  .skills-flex-container > div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .skills-flex-container .card-hover {
+    height: 100%;
+  }
 }

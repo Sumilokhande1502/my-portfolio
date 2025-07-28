@@ -102,20 +102,20 @@ export function Skills() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="skills-flex-container gap-6">
           {skillCategories.map((category, index) => (
-            <div key={index} className={`bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg card-hover scroll-animate`} style={{ animationDelay: `${index * SCROLL_ANIMATION.staggerDelay}s` }}>
+            <div key={index} className={`flex-1 min-w-0 bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg card-hover scroll-animate h-full`} style={{ animationDelay: `${index * SCROLL_ANIMATION.staggerDelay}s` }}>
               <div className="flex items-center mb-6">
                 <div className="mr-4">{category.icon}</div>
-                <h3 className="text-xl text-heading-secondary">{category.title}</h3>
+                <h3 className="text-lg text-heading-secondary">{category.title}</h3>
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="flex flex-col gap-3">
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="flex flex-col items-center p-4 bg-slate-50 dark:bg-slate-700 rounded-lg hover:shadow-md transition-all duration-200">
-                    <div className="mb-3">
+                  <div key={skillIndex} className="flex items-center p-3 bg-slate-50 dark:bg-slate-700 rounded-lg hover:shadow-md transition-all duration-200">
+                    <div className="mr-3 flex-shrink-0">
                       {skill.icon}
                     </div>
-                    <span className="text-body-primary font-medium text-center text-sm">{skill.name}</span>
+                    <span className="text-body-primary font-medium text-sm flex-grow">{skill.name}</span>
                   </div>
                 ))}
               </div>
