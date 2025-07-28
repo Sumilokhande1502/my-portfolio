@@ -38,7 +38,7 @@ export function Experience() {
       company: 'NeoSoft Technologies Pvt. Ltd.',
       duration: 'Apr 2020 - Aug 2022',
       description: 'Created dynamic, single-page applications (SPA) using Angular providing seamless experience across devices. Developed reusable UI components with Angular, collaborating with backend teams to integrate Java Microservices and Oracle databases via RESTful APIs.',
-      technologies: ['Angular', 'Java Microservices', 'Oracle', 'RESTful APIs', 'Jenkins', 'GIT'],
+      technologies: ['Angular', 'RESTful APIs', 'GIT', 'Gulp', 'TypeScript'],
       icon: 'code'
     },
     {
