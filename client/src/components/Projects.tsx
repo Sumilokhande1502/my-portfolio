@@ -4,6 +4,7 @@ import { RootState } from '@/store';
 import { setProjectFilter } from '@/store/slices/uiSlice';
 import { type Project } from '@shared/schema';
 import { Github, ExternalLink } from 'lucide-react';
+import { SOCIAL_LINKS } from '@shared/constants';
 
 export function Projects() {
   const dispatch = useDispatch();
@@ -112,10 +113,24 @@ export function Projects() {
           <div className="bg-slate-50 dark:bg-slate-900 rounded-xl p-12 shadow-lg">
             <div className="text-6xl mb-6">🚧</div>
             <h3 className="text-2xl text-heading-primary mb-4">Projects Coming Soon</h3>
-            <p className="text-lg text-body-primary max-w-2xl mx-auto">
+            <p className="text-lg text-body-primary max-w-2xl mx-auto mb-8">
               I'm currently working on showcasing my best projects. Check back soon to see detailed case studies 
               of my work at <span className="text-accent-emphasis">Citi</span>, <span className="text-accent-emphasis">NeoSoft Technologies</span>, and other exciting projects.
             </p>
+            
+            {/* View GitHub Projects Button */}
+            <div className="flex justify-center">
+              <a 
+                href={SOCIAL_LINKS.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-200 flex items-center space-x-2 shadow-lg hover:shadow-xl"
+              >
+                <Github className="w-5 h-5" />
+                <span>View GitHub Projects</span>
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
