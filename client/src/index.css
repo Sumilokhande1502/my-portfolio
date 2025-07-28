@@ -557,8 +557,8 @@
   }
 
   .skills-flex-container > div {
-    max-height: 320px;
-    overflow: hidden;
+    height: auto;
+    min-height: 280px;
   }
 
   @media (max-width: 1023px) {
