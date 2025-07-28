@@ -11,7 +11,7 @@ export const PERSONAL_INFO = {
 
 // Social Media Links (Client-safe constants)
 export const SOCIAL_LINKS = {
-  github: 'https://github.com/sumitlokhande',
+  github: 'https://github.com/Sumilokhande1502',
   linkedin: 'https://www.linkedin.com/in/sumit-lokhande-0a2380148/',
   portfolio: 'https://sumitlokhande.dev',
 } as const;
