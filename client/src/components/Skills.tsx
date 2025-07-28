@@ -40,25 +40,45 @@ export function Skills() {
     return () => observer.disconnect();
   }, []);
 
-  const skills = [
-    { name: 'React', icon: <SiReact className="w-8 h-8 text-[#61DAFB]" /> },
-    { name: 'Angular', icon: <SiAngular className="w-8 h-8 text-[#DD0031]" /> },
-    { name: 'TypeScript', icon: <SiTypescript className="w-8 h-8 text-[#3178C6]" /> },
-    { name: 'JavaScript', icon: <SiJavascript className="w-8 h-8 text-[#F7DF1E]" /> },
-    { name: 'Redux Toolkit', icon: <SiRedux className="w-8 h-8 text-[#764ABC]" /> },
-    { name: 'HTML5', icon: <SiHtml5 className="w-8 h-8 text-[#E34F26]" /> },
-    { name: 'CSS3', icon: <SiCss3 className="w-8 h-8 text-[#1572B6]" /> },
-    { name: 'SCSS', icon: <SiSass className="w-8 h-8 text-[#CC6699]" /> },
-    { name: 'Tailwind CSS', icon: <SiTailwindcss className="w-8 h-8 text-[#06B6D4]" /> },
-    { name: 'Bootstrap', icon: <SiBootstrap className="w-8 h-8 text-[#7952B3]" /> },
-    { name: 'Material-UI', icon: <SiMui className="w-8 h-8 text-[#007FFF]" /> },
-    { name: 'Git', icon: <SiGit className="w-8 h-8 text-[#F05032]" /> },
-    { name: 'Docker', icon: <SiDocker className="w-8 h-8 text-[#2496ED]" /> },
-    { name: 'Jenkins', icon: <SiJenkins className="w-8 h-8 text-[#D33833]" /> },
-    { name: 'Webpack', icon: <SiWebpack className="w-8 h-8 text-[#8DD6F9]" /> },
-    { name: 'Vite', icon: <SiVite className="w-8 h-8 text-[#646CFF]" /> },
-    { name: 'Jest', icon: <SiJest className="w-8 h-8 text-[#C21325]" /> },
-    { name: 'MySQL', icon: <SiMysql className="w-8 h-8 text-[#4479A1]" /> },
+  const skillCategories = [
+    {
+      title: 'Frontend Frameworks',
+      skills: [
+        { name: 'React', icon: <SiReact className="w-4 h-4 text-[#61DAFB]" /> },
+        { name: 'Angular', icon: <SiAngular className="w-4 h-4 text-[#DD0031]" /> },
+        { name: 'Redux Toolkit', icon: <SiRedux className="w-4 h-4 text-[#764ABC]" /> },
+      ]
+    },
+    {
+      title: 'Languages',
+      skills: [
+        { name: 'TypeScript', icon: <SiTypescript className="w-4 h-4 text-[#3178C6]" /> },
+        { name: 'JavaScript', icon: <SiJavascript className="w-4 h-4 text-[#F7DF1E]" /> },
+        { name: 'HTML5', icon: <SiHtml5 className="w-4 h-4 text-[#E34F26]" /> },
+        { name: 'CSS3', icon: <SiCss3 className="w-4 h-4 text-[#1572B6]" /> },
+      ]
+    },
+    {
+      title: 'Styling & UI',
+      skills: [
+        { name: 'Tailwind CSS', icon: <SiTailwindcss className="w-4 h-4 text-[#06B6D4]" /> },
+        { name: 'SCSS', icon: <SiSass className="w-4 h-4 text-[#CC6699]" /> },
+        { name: 'Bootstrap', icon: <SiBootstrap className="w-4 h-4 text-[#7952B3]" /> },
+        { name: 'Material-UI', icon: <SiMui className="w-4 h-4 text-[#007FFF]" /> },
+      ]
+    },
+    {
+      title: 'Tools & DevOps',
+      skills: [
+        { name: 'Git', icon: <SiGit className="w-4 h-4 text-[#F05032]" /> },
+        { name: 'Docker', icon: <SiDocker className="w-4 h-4 text-[#2496ED]" /> },
+        { name: 'Jenkins', icon: <SiJenkins className="w-4 h-4 text-[#D33833]" /> },
+        { name: 'Webpack', icon: <SiWebpack className="w-4 h-4 text-[#8DD6F9]" /> },
+        { name: 'Vite', icon: <SiVite className="w-4 h-4 text-[#646CFF]" /> },
+        { name: 'Jest', icon: <SiJest className="w-4 h-4 text-[#C21325]" /> },
+        { name: 'MySQL', icon: <SiMysql className="w-4 h-4 text-[#4479A1]" /> },
+      ]
+    }
   ];
 
 
@@ -74,19 +94,31 @@ export function Skills() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 max-w-4xl mx-auto">
-          {skills.map((skill, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+          {skillCategories.map((category, categoryIndex) => (
             <div 
-              key={index} 
-              className="flex flex-col items-center p-4 bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 scroll-animate"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              key={categoryIndex} 
+              className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300 scroll-animate"
+              style={{ animationDelay: `${categoryIndex * 0.1}s` }}
             >
-              <div className="mb-3">
-                {skill.icon}
+              <h3 className="text-lg font-semibold text-heading-secondary mb-4 text-center">
+                {category.title}
+              </h3>
+              <div className="space-y-3">
+                {category.skills.map((skill, skillIndex) => (
+                  <div 
+                    key={skillIndex} 
+                    className="flex items-center gap-3 p-2 rounded-md hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors duration-200"
+                  >
+                    <div className="flex-shrink-0">
+                      {skill.icon}
+                    </div>
+                    <span className="text-sm font-medium text-body-primary">
+                      {skill.name}
+                    </span>
+                  </div>
+                ))}
               </div>
-              <span className="text-sm font-medium text-center text-body-primary">
-                {skill.name}
-              </span>
             </div>
           ))}
         </div>
