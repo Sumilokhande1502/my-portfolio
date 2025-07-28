@@ -1,4 +1,3 @@
-import { type Skill } from '@shared/schema';
 import { 
   SiReact, 
   SiRedux, 
@@ -7,16 +6,18 @@ import {
   SiJavascript, 
   SiHtml5, 
   SiCss3, 
+  SiSass,
+  SiBootstrap,
+  SiTailwindcss,
+  SiMui,
   SiJenkins, 
   SiGit, 
   SiMysql,
   SiJest,
-  SiSpring,
   SiDocker,
   SiWebpack,
   SiVite
 } from 'react-icons/si';
-import { FaCode, FaDatabase, FaCog } from 'react-icons/fa';
 import { useEffect } from 'react';
 import { SCROLL_ANIMATION } from '@shared/constants';
 
@@ -39,54 +40,25 @@ export function Skills() {
     return () => observer.disconnect();
   }, []);
 
-  const skillCategories = [
-    {
-      title: 'Frontend Technologies',
-      icon: <FaCode className="w-8 h-8 text-primary-solid" />,
-      color: 'primary',
-      skills: [
-        { name: 'React', icon: <SiReact className="w-6 h-6 text-[#61DAFB]" /> },
-        { name: 'Redux Toolkit', icon: <SiRedux className="w-6 h-6 text-[#764ABC]" /> },
-        { name: 'Angular', icon: <SiAngular className="w-6 h-6 text-[#DD0031]" /> },
-        { name: 'TypeScript', icon: <SiTypescript className="w-6 h-6 text-[#3178C6]" /> },
-        { name: 'JavaScript (ES6+)', icon: <SiJavascript className="w-6 h-6 text-[#F7DF1E]" /> },
-        { name: 'HTML5', icon: <SiHtml5 className="w-6 h-6 text-[#E34F26]" /> },
-        { name: 'CSS3', icon: <SiCss3 className="w-6 h-6 text-[#1572B6]" /> },
-        { name: 'Reflux', icon: <FaCode className="w-6 h-6 text-[#00D4FF]" /> },
-      ]
-    },
-    {
-      title: 'Backend & Database',
-      icon: <FaDatabase className="w-8 h-8 text-secondary-solid" />,
-      color: 'secondary',
-      skills: [
-        { name: 'Java Microservices', icon: <SiSpring className="w-6 h-6 text-[#6DB33F]" /> },
-        { name: 'RESTful APIs', icon: <FaCode className="w-6 h-6 text-secondary-solid" /> },
-        { name: 'SQL', icon: <SiMysql className="w-6 h-6 text-[#4479A1]" /> },
-      ]
-    },
-    {
-      title: 'DevOps & Build Tools',
-      icon: <FaCog className="w-8 h-8 text-accent-solid" />,
-      color: 'accent',
-      skills: [
-        { name: 'Docker', icon: <SiDocker className="w-6 h-6 text-[#2496ED]" /> },
-        { name: 'Jenkins', icon: <SiJenkins className="w-6 h-6 text-[#D33833]" /> },
-        { name: 'CI/CD', icon: <FaCog className="w-6 h-6 text-accent-solid" /> },
-        { name: 'Git', icon: <SiGit className="w-6 h-6 text-[#F05032]" /> },
-        { name: 'Webpack', icon: <SiWebpack className="w-6 h-6 text-[#8DD6F9]" /> },
-        { name: 'Vite', icon: <SiVite className="w-6 h-6 text-[#646CFF]" /> },
-      ]
-    },
-    {
-      title: 'Testing & Quality',
-      icon: <FaCog className="w-8 h-8 text-accent-solid" />,
-      color: 'accent',
-      skills: [
-        { name: 'Jest', icon: <SiJest className="w-6 h-6 text-[#C21325]" /> },
-        { name: 'Unit Testing', icon: <FaCog className="w-6 h-6 text-accent-solid" /> },
-      ]
-    }
+  const skills = [
+    { name: 'React', icon: <SiReact className="w-8 h-8 text-[#61DAFB]" /> },
+    { name: 'Angular', icon: <SiAngular className="w-8 h-8 text-[#DD0031]" /> },
+    { name: 'TypeScript', icon: <SiTypescript className="w-8 h-8 text-[#3178C6]" /> },
+    { name: 'JavaScript', icon: <SiJavascript className="w-8 h-8 text-[#F7DF1E]" /> },
+    { name: 'Redux Toolkit', icon: <SiRedux className="w-8 h-8 text-[#764ABC]" /> },
+    { name: 'HTML5', icon: <SiHtml5 className="w-8 h-8 text-[#E34F26]" /> },
+    { name: 'CSS3', icon: <SiCss3 className="w-8 h-8 text-[#1572B6]" /> },
+    { name: 'SCSS', icon: <SiSass className="w-8 h-8 text-[#CC6699]" /> },
+    { name: 'Tailwind CSS', icon: <SiTailwindcss className="w-8 h-8 text-[#06B6D4]" /> },
+    { name: 'Bootstrap', icon: <SiBootstrap className="w-8 h-8 text-[#7952B3]" /> },
+    { name: 'Material-UI', icon: <SiMui className="w-8 h-8 text-[#007FFF]" /> },
+    { name: 'Git', icon: <SiGit className="w-8 h-8 text-[#F05032]" /> },
+    { name: 'Docker', icon: <SiDocker className="w-8 h-8 text-[#2496ED]" /> },
+    { name: 'Jenkins', icon: <SiJenkins className="w-8 h-8 text-[#D33833]" /> },
+    { name: 'Webpack', icon: <SiWebpack className="w-8 h-8 text-[#8DD6F9]" /> },
+    { name: 'Vite', icon: <SiVite className="w-8 h-8 text-[#646CFF]" /> },
+    { name: 'Jest', icon: <SiJest className="w-8 h-8 text-[#C21325]" /> },
+    { name: 'MySQL', icon: <SiMysql className="w-8 h-8 text-[#4479A1]" /> },
   ];
 
 
@@ -102,23 +74,19 @@ export function Skills() {
           </p>
         </div>
 
-        <div className="skills-flex-container gap-4">
-          {skillCategories.map((category, index) => (
-            <div key={index} className={`flex-1 min-w-[280px] bg-white dark:bg-slate-800 rounded-lg p-4 shadow-md hover:shadow-lg card-hover scroll-animate transition-all duration-300 flex flex-col`} style={{ animationDelay: `${index * SCROLL_ANIMATION.staggerDelay}s` }}>
-              <div className="flex items-center mb-4">
-                <div className="mr-3">{category.icon}</div>
-                <h3 className="text-base font-semibold text-heading-secondary">{category.title}</h3>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 max-w-4xl mx-auto">
+          {skills.map((skill, index) => (
+            <div 
+              key={index} 
+              className="flex flex-col items-center p-4 bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 scroll-animate"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <div className="mb-3">
+                {skill.icon}
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 flex-grow">
-                {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="flex items-center p-2 bg-slate-50 dark:bg-slate-700 rounded-md hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors duration-200">
-                    <div className="mr-2 flex-shrink-0">
-                      {skill.icon}
-                    </div>
-                    <span className="text-body-primary font-medium text-sm">{skill.name}</span>
-                  </div>
-                ))}
-              </div>
+              <span className="text-sm font-medium text-center text-body-primary">
+                {skill.name}
+              </span>
             </div>
           ))}
         </div>

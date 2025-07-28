@@ -541,53 +541,5 @@
     box-shadow: 0 0 0 4px var(--background);
   }
 
-  /* Skills section compact layout */
-  .skills-flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: center;
-  }
 
-  @media (min-width: 1024px) {
-    .skills-flex-container {
-      flex-wrap: nowrap;
-      justify-content: space-between;
-    }
-  }
-
-  .skills-flex-container > div {
-    height: auto;
-    min-height: 280px;
-  }
-
-  @media (max-width: 1023px) {
-    .skills-flex-container > div {
-      flex: 1 1 calc(50% - 1rem);
-      min-width: 320px;
-    }
-  }
-
-  @media (max-width: 767px) {
-    .skills-flex-container > div {
-      flex: 1 1 100%;
-      min-width: 300px;
-    }
-    
-    /* Two-column layout for skills within cards on small screens */
-    .skills-flex-container .grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (max-width: 479px) {
-    .skills-flex-container > div {
-      min-width: 280px;
-    }
-    
-    /* Single column for very small screens */
-    .skills-flex-container .grid {
-      grid-template-columns: 1fr;
-    }
-  }
 }
