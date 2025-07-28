@@ -49,19 +49,19 @@ export function Skills() {
         { name: 'Redux Toolkit', icon: <SiRedux className="w-6 h-6 text-[#764ABC]" /> },
         { name: 'Angular', icon: <SiAngular className="w-6 h-6 text-[#DD0031]" /> },
         { name: 'TypeScript', icon: <SiTypescript className="w-6 h-6 text-[#3178C6]" /> },
-        { name: 'Reflux', icon: <FaCode className="w-6 h-6 text-[#00D4FF]" /> },
         { name: 'JavaScript (ES6+)', icon: <SiJavascript className="w-6 h-6 text-[#F7DF1E]" /> },
+        { name: 'HTML5', icon: <SiHtml5 className="w-6 h-6 text-[#E34F26]" /> },
+        { name: 'CSS3', icon: <SiCss3 className="w-6 h-6 text-[#1572B6]" /> },
+        { name: 'Reflux', icon: <FaCode className="w-6 h-6 text-[#00D4FF]" /> },
       ]
     },
     {
-      title: 'Backend & Core',
+      title: 'Backend & Database',
       icon: <FaDatabase className="w-8 h-8 text-secondary-solid" />,
       color: 'secondary',
       skills: [
         { name: 'Java Microservices', icon: <SiSpring className="w-6 h-6 text-[#6DB33F]" /> },
         { name: 'RESTful APIs', icon: <FaCode className="w-6 h-6 text-secondary-solid" /> },
-        { name: 'HTML5', icon: <SiHtml5 className="w-6 h-6 text-[#E34F26]" /> },
-        { name: 'CSS3', icon: <SiCss3 className="w-6 h-6 text-[#1572B6]" /> },
         { name: 'SQL', icon: <SiMysql className="w-6 h-6 text-[#4479A1]" /> },
       ]
     },
