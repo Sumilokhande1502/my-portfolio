@@ -18,10 +18,5 @@
       "src": "/(.*)",
       "dest": "/dist/public/$1"
     }
-  ],
-  "functions": {
-    "api/contacts.ts": {
-      "maxDuration": 30
-    }
-  }
+  ]
 }
