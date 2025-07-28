@@ -80,11 +80,11 @@ export function Skills() {
     },
     {
       title: 'Testing & Quality',
-      icon: <FaCode className="w-8 h-8 text-primary-solid" />,
-      color: 'primary',
+      icon: <FaCog className="w-8 h-8 text-accent-solid" />,
+      color: 'accent',
       skills: [
         { name: 'Jest', icon: <SiJest className="w-6 h-6 text-[#C21325]" /> },
-        { name: 'Unit Testing', icon: <FaCode className="w-6 h-6 text-primary-solid" /> },
+        { name: 'Unit Testing', icon: <FaCog className="w-6 h-6 text-accent-solid" /> },
       ]
     }
   ];
@@ -109,7 +109,7 @@ export function Skills() {
                 <div className="mr-3">{category.icon}</div>
                 <h3 className="text-base font-semibold text-heading-secondary">{category.title}</h3>
               </div>
-              <div className="grid grid-cols-1 gap-2 flex-grow">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 flex-grow">
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skillIndex} className="flex items-center p-2 bg-slate-50 dark:bg-slate-700 rounded-md hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors duration-200">
                     <div className="mr-2 flex-shrink-0">
