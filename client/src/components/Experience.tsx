@@ -95,7 +95,7 @@ export function Experience() {
                   {experience.technologies.map((tech, techIndex) => (
                     <span 
                       key={techIndex} 
-                      className="px-4 py-2 bg-slate-100 dark:bg-slate-700 text-body-primary rounded-lg text-sm font-medium hover:bg-primary-solid hover:text-white transition-all duration-200"
+                      className="px-4 py-2 bg-slate-100 dark:bg-slate-700 text-body-primary rounded-lg text-sm font-medium hover:bg-primary-solid/10 hover:text-primary-solid hover:border hover:border-primary-solid transition-all duration-200"
                     >
                       {tech}
                     </span>
