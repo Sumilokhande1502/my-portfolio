@@ -17,9 +17,11 @@ const themeSlice = createSlice({
       localStorage.setItem('darkMode', state.isDarkMode.toString());
       
       if (state.isDarkMode) {
+        document.documentElement.classList.remove('light');
         document.documentElement.classList.add('dark');
       } else {
         document.documentElement.classList.remove('dark');
+        document.documentElement.classList.add('light');
       }
     },
     initializeTheme: (state) => {
@@ -28,9 +30,11 @@ const themeSlice = createSlice({
       state.isDarkMode = savedTheme !== null ? savedTheme === 'true' : true;
       
       if (state.isDarkMode) {
+        document.documentElement.classList.remove('light');
         document.documentElement.classList.add('dark');
       } else {
         document.documentElement.classList.remove('dark');
+        document.documentElement.classList.add('light');
       }
     },
   },
