@@ -171,23 +171,7 @@ export function Projects() {
           </p>
         </div>
 
-        {/* Filter buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12 scroll-animate">
-          {projectCategories.map((category) => (
-            <button
-              key={category.id}
-              onClick={() => handleFilterChange(category.id)}
-              className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
-                activeFilter === category.id
-                  ? 'bg-primary text-primary-foreground shadow-lg'
-                  : 'bg-white dark:bg-slate-800 text-body-primary hover:bg-primary/10 dark:hover:bg-slate-700'
-              }`}
-            >
-              {category.label}
-              <span className="ml-2 text-sm opacity-75">({category.count})</span>
-            </button>
-          ))}
-        </div>
+
 
         {/* Interactive Projects Preview */}
         <div className="text-center mb-16">
@@ -213,119 +197,7 @@ export function Projects() {
           </div>
         </div>
 
-        {/* Projects grid with micro-interactions */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => (
-            <div
-              key={project.id}
-              className="project-card bg-white dark:bg-slate-800 rounded-lg overflow-hidden shadow-lg group cursor-pointer"
-            >
-              
-              {/* Project image with overlay effects */}
-              <div className="relative overflow-hidden project-image-container">
-                <img
-                  src={project.imageUrl}
-                  alt={`${project.title} screenshot`}
-                  className="w-full h-48 object-cover project-image"
-                  loading="lazy"
-                />
-                
-                {/* Animated overlay */}
-                <div className="project-overlay absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent opacity-0 transition-all duration-500 group-hover:opacity-100 flex items-center justify-center">
-                  <div className="text-center text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                    <div className="flex gap-4">
-                      {project.liveUrl && (
-                        <button className="bg-white/20 backdrop-blur-sm border border-white/30 text-white px-4 py-2 rounded-lg hover:bg-white/30 transition-all duration-200 flex items-center gap-2">
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                          </svg>
-                          View
-                        </button>
-                      )}
-                      <button className="bg-white/20 backdrop-blur-sm border border-white/30 text-white px-4 py-2 rounded-lg hover:bg-white/30 transition-all duration-200 flex items-center gap-2">
-                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                        </svg>
-                        Code
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Featured badge */}
-                {project.featured && (
-                  <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-medium shadow-lg featured-badge">
-                    Featured
-                  </div>
-                )}
-                
-                {/* Completion date */}
-                <div className="absolute top-4 right-4 bg-black/70 backdrop-blur-sm text-white px-2 py-1 rounded text-xs completion-date">
-                  {formatDate(project.completedDate)}
-                </div>
-              </div>
 
-              {/* Project content */}
-              <div className="p-6 project-content">
-                
-                {/* Project title and description */}
-                <div className="mb-4">
-                  <h3 className="text-xl font-bold text-heading-primary mb-2 group-hover:text-primary transition-colors duration-300">
-                    {project.title}
-                  </h3>
-                  <p className="text-body-secondary text-sm leading-relaxed">
-                    {project.description}
-                  </p>
-                </div>
-
-                {/* Technologies used */}
-                <div className="mb-4">
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="tech-tag px-2 py-1 bg-primary/10 text-primary text-xs font-medium rounded transition-all duration-200 hover:bg-primary hover:text-white hover:scale-105"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Project links - hidden as overlay shows them */}
-                <div className="hidden gap-4">
-                  {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors duration-200 text-sm font-medium"
-                    >
-                      <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                      Live Demo
-                    </a>
-                  )}
-                  
-                  {project.githubUrl && (
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center px-4 py-2 border border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-lg transition-colors duration-200 text-sm font-medium"
-                    >
-                      <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                      </svg>
-                      Code
-                    </a>
-                  )}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
 
 
       </div>
