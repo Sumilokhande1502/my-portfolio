@@ -14,6 +14,7 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useEffect } from 'react';
 import citiLogo from '@assets/image_1753891620825.png';
+import neosoftLogo from '@assets/image_1753891886557.png';
 
 /**
  * Experience data interface
@@ -69,13 +70,11 @@ const experienceData: ExperienceItem[] = [
     technologies: ['Angular', 'RESTful APIs', 'GIT', 'Gulp', 'TypeScript'],
     logo: (
       <div className="w-12 h-12 flex items-center justify-center">
-        <div className="w-full h-full bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
-          <svg viewBox="0 0 100 100" className="w-8 h-8">
-            <text x="50%" y="50%" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="36" fontWeight="bold" fontFamily="Arial, sans-serif">
-              NS
-            </text>
-          </svg>
-        </div>
+        <img 
+          src={neosoftLogo} 
+          alt="NeoSoft Technologies" 
+          className="w-full h-full object-contain"
+        />
       </div>
     )
   },
@@ -175,7 +174,7 @@ export function Experience() {
               className="experience-card bg-white dark:bg-slate-800 rounded-lg p-4 sm:p-8 shadow-lg stagger-child"
             >
               
-              {/* Header with Logo */}
+              {/* Header with Logo and Date */}
               <div className="flex items-start gap-4 mb-6">
                 {/* Company Logo */}
                 {experience.logo && (
@@ -185,17 +184,19 @@ export function Experience() {
                 )}
                 
                 {/* Experience Details */}
-                <div className="flex-1">
-                  <h3 className="text-lg sm:text-2xl font-bold text-heading-primary mb-2 leading-tight">
-                    {experience.position}
-                  </h3>
-                  <h4 className="text-base sm:text-xl font-semibold text-accent-emphasis mb-3">
-                    {experience.company}
-                  </h4>
+                <div className="flex-1 flex justify-between items-start">
+                  <div>
+                    <h3 className="text-lg sm:text-2xl font-bold text-heading-primary mb-2 leading-tight">
+                      {experience.position}
+                    </h3>
+                    <h4 className="text-base sm:text-xl font-semibold text-accent-emphasis">
+                      {experience.company}
+                    </h4>
+                  </div>
                   
-                  {/* Date */}
-                  <div className="text-body-secondary">
-                    <span className="font-medium">
+                  {/* Date on the right */}
+                  <div className="text-body-secondary text-right ml-4">
+                    <span className="font-medium text-sm sm:text-base">
                       {formatDate(experience.startDate)} - {experience.endDate ? formatDate(experience.endDate) : 'Present'}
                     </span>
                   </div>
