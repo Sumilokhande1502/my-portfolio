@@ -54,25 +54,25 @@ export function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
           
           {/* Left content */}
-          <div className="text-left text-white">
+          <div className="text-left">
             {/* Main heading */}
             <div className="scroll-animate" style={{ animationDelay: '0.1s' }}>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 hidden md:block">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white dark:text-white mb-6 hidden md:block">
                 {PERSONAL_INFO.name}
               </h1>
             </div>
 
             {/* Professional title */}
             <div className="scroll-animate" style={{ animationDelay: '0.2s' }}>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl text-white/90 mb-8">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl text-white/90 dark:text-white/90 mb-8">
                 {PERSONAL_INFO.title}
               </h2>
             </div>
 
             {/* Professional summary */}
             <div className="scroll-animate" style={{ animationDelay: '0.3s' }}>
-              <p className="text-lg text-white/80 mb-12 leading-relaxed">
-                Frontend Engineer with <span className="text-white font-medium">{PERSONAL_INFO.experience}+ years</span> of experience developing responsive web applications using React, Redux Toolkit, Angular, JavaScript, and TypeScript. Skilled in designing user-focused interfaces and integrating RESTful APIs.
+              <p className="text-lg text-white/80 dark:text-white/80 mb-12 leading-relaxed">
+                Frontend Engineer with <span className="text-white dark:text-white font-medium">{PERSONAL_INFO.experience}+ years</span> of experience developing responsive web applications using React, Redux Toolkit, Angular, JavaScript, and TypeScript. Skilled in designing user-focused interfaces and integrating RESTful APIs.
               </p>
             </div>
 
@@ -82,7 +82,7 @@ export function Hero() {
               {/* Primary CTA - View Projects */}
               <button
                 onClick={handleProjectsClick}
-                className="inline-flex items-center px-8 py-4 bg-white/20 text-white rounded-lg hover:bg-white/30 transition-all duration-200 font-medium text-lg shadow-lg backdrop-blur-sm"
+                className="inline-flex items-center px-8 py-4 bg-white/20 dark:bg-white/25 text-white dark:text-white rounded-lg hover:bg-white/30 dark:hover:bg-white/35 transition-all duration-200 font-medium text-lg shadow-lg backdrop-blur-sm"
               >
                 View My Work
               </button>
@@ -90,7 +90,7 @@ export function Hero() {
               {/* Secondary CTA - Contact */}
               <button
                 onClick={handleContactClick}
-                className="inline-flex items-center px-8 py-4 border-2 border-white/30 text-white hover:bg-white/20 rounded-lg transition-all duration-200 font-medium text-lg shadow-lg backdrop-blur-sm"
+                className="inline-flex items-center px-8 py-4 border-2 border-white/30 dark:border-white/40 text-white dark:text-white hover:bg-white/20 dark:hover:bg-white/25 rounded-lg transition-all duration-200 font-medium text-lg shadow-lg backdrop-blur-sm"
               >
                 Get In Touch
                 <svg 
@@ -115,7 +115,7 @@ export function Hero() {
                 href={SOCIAL_LINKS.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/70 hover:text-white transition-colors duration-200"
+                className="text-white/70 dark:text-white/70 hover:text-white dark:hover:text-white transition-colors duration-200"
                 aria-label="GitHub Profile"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -127,7 +127,7 @@ export function Hero() {
                 href={SOCIAL_LINKS.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/70 hover:text-white transition-colors duration-200"
+                className="text-white/70 dark:text-white/70 hover:text-white dark:hover:text-white transition-colors duration-200"
                 aria-label="LinkedIn Profile"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
