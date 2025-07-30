@@ -57,7 +57,7 @@ export function Hero() {
           <div className="text-left text-white">
             {/* Main heading */}
             <div className="scroll-animate" style={{ animationDelay: '0.1s' }}>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 hidden md:block">
                 {PERSONAL_INFO.name}
               </h1>
             </div>

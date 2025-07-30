@@ -59,7 +59,7 @@ export function Navbar() {
                 className="w-10 h-10 rounded-full object-cover border-2 border-primary/20 group-hover:border-primary transition-all duration-200"
               />
               <span className="text-xl font-bold">
-                <span className="sm:hidden text-heading-primary font-semibold tracking-tight">{PERSONAL_INFO.name}</span>
+                <span className="md:hidden text-heading-primary font-semibold tracking-tight">{PERSONAL_INFO.name}</span>
               </span>
             </button>
           </div>
