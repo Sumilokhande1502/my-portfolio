@@ -13,6 +13,7 @@
 
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useEffect } from 'react';
+import citiLogo from '@assets/image_1753891620825.png';
 
 /**
  * Experience data interface
@@ -46,11 +47,12 @@ const experienceData: ExperienceItem[] = [
     ],
     technologies: ['React', 'Redux Toolkit', 'Reflux', 'TypeScript', 'Java Microservices', 'Oracle', 'Jenkins', 'GIT'],
     logo: (
-      <div className="w-12 h-12 flex items-center justify-center">
-        <svg viewBox="0 0 120 30" className="w-full h-full" fill="#005EB8">
-          <path d="M0 15C0 6.72 6.72 0 15 0s15 6.72 15 15c0 2.94-.84 5.68-2.3 8h8.42c.92-2.48 1.38-5.16 1.38-8 0-12.15-9.85-22-22-22S-7 2.85-7 15s9.85 22 22 22c2.84 0 5.52-.46 8-1.38v-8.42c-2.32 1.46-5.06 2.3-8 2.3C6.72 30 0 23.28 0 15zm45 0v15h7V15h-7zm0-7V0h7v8h-7zm15 7v15h7V15h-7zm0-7V0h7v8h-7z" />
-          <text x="45" y="22" fontFamily="Arial, sans-serif" fontSize="24" fontWeight="500" fill="#005EB8">citi</text>
-        </svg>
+      <div className="w-12 h-12 flex items-center justify-center bg-white rounded-lg p-2">
+        <img 
+          src={citiLogo} 
+          alt="Citi" 
+          className="w-full h-full object-contain"
+        />
       </div>
     )
   },
