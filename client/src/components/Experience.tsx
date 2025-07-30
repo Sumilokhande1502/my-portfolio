@@ -185,9 +185,9 @@ export function Experience() {
             {experienceData.map((experience, index) => (
               <div 
                 key={experience.id}
-                className={`relative ${
-                  index % 2 === 0 ? 'scroll-animate-slide-left md:flex-row' : 'scroll-animate-slide-right md:flex-row-reverse'
-                } stagger-child flex flex-col md:flex md:items-center`}
+                className={`relative stagger-child flex flex-col md:flex md:items-center ${
+                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                }`}
               >
                 
                 {/* Timeline marker */}
@@ -272,7 +272,7 @@ export function Experience() {
         </div>
 
         {/* Call to action */}
-        <div className="text-center mt-16 scroll-animate">
+        <div className="text-center mt-16 stagger-child">
           <div className="bg-white dark:bg-slate-800 rounded-lg p-8 shadow-lg max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold text-heading-primary mb-4">
               Ready to Work Together?
