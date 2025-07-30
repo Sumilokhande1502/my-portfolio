@@ -60,9 +60,6 @@ export function About() {
         <div className="max-w-4xl mx-auto">
           <div className="scroll-animate stagger-child">
             <div className="space-y-8 text-center">
-              
-
-
               {/* Professional Summary */}
               <div className="space-y-6 max-w-3xl mx-auto">
                 <p className="text-body-primary leading-relaxed text-lg">
