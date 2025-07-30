@@ -48,87 +48,47 @@ const projectCategories = [
 ];
 
 /**
- * Portfolio projects data
- * In a real application, this would come from a CMS or API
+ * Portfolio projects data - Real projects from professional experience
+ * Showcasing actual work and achievements
  */
 const projectsData: Project[] = [
   {
     id: 'project-1',
-    title: 'E-Commerce Dashboard',
-    description: 'Modern admin dashboard for e-commerce management with real-time analytics',
-    longDescription: 'A comprehensive admin dashboard built with React and TypeScript, featuring real-time sales analytics, inventory management, and customer insights. The application includes advanced filtering, data visualization with charts, and a responsive design that works seamlessly across all devices.',
-    technologies: ['React', 'TypeScript', 'Redux Toolkit', 'Chart.js', 'Tailwind CSS'],
+    title: 'Banking Application Frontend',
+    description: 'Enterprise banking web application with React and Redux Toolkit',
+    longDescription: 'Led front-end development for a comprehensive banking application at Citi using React and Redux Toolkit. Focused on state management, performance optimization, and user-centric design. Integrated with Java Microservices and Oracle databases for dynamic financial data.',
+    technologies: ['React', 'Redux Toolkit', 'TypeScript', 'JavaScript', 'Jenkins', 'GIT'],
     category: 'web',
     imageUrl: '/api/placeholder/600/400',
-    liveUrl: 'https://dashboard-demo.vercel.app',
-    githubUrl: `${SOCIAL_LINKS.github}/ecommerce-dashboard`,
+    githubUrl: `${SOCIAL_LINKS.github}`,
     featured: true,
     completedDate: '2024-01'
   },
   {
     id: 'project-2',
-    title: 'Task Management App',
-    description: 'Collaborative task management with real-time updates and team features',
-    longDescription: 'A full-stack task management application that enables teams to collaborate effectively. Features include real-time updates, drag-and-drop task organization, team member assignments, and progress tracking. Built with modern web technologies and optimized for performance.',
-    technologies: ['React', 'Node.js', 'Socket.io', 'MongoDB', 'Express'],
-    category: 'fullstack',
+    title: 'Angular Single Page Applications',
+    description: 'Enterprise SPAs with seamless cross-device experience',
+    longDescription: 'Created dynamic, single-page applications using Angular at NeoSoft Technologies, providing seamless experience across devices. Developed reusable UI components and collaborated with backend teams to integrate Java Microservices and Oracle databases via RESTful APIs.',
+    technologies: ['Angular', 'TypeScript', 'JavaScript', 'RESTful APIs', 'Java Microservices', 'Oracle'],
+    category: 'web',
     imageUrl: '/api/placeholder/600/400',
-    liveUrl: 'https://taskapp-demo.vercel.app',
-    githubUrl: `${SOCIAL_LINKS.github}/task-management`,
+    githubUrl: `${SOCIAL_LINKS.github}`,
     featured: true,
-    completedDate: '2023-11'
+    completedDate: '2022-08'
   },
   {
     id: 'project-3',
-    title: 'Weather Forecast App',
-    description: 'Beautiful weather app with location-based forecasts and interactive maps',
-    longDescription: 'An elegant weather application that provides accurate forecasts with beautiful visualizations. Features include location-based weather data, interactive maps, 7-day forecasts, and weather alerts. The app uses modern APIs and provides a smooth user experience across all devices.',
-    technologies: ['React', 'JavaScript', 'Weather API', 'Mapbox', 'CSS3'],
+    title: 'Online Course Platform',
+    description: 'Frontend development for educational content management',
+    longDescription: 'Developed Front End online course pages using HTML, CSS by migrating content from various sources at LearningMate Solutions. Managed technical issues and troubleshooting while working across multiple projects simultaneously.',
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'Content Migration'],
     category: 'web',
     imageUrl: '/api/placeholder/600/400',
-    liveUrl: 'https://weather-app-demo.vercel.app',
-    githubUrl: `${SOCIAL_LINKS.github}/weather-app`,
+    githubUrl: `${SOCIAL_LINKS.github}`,
     featured: false,
-    completedDate: '2023-09'
+    completedDate: '2020-12'
   },
-  {
-    id: 'project-4',
-    title: 'Recipe Finder Mobile App',
-    description: 'Cross-platform mobile app for discovering and saving recipes',
-    longDescription: 'A mobile application that helps users discover new recipes based on available ingredients. Features include ingredient-based search, recipe saving, shopping list generation, and nutritional information. Built with React Native for cross-platform compatibility.',
-    technologies: ['React Native', 'TypeScript', 'Firebase', 'Recipe API'],
-    category: 'mobile',
-    imageUrl: '/api/placeholder/600/400',
-    githubUrl: `${SOCIAL_LINKS.github}/recipe-finder`,
-    featured: false,
-    completedDate: '2023-07'
-  },
-  {
-    id: 'project-5',
-    title: 'Portfolio Website Generator',
-    description: 'Tool for creating professional portfolio websites with customizable themes',
-    longDescription: 'A web application that allows users to create professional portfolio websites without coding. Features include drag-and-drop interface, customizable themes, responsive designs, and easy deployment. Built with modern React architecture and optimized for performance.',
-    technologies: ['React', 'TypeScript', 'Styled Components', 'Framer Motion'],
-    category: 'web',
-    imageUrl: '/api/placeholder/600/400',
-    liveUrl: 'https://portfolio-generator.vercel.app',
-    githubUrl: `${SOCIAL_LINKS.github}/portfolio-generator`,
-    featured: true,
-    completedDate: '2023-05'
-  },
-  {
-    id: 'project-6',
-    title: 'Data Visualization Dashboard',
-    description: 'Interactive dashboard for complex data analysis and visualization',
-    longDescription: 'A comprehensive data visualization platform that transforms complex datasets into interactive charts and insights. Features include multiple chart types, real-time data updates, filtering capabilities, and export functionality. Designed for business intelligence and analytics teams.',
-    technologies: ['D3.js', 'React', 'Python', 'PostgreSQL', 'FastAPI'],
-    category: 'fullstack',
-    imageUrl: '/api/placeholder/600/400',
-    liveUrl: 'https://dataviz-demo.vercel.app',
-    githubUrl: `${SOCIAL_LINKS.github}/data-visualization`,
-    featured: false,
-    completedDate: '2023-03'
-  }
+
 ];
 
 // Update category counts

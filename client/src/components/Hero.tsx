@@ -118,7 +118,7 @@ export function Hero() {
               onClick={handleContactClick}
               className="inline-flex items-center px-8 py-4 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-lg transition-all duration-200 font-medium text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
             >
-              Let's Connect
+              Get In Touch
               <svg 
                 className="ml-2 w-5 h-5" 
                 fill="none" 
@@ -129,7 +129,7 @@ export function Hero() {
                   strokeLinecap="round" 
                   strokeLinejoin="round" 
                   strokeWidth={2} 
-                  d="M17 8l4 4m0 0l-4 4m4-4H3" 
+                  d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" 
                 />
               </svg>
             </button>

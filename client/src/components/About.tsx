@@ -53,11 +53,11 @@ export function About() {
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-2xl transform rotate-3"></div>
               
               {/* Profile image container */}
-              <div className="relative bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-xl">
+              <div className="relative bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-xl max-w-sm mx-auto">
                 <img
                   src={PERSONAL_INFO.profileImage}
                   alt={`${PERSONAL_INFO.name} - ${PERSONAL_INFO.title}`}
-                  className="w-full h-auto rounded-xl object-cover"
+                  className="w-full h-auto rounded-xl object-cover max-h-80"
                   loading="lazy"
                 />
               </div>

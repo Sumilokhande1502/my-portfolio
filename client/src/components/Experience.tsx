@@ -34,66 +34,81 @@ interface ExperienceItem {
 
 /**
  * Professional experience data
- * This would typically come from a CMS or API in a real application
+ * Based on actual resume information
  */
 const experienceData: ExperienceItem[] = [
   {
     id: 'experience-1',
-    company: 'Tech Solutions Inc.',
-    position: 'Senior Frontend Engineer',
-    startDate: '2022-01',
-    location: 'Remote',
+    company: 'Citi',
+    position: 'Apps Dev Intmd Programmer Analyst - C11',
+    startDate: '2022-08',
+    location: 'India',
     description: [
-      'Led frontend development for enterprise web applications serving 10,000+ users',
-      'Architected and implemented scalable React components with TypeScript',
-      'Collaborated with cross-functional teams to deliver high-quality user experiences',
-      'Mentored junior developers and established frontend best practices'
+      'Lead front-end development for web applications using React and Redux Toolkit and Reflux, focusing on state management, performance optimization, and user-centric design',
+      'Developed and maintained web applications using React and Redux Toolkit, focusing on performance, scalability, and user experience',
+      'Built and optimized UI components, leveraging JavaScript and TypeScript to create responsive, modular code that enhances code maintainability',
+      'Integrated front-end features with backend RESTful APIs developed in Java Microservices and utilized Oracle databases for dynamic data',
+      'Utilized GIT and Jenkins for version control and continuous deployment, maintaining high standards of code quality and minimizing deployment issues'
     ],
-    technologies: ['React', 'TypeScript', 'Redux Toolkit', 'Tailwind CSS', 'Jest'],
+    technologies: ['React', 'Redux Toolkit', 'Reflux', 'JavaScript', 'TypeScript', 'Java Microservices', 'Oracle', 'Jenkins', 'GIT'],
     achievements: [
-      'Improved application performance by 40% through code optimization',
-      'Successfully migrated legacy codebase to modern React architecture',
-      'Led team of 3 frontend developers on critical product features'
+      'Reduced page load times by 40% through React optimization, including code-splitting and lazy loading',
+      'Led the development of a product, increasing user engagement by 30% with interactive and responsive components'
     ]
   },
   {
     id: 'experience-2',
-    company: 'Digital Innovations Ltd.',
-    position: 'Frontend Developer',
-    startDate: '2020-03',
-    endDate: '2021-12',
-    location: 'Mumbai, India',
+    company: 'NeoSoft Technologies Pvt. Ltd.',
+    position: 'Software Engineer',
+    startDate: '2020-04',
+    endDate: '2022-08',
+    location: 'India',
     description: [
-      'Developed responsive web applications using React and modern JavaScript',
-      'Implemented pixel-perfect designs with attention to cross-browser compatibility',
-      'Integrated RESTful APIs and managed application state with Redux',
-      'Participated in agile development processes and code reviews'
+      'Created dynamic, single-page applications (SPA) using Angular providing a seamless experience across devices',
+      'Developed reusable UI components with Angular, collaborating with backend teams to integrate Java Microservices and Oracle databases via RESTful APIs',
+      'Managed code versions and automated deployment processes using Jenkins and GIT, ensuring continuous integration and streamlined project releases'
     ],
-    technologies: ['React', 'JavaScript', 'Redux', 'SCSS', 'Bootstrap'],
+    technologies: ['Angular', 'JavaScript', 'TypeScript', 'Java Microservices', 'Oracle', 'RESTful APIs', 'Jenkins', 'GIT'],
     achievements: [
-      'Delivered 15+ client projects on time and within budget',
-      'Reduced bug reports by 30% through comprehensive testing',
-      'Improved development workflow with automated build processes'
+      'Successfully delivered multiple SPAs with seamless cross-device experience',
+      'Collaborated effectively with backend teams for smooth API integration'
     ]
   },
   {
     id: 'experience-3',
-    company: 'StartupXYZ',
-    position: 'Junior Frontend Developer',
-    startDate: '2019-06',
-    endDate: '2020-02',
-    location: 'Pune, India',
+    company: 'LearningMate Solutions Pvt. Ltd.',
+    position: 'Front End Web Developer',
+    startDate: '2019-10',
+    endDate: '2020-12',
+    location: 'India',
     description: [
-      'Built interactive user interfaces for startup web applications',
-      'Worked closely with designers to implement creative UI/UX concepts',
-      'Learned and applied modern frontend development practices',
-      'Contributed to product feature development and bug fixes'
+      'Developed Front End online course pages using HTML, CSS by migrating content from various sources',
+      'Oversaw technical issues and troubleshooting requests to resolve surfaced problems',
+      'Multi-tasked across multiple functions and roles to generate project results and meet deadlines and organizational expectations'
     ],
-    technologies: ['HTML5', 'CSS3', 'JavaScript', 'Angular', 'Bootstrap'],
+    technologies: ['HTML5', 'CSS3', 'JavaScript'],
     achievements: [
-      'Successfully completed onboarding and contributed to live projects within 2 weeks',
-      'Improved personal coding skills through mentorship and self-learning',
-      'Helped launch 3 major product features used by early customers'
+      'Successfully migrated content from various sources to create engaging online course pages',
+      'Maintained high standards while working across multiple projects simultaneously'
+    ]
+  },
+  {
+    id: 'experience-4',
+    company: 'A One Salasar Pvt. Ltd.',
+    position: 'Associate Business Developer',
+    startDate: '2019-03',
+    endDate: '2019-06',
+    location: 'India',
+    description: [
+      'Developing and expanding business by cold calling',
+      'Doing follow up calls to clients',
+      'Pitching clients about the company\'s services and products. Maintaining relationships with clients',
+      'Increased customer satisfaction by resolving CLIENT issues'
+    ],
+    technologies: ['Business Development', 'Client Relations', 'Sales'],
+    achievements: [
+      'Increased customer satisfaction by resolving client issues',
+      'Developed and maintained courteous and effective working relationships'
     ]
   }
 ];
