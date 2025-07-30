@@ -42,7 +42,7 @@ export function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 dark:from-slate-900 dark:via-gray-900 dark:to-slate-800 relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-cyan-400 via-blue-500 to-blue-600 relative overflow-hidden">
       
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -54,25 +54,25 @@ export function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
           {/* Left content */}
-          <div className="text-left">
+          <div className="text-left text-white">
             {/* Main heading */}
             <div className="scroll-animate" style={{ animationDelay: '0.1s' }}>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-heading-primary mb-6">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6">
                 {PERSONAL_INFO.name}
               </h1>
             </div>
 
             {/* Professional title */}
             <div className="scroll-animate" style={{ animationDelay: '0.2s' }}>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl text-heading-secondary mb-8">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl text-white/90 mb-8">
                 {PERSONAL_INFO.title}
               </h2>
             </div>
 
             {/* Professional summary */}
             <div className="scroll-animate" style={{ animationDelay: '0.3s' }}>
-              <p className="text-lg text-body-primary mb-12 leading-relaxed">
-                Frontend Engineer with <span className="text-accent-emphasis font-medium">{PERSONAL_INFO.experience}+ years</span> of experience developing responsive web applications using React, Redux Toolkit, Angular, JavaScript, and TypeScript. Skilled in designing user-focused interfaces and integrating RESTful APIs.
+              <p className="text-lg text-white/80 mb-12 leading-relaxed">
+                Frontend Engineer with <span className="text-white font-medium">{PERSONAL_INFO.experience}+ years</span> of experience developing responsive web applications using React, Redux Toolkit, Angular, JavaScript, and TypeScript. Skilled in designing user-focused interfaces and integrating RESTful APIs.
               </p>
             </div>
 
@@ -82,7 +82,7 @@ export function Hero() {
               {/* Primary CTA - View Projects */}
               <button
                 onClick={handleProjectsClick}
-                className="inline-flex items-center px-8 py-4 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-200 font-medium text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
+                className="inline-flex items-center px-8 py-4 bg-white/20 text-white rounded-lg hover:bg-white/30 transition-all duration-200 font-medium text-lg shadow-lg backdrop-blur-sm"
               >
                 View My Work
               </button>
@@ -90,7 +90,7 @@ export function Hero() {
               {/* Secondary CTA - Contact */}
               <button
                 onClick={handleContactClick}
-                className="inline-flex items-center px-8 py-4 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-lg transition-all duration-200 font-medium text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
+                className="inline-flex items-center px-8 py-4 border-2 border-white/30 text-white hover:bg-white/20 rounded-lg transition-all duration-200 font-medium text-lg shadow-lg backdrop-blur-sm"
               >
                 Get In Touch
                 <svg 
@@ -115,7 +115,7 @@ export function Hero() {
                 href={SOCIAL_LINKS.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-body-secondary hover:text-primary transition-colors duration-200"
+                className="text-white/70 hover:text-white transition-colors duration-200"
                 aria-label="GitHub Profile"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -127,7 +127,7 @@ export function Hero() {
                 href={SOCIAL_LINKS.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-body-secondary hover:text-primary transition-colors duration-200"
+                className="text-white/70 hover:text-white transition-colors duration-200"
                 aria-label="LinkedIn Profile"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -137,7 +137,7 @@ export function Hero() {
               
               <a
                 href={`mailto:${PERSONAL_INFO.email}`}
-                className="text-body-secondary hover:text-primary transition-colors duration-200"
+                className="text-white/70 hover:text-white transition-colors duration-200"
                 aria-label="Email Contact"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
