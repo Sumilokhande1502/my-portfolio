@@ -81,38 +81,39 @@ export function Skills() {
           </p>
         </div>
 
-        {/* Skills Layout - Clean three-column design matching the template */}
-        <div className="bg-white dark:bg-slate-800 rounded-lg p-8 shadow-lg max-w-4xl mx-auto scroll-animate">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {skillCategories.map((category, categoryIndex) => (
-              <div key={categoryIndex} className="space-y-6">
-                {/* Category Title */}
-                <h3 className="text-xl font-bold text-heading-primary border-b border-slate-200 dark:border-slate-600 pb-2">
-                  {category.title}
-                </h3>
-                
-                {/* Skills List */}
-                <div className="space-y-4">
-                  {category.skills.map((skill, skillIndex) => (
-                    <div 
-                      key={skillIndex} 
-                      className="flex items-center gap-3 hover:bg-slate-50 dark:hover:bg-slate-700/50 p-2 rounded-md transition-colors duration-200"
-                    >
-                      {/* Skill Icon */}
-                      <div className="flex-shrink-0">
-                        {skill.icon}
-                      </div>
-                      
-                      {/* Skill Name */}
-                      <span className="text-body-primary font-medium">
-                        {skill.name}
-                      </span>
+        {/* Skills Layout - Three separate cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {skillCategories.map((category, categoryIndex) => (
+            <div 
+              key={categoryIndex} 
+              className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 scroll-animate"
+            >
+              {/* Category Title */}
+              <h3 className="text-xl font-bold text-heading-primary border-b border-slate-200 dark:border-slate-600 pb-3 mb-6">
+                {category.title}
+              </h3>
+              
+              {/* Skills List */}
+              <div className="space-y-4">
+                {category.skills.map((skill, skillIndex) => (
+                  <div 
+                    key={skillIndex} 
+                    className="flex items-center gap-3 hover:bg-slate-50 dark:hover:bg-slate-700/50 p-2 rounded-md transition-colors duration-200"
+                  >
+                    {/* Skill Icon */}
+                    <div className="flex-shrink-0">
+                      {skill.icon}
                     </div>
-                  ))}
-                </div>
+                    
+                    {/* Skill Name */}
+                    <span className="text-body-primary font-medium">
+                      {skill.name}
+                    </span>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
