@@ -112,17 +112,17 @@ export function Experience() {
   return (
     <section 
       id="experience" 
-      className="py-20 bg-gradient-to-br from-slate-50 via-indigo-50 to-purple-50 dark:from-slate-900 dark:via-gray-900 dark:to-slate-800 section-transition"
+      className="py-12 sm:py-20 bg-gradient-to-br from-slate-50 via-indigo-50 to-purple-50 dark:from-slate-900 dark:via-gray-900 dark:to-slate-800 section-transition"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center mb-16 stagger-child">
-          <h2 className="text-4xl text-heading-primary mb-4 section-heading-decoration experience">
+        <div className="text-center mb-8 sm:mb-16 stagger-child">
+          <h2 className="text-3xl sm:text-4xl text-heading-primary mb-4 section-heading-decoration experience">
             Work Experience
           </h2>
           <div className="section-divider decorative"></div>
-          <p className="text-xl text-body-secondary">
+          <p className="text-lg sm:text-xl text-body-secondary px-4">
             5+ years delivering scalable web solutions across diverse industries
           </p>
         </div>
@@ -132,15 +132,15 @@ export function Experience() {
           {experienceData.map((experience, index) => (
             <div 
               key={experience.id}
-              className="experience-card bg-white dark:bg-slate-800 rounded-lg p-8 shadow-lg stagger-child"
+              className="experience-card bg-white dark:bg-slate-800 rounded-lg p-4 sm:p-8 shadow-lg stagger-child"
             >
               
               {/* Header */}
               <div className="mb-6">
-                <h3 className="text-2xl font-bold text-heading-primary mb-2">
+                <h3 className="text-lg sm:text-2xl font-bold text-heading-primary mb-2 leading-tight">
                   {experience.position}
                 </h3>
-                <h4 className="text-xl font-semibold text-accent-emphasis mb-3">
+                <h4 className="text-base sm:text-xl font-semibold text-accent-emphasis mb-3">
                   {experience.company}
                 </h4>
                 
