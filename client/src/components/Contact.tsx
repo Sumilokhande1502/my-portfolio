@@ -74,7 +74,7 @@ const contactInfo = [
   {
     id: 'linkedin',
     label: 'LinkedIn',
-    value: 'linkedin.com/in/sumit-lokhande',
+    value: 'Connect on LinkedIn',
     href: SOCIAL_LINKS.linkedin,
     icon: (
       <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
