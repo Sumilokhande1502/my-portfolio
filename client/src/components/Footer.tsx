@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin } from 'lucide-react';
 
 export function Footer() {
   const scrollToSection = (sectionId: string) => {
@@ -41,7 +41,9 @@ export function Footer() {
                 href="mailto:sumitlokhande53@gmail.com"
                 className="text-slate-400 hover:text-white transition-colors duration-200"
               >
-                <Mail className="w-6 h-6" />
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M22 4H2C0.9 4 0 4.9 0 6v12c0 1.1 0.9 2 2 2h20c1.1 0 2-0.9 2-2V6C24 4.9 23.1 4 22 4zM22 8l-10 6L2 8V6l10 6 10-6V8z"/>
+                </svg>
               </a>
             </div>
           </div>

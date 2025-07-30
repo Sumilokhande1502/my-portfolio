@@ -137,11 +137,11 @@ export function Hero() {
               
               <a
                 href={`mailto:${PERSONAL_INFO.email}`}
-                className="text-white/70 hover:text-white transition-colors duration-200"
+                className="text-white/70 dark:text-white/70 hover:text-white dark:hover:text-white transition-colors duration-200"
                 aria-label="Email Contact"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 002 2z" />
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M22 4H2C0.9 4 0 4.9 0 6v12c0 1.1 0.9 2 2 2h20c1.1 0 2-0.9 2-2V6C24 4.9 23.1 4 22 4zM22 8l-10 6L2 8V6l10 6 10-6V8z"/>
                 </svg>
               </a>
             </div>
