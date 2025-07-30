@@ -49,8 +49,7 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="border-t border-slate-800 mt-8 pt-8 text-center space-y-2">
-          <p className="text-slate-400">© 2025 All rights reserved</p>
+        <div className="border-t border-slate-800 mt-8 pt-8 text-center">
           <p className="text-slate-400">Built with React & TypeScript.</p>
         </div>
       </div>
