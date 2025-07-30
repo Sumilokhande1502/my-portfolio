@@ -68,8 +68,7 @@ const experienceData: ExperienceItem[] = [
     location: 'India',
     description: [
       'Developed Front End online course pages using HTML, CSS by migrating content from various sources.',
-      'Oversaw technical issues and troubleshooting requests to resolve surfaced problems.',
-      'Multi-tasked across multiple functions and roles to generate project results.'
+      'Oversaw technical issues and troubleshooting requests to resolve surfaced problems.'
     ],
     technologies: ['HTML', 'CSS', 'JavaScript', 'Frontend Development']
   },
@@ -82,8 +81,7 @@ const experienceData: ExperienceItem[] = [
     location: 'India',
     description: [
       'Developed and expanded business by cold calling and follow-up calls to clients.',
-      'Pitched clients about company services and products while maintaining relationships.',
-      'Increased customer satisfaction by resolving client issues and maintained energy in fast-paced environment.'
+      'Pitched clients about company services and products while maintaining relationships.'
     ],
     technologies: ['Business Development', 'Client Relations', 'Communication']
   }
