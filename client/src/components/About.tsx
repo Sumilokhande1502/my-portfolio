@@ -43,51 +43,31 @@ export function About() {
           </p>
         </div>
 
-        {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          
-          {/* Left Column: Profile Image */}
-          <div className="scroll-animate-slide-left stagger-child">
-            <div className="relative">
-              {/* Decorative background element */}
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-2xl transform rotate-3"></div>
-              
-              {/* Profile image container */}
-              <div className="relative bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-xl max-w-sm mx-auto">
-                <img
-                  src={PERSONAL_INFO.profileImage}
-                  alt={`${PERSONAL_INFO.name} - ${PERSONAL_INFO.title}`}
-                  className="w-full h-auto rounded-xl object-cover max-h-80"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Right Column: Content */}
-          <div className="scroll-animate-slide-right stagger-child">
-            <div className="space-y-6">
+        {/* Main Content - Single Column */}
+        <div className="max-w-4xl mx-auto">
+          <div className="scroll-animate stagger-child">
+            <div className="space-y-8 text-center">
               
               {/* Professional Title */}
               <div>
-                <h3 className="text-2xl font-bold text-heading-primary mb-2">
+                <h3 className="text-3xl font-bold text-heading-primary mb-3">
                   {PERSONAL_INFO.title}
                 </h3>
-                <p className="text-lg text-body-secondary">
+                <p className="text-xl text-body-secondary">
                   with <span className="text-accent-emphasis font-semibold">{PERSONAL_INFO.experience}+ years</span> of professional experience
                 </p>
               </div>
 
               {/* Professional Summary */}
-              <div className="space-y-4">
-                <p className="text-body-primary leading-relaxed">
+              <div className="space-y-6 max-w-3xl mx-auto">
+                <p className="text-body-primary leading-relaxed text-lg">
                   I'm a <span className="text-accent-emphasis font-medium">{PERSONAL_INFO.title}</span> with <span className="text-accent-emphasis font-medium">{PERSONAL_INFO.experience}+ years</span> of 
                   experience developing responsive web applications using React, Redux Toolkit, Angular, JavaScript, and TypeScript. 
                   I have proven expertise in designing user-focused interfaces, integrating RESTful APIs with frontend components, 
                   and working in Agile environments.
                 </p>
                 
-                <p className="text-body-primary leading-relaxed">
+                <p className="text-body-primary leading-relaxed text-lg">
                   I'm skilled in version control and DevOps practices using Jenkins and GIT to streamline deployment and 
                   maintain code integrity. I believe in creating optimized, user-centric applications that deliver 
                   exceptional performance and user experience.
@@ -156,7 +136,7 @@ export function About() {
               {/* Download Resume Button */}
               <div className="pt-6">
                 <a
-                  href="/resume.pdf"
+                  href="/attached_assets/Resume_Updated_2025_1753601334419.pdf"
                   download="Sumit_Lokhande_Resume.pdf"
                   className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl transform hover:scale-105"
                 >

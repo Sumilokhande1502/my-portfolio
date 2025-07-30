@@ -372,31 +372,7 @@ export function Contact() {
                 </div>
               </div>
 
-              {/* Social media links */}
-              <div className="bg-white dark:bg-slate-800 rounded-lg p-8 shadow-lg">
-                <h3 className="text-2xl font-bold text-heading-primary mb-6">
-                  Connect With Me
-                </h3>
-                
-                <div className="flex space-x-4">
-                  {socialMediaLinks.map((social) => (
-                    <a
-                      key={social.id}
-                      href={social.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center w-12 h-12 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg transition-colors duration-200 group"
-                      aria-label={`Visit ${social.label} profile`}
-                    >
-                      {social.icon}
-                    </a>
-                  ))}
-                </div>
-                
-                <p className="text-sm text-body-secondary mt-4">
-                  Follow me on social media for updates on my latest projects and insights into web development.
-                </p>
-              </div>
+
 
               {/* Quick response note */}
               <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-lg p-6 border border-primary/20">

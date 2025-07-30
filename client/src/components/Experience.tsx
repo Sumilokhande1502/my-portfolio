@@ -132,7 +132,7 @@ export function Experience() {
           {experienceData.map((experience, index) => (
             <div 
               key={experience.id}
-              className="bg-white dark:bg-slate-800 rounded-lg p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+              className="experience-card bg-white dark:bg-slate-800 rounded-lg p-8 shadow-lg"
             >
               
               {/* Header */}

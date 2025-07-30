@@ -42,7 +42,7 @@ export function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-cyan-400 via-blue-500 to-blue-600 relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center hero-gradient relative overflow-hidden">
       
       {/* Background decorative elements with parallax */}
       <div className="absolute inset-0 overflow-hidden">
@@ -150,7 +150,7 @@ export function Hero() {
           {/* Right content - Profile Image */}
           <div className="scroll-animate flex justify-center lg:justify-end" style={{ animationDelay: '0.3s' }}>
             <div className="relative">
-              <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-white shadow-2xl">
+              <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-4 border-white shadow-2xl">
                 <img
                   src="/attached_assets/20231120_210945_IMG_0457_1753609330229.JPG"
                   alt="Sumit Lokhande - Frontend Engineer"
