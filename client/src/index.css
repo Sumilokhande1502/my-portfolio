@@ -900,10 +900,9 @@
     transform: translateY(0);
   }
 
-  /* Ensure animations work when elements are in view */
-  .scroll-animate:not(.animate) {
-    animation: fadeInUp 0.6s ease-out forwards;
-    animation-delay: var(--animation-delay, 0s);
+  /* Animation delays for staggered effects */
+  .scroll-animate[style*="animation-delay"] {
+    transition-delay: var(--animation-delay, 0s);
   }
 
   @keyframes fadeInUp {

@@ -6,11 +6,13 @@
  * - Professional experience cards with company, role, dates
  * - Technology tags for each position
  * - Responsive design for all screen sizes
+ * - Scroll animations for smooth entrance effects
  * 
  * Layout matches the deployed portfolio exactly
  */
 
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { useEffect } from 'react';
 
 /**
  * Experience data interface
@@ -94,6 +96,26 @@ const experienceData: ExperienceItem[] = [
 export function Experience() {
   // Enable scroll animations for this component
   useScrollAnimation();
+
+  // Additional effect to ensure animations work
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    // Observe all scroll-animate elements in this section
+    const animatedElements = document.querySelectorAll('#experience .scroll-animate');
+    animatedElements.forEach((element) => observer.observe(element));
+
+    return () => observer.disconnect();
+  }, []);
 
   /**
    * Format date string to readable format
