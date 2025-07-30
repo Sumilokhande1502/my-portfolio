@@ -17,49 +17,50 @@ export function Loader({ className, size = "lg" }: LoaderProps) {
     <div className="fixed inset-0 bg-gradient-to-br from-white via-blue-50 to-indigo-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 flex items-center justify-center z-50">
       <div className="flex flex-col items-center justify-center space-y-8 min-h-screen w-full">
         
-        {/* Elegant animated logo with circular design */}
+        {/* Elegant animated logo with single rotating circle */}
         <div className="relative">
           {/* Main logo container with subtle float animation */}
-          <div className="flex items-center justify-center space-x-6 animate-bounce-gentle">
+          <div className="flex items-center justify-center animate-bounce-gentle">
             
-            {/* Animated "S" in circle */}
+            {/* Single rotating circle with both initials */}
             <div className="relative group">
               {/* Outer rotating ring */}
-              <div className="w-24 h-24 rounded-full border-4 border-gradient-to-r from-blue-500 to-purple-500 animate-spin-slow opacity-60"></div>
-              {/* Inner circle with letter */}
-              <div className="absolute inset-2 w-20 h-20 rounded-full bg-gradient-to-br from-blue-500 via-blue-600 to-purple-600 flex items-center justify-center shadow-xl animate-pulse-scale">
-                <span className="text-3xl font-bold text-white tracking-tight">S</span>
+              <div className="w-32 h-32 rounded-full border-4 border-dashed border-gradient-to-r from-blue-500 via-purple-500 to-teal-500 animate-spin-slow opacity-70"></div>
+              
+              {/* Middle rotating ring - opposite direction */}
+              <div className="absolute inset-1 w-30 h-30 rounded-full border-2 border-dotted border-gradient-to-l from-teal-400 via-purple-400 to-blue-400 animate-spin-reverse opacity-50"></div>
+              
+              {/* Inner circle with both initials */}
+              <div className="absolute inset-3 w-26 h-26 rounded-full bg-gradient-to-br from-blue-500 via-purple-600 to-teal-600 flex items-center justify-center shadow-2xl animate-pulse-scale">
+                <div className="flex items-center space-x-1">
+                  <span className="text-3xl font-bold text-white tracking-tight animate-pulse-scale" style={{ animationDelay: '0ms' }}>S</span>
+                  <span className="text-2xl text-white/80">•</span>
+                  <span className="text-3xl font-bold text-white tracking-tight animate-pulse-scale" style={{ animationDelay: '200ms' }}>L</span>
+                </div>
               </div>
-              {/* Glowing dots */}
-              <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-purple-400 to-teal-400 rounded-full animate-ping"></div>
-              <div className="absolute -bottom-1 -left-1 w-3 h-3 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full animate-ping" style={{ animationDelay: '0.5s' }}></div>
-            </div>
-            
-            {/* Animated "L" in circle */}
-            <div className="relative group">
-              {/* Outer rotating ring */}
-              <div className="w-24 h-24 rounded-full border-4 border-gradient-to-r from-purple-500 to-teal-500 animate-spin-slow opacity-60" style={{ animationDelay: '0.3s' }}></div>
-              {/* Inner circle with letter */}
-              <div className="absolute inset-2 w-20 h-20 rounded-full bg-gradient-to-br from-purple-500 via-purple-600 to-teal-600 flex items-center justify-center shadow-xl animate-pulse-scale" style={{ animationDelay: '0.2s' }}>
-                <span className="text-3xl font-bold text-white tracking-tight">L</span>
+              
+              {/* Orbiting glowing dots */}
+              <div className="absolute inset-0 w-32 h-32 animate-spin-slow">
+                <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full animate-ping"></div>
+                <div className="absolute top-1/2 -right-2 transform -translate-y-1/2 w-3 h-3 bg-gradient-to-r from-purple-400 to-teal-400 rounded-full animate-ping" style={{ animationDelay: '0.3s' }}></div>
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-r from-teal-400 to-blue-400 rounded-full animate-ping" style={{ animationDelay: '0.6s' }}></div>
+                <div className="absolute top-1/2 -left-2 transform -translate-y-1/2 w-3 h-3 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full animate-ping" style={{ animationDelay: '0.9s' }}></div>
               </div>
-              {/* Glowing dots */}
-              <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-teal-400 to-blue-400 rounded-full animate-ping" style={{ animationDelay: '0.3s' }}></div>
-              <div className="absolute -bottom-1 -left-1 w-3 h-3 bg-gradient-to-r from-purple-400 to-teal-400 rounded-full animate-ping" style={{ animationDelay: '0.8s' }}></div>
             </div>
           </div>
           
-          {/* Elegant floating particles */}
-          <div className="absolute -inset-12">
-            <div className="w-2 h-2 bg-blue-400 rounded-full absolute top-4 left-8 animate-float opacity-70" style={{ animationDelay: '0s' }}></div>
-            <div className="w-1.5 h-1.5 bg-purple-400 rounded-full absolute top-12 right-6 animate-float opacity-70" style={{ animationDelay: '0.7s' }}></div>
-            <div className="w-2 h-2 bg-teal-400 rounded-full absolute bottom-6 left-4 animate-float opacity-70" style={{ animationDelay: '1.2s' }}></div>
-            <div className="w-1.5 h-1.5 bg-blue-300 rounded-full absolute bottom-12 right-10 animate-float opacity-70" style={{ animationDelay: '1.8s' }}></div>
-            <div className="w-1 h-1 bg-purple-300 rounded-full absolute top-6 right-12 animate-float opacity-70" style={{ animationDelay: '2.3s' }}></div>
+          {/* Elegant floating particles around the circle */}
+          <div className="absolute -inset-16">
+            <div className="w-2 h-2 bg-blue-400 rounded-full absolute top-8 left-12 animate-float opacity-60" style={{ animationDelay: '0s' }}></div>
+            <div className="w-1.5 h-1.5 bg-purple-400 rounded-full absolute top-16 right-8 animate-float opacity-60" style={{ animationDelay: '0.8s' }}></div>
+            <div className="w-2 h-2 bg-teal-400 rounded-full absolute bottom-12 left-8 animate-float opacity-60" style={{ animationDelay: '1.4s' }}></div>
+            <div className="w-1.5 h-1.5 bg-blue-300 rounded-full absolute bottom-16 right-12 animate-float opacity-60" style={{ animationDelay: '2.0s' }}></div>
+            <div className="w-1 h-1 bg-purple-300 rounded-full absolute top-12 right-16 animate-float opacity-60" style={{ animationDelay: '2.6s' }}></div>
+            <div className="w-1 h-1 bg-teal-300 rounded-full absolute bottom-8 left-16 animate-float opacity-60" style={{ animationDelay: '3.2s' }}></div>
           </div>
           
-          {/* Subtle glow effect */}
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-teal-500/10 rounded-full blur-xl animate-pulse"></div>
+          {/* Enhanced glow effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/15 via-purple-500/15 to-teal-500/15 rounded-full blur-2xl animate-pulse"></div>
         </div>
         
         {/* Animated progress bar */}
