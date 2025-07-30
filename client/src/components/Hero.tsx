@@ -53,44 +53,29 @@ export function Hero() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
           
-          {/* Main heading with staggered animation */}
+          {/* Main heading */}
           <div className="scroll-animate" style={{ animationDelay: '0.1s' }}>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-heading-primary mb-6">
-              Hi, I'm{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-                {PERSONAL_INFO.name.split(' ')[0]}
-              </span>
+              {PERSONAL_INFO.name}
             </h1>
           </div>
 
           {/* Professional title */}
           <div className="scroll-animate" style={{ animationDelay: '0.2s' }}>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl text-heading-secondary mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl text-heading-secondary mb-8">
               {PERSONAL_INFO.title}
             </h2>
           </div>
 
-          {/* Experience highlight */}
-          <div className="scroll-animate" style={{ animationDelay: '0.3s' }}>
-            <p className="text-xl sm:text-2xl text-body-secondary mb-8">
-              with <span className="text-accent-emphasis font-semibold">{PERSONAL_INFO.experience}+ years</span> of 
-              experience creating exceptional digital experiences
-            </p>
-          </div>
-
           {/* Professional summary */}
-          <div className="scroll-animate" style={{ animationDelay: '0.4s' }}>
+          <div className="scroll-animate" style={{ animationDelay: '0.3s' }}>
             <p className="text-lg text-body-primary max-w-3xl mx-auto mb-12 leading-relaxed">
-              I specialize in building modern, responsive web applications using 
-              <span className="text-accent-emphasis font-medium"> React</span>,
-              <span className="text-accent-emphasis font-medium"> TypeScript</span>, and 
-              <span className="text-accent-emphasis font-medium"> cutting-edge frontend technologies</span>. 
-              Let me help bring your ideas to life with clean, efficient code and beautiful user interfaces.
+              Frontend Engineer with <span className="text-accent-emphasis font-medium">{PERSONAL_INFO.experience}+ years</span> of experience developing responsive web applications using React, Redux Toolkit, Angular, JavaScript, and TypeScript. Skilled in designing user-focused interfaces and integrating RESTful APIs.
             </p>
           </div>
 
           {/* Action buttons */}
-          <div className="scroll-animate flex flex-col sm:flex-row gap-4 justify-center mb-16" style={{ animationDelay: '0.5s' }}>
+          <div className="scroll-animate flex flex-col sm:flex-row gap-4 justify-center mb-16" style={{ animationDelay: '0.4s' }}>
             
             {/* Primary CTA - View Projects */}
             <button
@@ -129,7 +114,7 @@ export function Hero() {
                   strokeLinecap="round" 
                   strokeLinejoin="round" 
                   strokeWidth={2} 
-                  d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" 
+                  d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 002 2z" 
                 />
               </svg>
             </button>
