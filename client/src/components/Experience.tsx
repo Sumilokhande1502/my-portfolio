@@ -15,6 +15,7 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useEffect } from 'react';
 import citiLogo from '@assets/image_1753891620825.png';
 import neosoftLogo from '@assets/image_1753891886557.png';
+import learningmateLogo from '@assets/image_1753892028905.png';
 
 /**
  * Experience data interface
@@ -91,13 +92,11 @@ const experienceData: ExperienceItem[] = [
     technologies: ['HTML', 'CSS', 'JavaScript', 'Frontend Development'],
     logo: (
       <div className="w-12 h-12 flex items-center justify-center">
-        <div className="w-full h-full bg-gradient-to-r from-teal-500 to-teal-600 rounded-lg flex items-center justify-center shadow-sm">
-          <svg viewBox="0 0 100 100" className="w-8 h-8">
-            <text x="50%" y="50%" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="32" fontWeight="bold" fontFamily="Arial, sans-serif">
-              LM
-            </text>
-          </svg>
-        </div>
+        <img 
+          src={learningmateLogo} 
+          alt="LearningMate Solutions" 
+          className="w-full h-full object-contain"
+        />
       </div>
     )
   },
