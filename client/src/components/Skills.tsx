@@ -11,23 +11,16 @@
 
 import { 
   SiReact, 
-  SiRedux, 
   SiAngular, 
   SiTypescript, 
   SiJavascript, 
   SiHtml5, 
-  SiCss3, 
-  SiSass,
-  SiBootstrap,
-  SiTailwindcss,
-  SiMui,
-  SiJenkins, 
+  SiCss3,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
   SiGit, 
-  SiMysql,
-  SiJest,
-  SiDocker,
-  SiWebpack,
-  SiVite
+  SiJest
 } from 'react-icons/si';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
@@ -36,49 +29,36 @@ export function Skills() {
   useScrollAnimation();
 
   /**
-   * Skills Data Structure
-   * - Organized by category for better readability
-   * - Each skill has name and brand-colored icon
-   * - Icons use official brand colors for authenticity
-   * - Small 4x4 icons for clean, minimal design
+   * Skills Data Structure - Matching the UI template design
+   * - Three main categories: Frontend, Backend, DevOps & Tools
+   * - Clean, simple layout with brand-colored icons
+   * - Each skill has name and appropriately sized icon
    */
   const skillCategories = [
     {
-      title: 'Frontend Frameworks',
+      title: 'Frontend',
       skills: [
-        { name: 'React', icon: <SiReact className="w-4 h-4 text-[#61DAFB]" /> },
-        { name: 'Angular', icon: <SiAngular className="w-4 h-4 text-[#DD0031]" /> },
-        { name: 'Redux Toolkit', icon: <SiRedux className="w-4 h-4 text-[#764ABC]" /> },
+        { name: 'React', icon: <SiReact className="w-5 h-5 text-[#61DAFB]" /> },
+        { name: 'JavaScript', icon: <SiJavascript className="w-5 h-5 text-[#F7DF1E]" /> },
+        { name: 'TypeScript', icon: <SiTypescript className="w-5 h-5 text-[#3178C6]" /> },
+        { name: 'HTML', icon: <SiHtml5 className="w-5 h-5 text-[#E34F26]" /> },
+        { name: 'CSS', icon: <SiCss3 className="w-5 h-5 text-[#1572B6]" /> },
       ]
     },
     {
-      title: 'Languages',
+      title: 'Backend',
       skills: [
-        { name: 'TypeScript', icon: <SiTypescript className="w-4 h-4 text-[#3178C6]" /> },
-        { name: 'JavaScript', icon: <SiJavascript className="w-4 h-4 text-[#F7DF1E]" /> },
-        { name: 'HTML5', icon: <SiHtml5 className="w-4 h-4 text-[#E34F26]" /> },
-        { name: 'CSS3', icon: <SiCss3 className="w-4 h-4 text-[#1572B6]" /> },
+        { name: 'Node.js', icon: <SiNodedotjs className="w-5 h-5 text-[#339933]" /> },
+        { name: 'Express', icon: <SiExpress className="w-5 h-5 text-slate-600 dark:text-slate-300" /> },
+        { name: 'MongoDB', icon: <SiMongodb className="w-5 h-5 text-[#47A248]" /> },
       ]
     },
     {
-      title: 'Styling & UI',
+      title: 'DevOps & Tools',
       skills: [
-        { name: 'Tailwind CSS', icon: <SiTailwindcss className="w-4 h-4 text-[#06B6D4]" /> },
-        { name: 'SCSS', icon: <SiSass className="w-4 h-4 text-[#CC6699]" /> },
-        { name: 'Bootstrap', icon: <SiBootstrap className="w-4 h-4 text-[#7952B3]" /> },
-        { name: 'Material-UI', icon: <SiMui className="w-4 h-4 text-[#007FFF]" /> },
-      ]
-    },
-    {
-      title: 'Tools & DevOps',
-      skills: [
-        { name: 'Git', icon: <SiGit className="w-4 h-4 text-[#F05032]" /> },
-        { name: 'Docker', icon: <SiDocker className="w-4 h-4 text-[#2496ED]" /> },
-        { name: 'Jenkins', icon: <SiJenkins className="w-4 h-4 text-[#D33833]" /> },
-        { name: 'Webpack', icon: <SiWebpack className="w-4 h-4 text-[#8DD6F9]" /> },
-        { name: 'Vite', icon: <SiVite className="w-4 h-4 text-[#646CFF]" /> },
-        { name: 'Jest', icon: <SiJest className="w-4 h-4 text-[#C21325]" /> },
-        { name: 'MySQL', icon: <SiMysql className="w-4 h-4 text-[#4479A1]" /> },
+        { name: 'Git', icon: <SiGit className="w-5 h-5 text-[#F05032]" /> },
+        { name: 'Jest', icon: <SiJest className="w-5 h-5 text-[#C21325]" /> },
+        { name: 'CI/CD', icon: <div className="w-5 h-5 bg-gradient-to-r from-orange-500 to-red-500 rounded flex items-center justify-center text-white text-xs font-bold">⚡</div> },
       ]
     }
   ];
@@ -96,39 +76,38 @@ export function Skills() {
           </p>
         </div>
 
-        {/* Skills Grid Layout - Responsive design with proper spacing */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
-          {skillCategories.map((category, categoryIndex) => (
-            <div 
-              key={categoryIndex} 
-              className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300 scroll-animate-scale stagger-child"
-            >
-              {/* Category Title */}
-              <h3 className="text-lg font-semibold text-heading-secondary mb-4 text-center">
-                {category.title}
-              </h3>
-              
-              {/* Skills List */}
-              <div className="space-y-3">
-                {category.skills.map((skill, skillIndex) => (
-                  <div 
-                    key={skillIndex} 
-                    className="flex items-center gap-3 p-2 rounded-md hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors duration-200"
-                  >
-                    {/* Skill Icon */}
-                    <div className="flex-shrink-0">
-                      {skill.icon}
+        {/* Skills Layout - Clean three-column design matching the template */}
+        <div className="bg-white dark:bg-slate-800 rounded-lg p-8 shadow-lg max-w-4xl mx-auto scroll-animate">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {skillCategories.map((category, categoryIndex) => (
+              <div key={categoryIndex} className="space-y-6">
+                {/* Category Title */}
+                <h3 className="text-xl font-bold text-heading-primary border-b border-slate-200 dark:border-slate-600 pb-2">
+                  {category.title}
+                </h3>
+                
+                {/* Skills List */}
+                <div className="space-y-4">
+                  {category.skills.map((skill, skillIndex) => (
+                    <div 
+                      key={skillIndex} 
+                      className="flex items-center gap-3 hover:bg-slate-50 dark:hover:bg-slate-700/50 p-2 rounded-md transition-colors duration-200"
+                    >
+                      {/* Skill Icon */}
+                      <div className="flex-shrink-0">
+                        {skill.icon}
+                      </div>
+                      
+                      {/* Skill Name */}
+                      <span className="text-body-primary font-medium">
+                        {skill.name}
+                      </span>
                     </div>
-                    
-                    {/* Skill Name */}
-                    <span className="text-sm font-medium text-body-primary">
-                      {skill.name}
-                    </span>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
