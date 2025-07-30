@@ -5,7 +5,7 @@ export const PERSONAL_INFO = {
   phone: '+91 9021181123',
   location: 'Maharashtra, India',
   title: 'Frontend Engineer',
-  experience: '5+',
+  experience: 5,
   profileImage: '/attached_assets/20231120_210945_IMG_0457_1753609330229.JPG',
 } as const;
 
@@ -80,67 +80,11 @@ export const NAVIGATION_ITEMS = [
   { id: 'contact', label: 'Contact' },
 ] as const;
 
-// Skills Categories
-export const SKILLS_CATEGORIES = [
-  'All',
-  'Frontend',
-  'Backend',
-  'Tools',
-  'Mobile',
-] as const;
 
-// Project Filters
-export const PROJECT_FILTERS = [
-  'All',
-  'React',
-  'Angular',
-  'Vue',
-  'Mobile',
-  'Full Stack',
-] as const;
-
-// Color Themes
-export const COLOR_THEMES = {
-  gradients: {
-    primary: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-    secondary: 'linear-gradient(135deg, #a8edea 0%, #74b9ff 100%)',
-    accent: 'linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%)',
-    warm: 'linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%)',
-    cool: 'linear-gradient(135deg, #74b9ff 0%, #0984e3 100%)',
-    hero: 'linear-gradient(135deg, #667eea 0%, #764ba2 50%, #a8edea 100%)',
-  },
-  darkGradients: {
-    primary: 'linear-gradient(135deg, #2d3748 0%, #4a5568 100%)',
-    secondary: 'linear-gradient(135deg, #2b6cb0 0%, #3182ce 100%)',
-    accent: 'linear-gradient(135deg, #ed8936 0%, #dd6b20 100%)',
-    warm: 'linear-gradient(135deg, #e53e3e 0%, #d69e2e 100%)',
-    cool: 'linear-gradient(135deg, #2b6cb0 0%, #2c5282 100%)',
-    hero: 'linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2b6cb0 100%)',
-  },
-} as const;
 
 // API Endpoints
 export const API_ENDPOINTS = {
   contacts: '/api/contacts',
-} as const;
-
-// Form Validation Constants
-export const VALIDATION_RULES = {
-  name: {
-    minLength: 2,
-    maxLength: 50,
-  },
-  email: {
-    pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-  },
-  subject: {
-    minLength: 5,
-    maxLength: 100,
-  },
-  message: {
-    minLength: 10,
-    maxLength: 1000,
-  },
 } as const;
 
 // Client Environment Variables (using import.meta.env for Vite)
