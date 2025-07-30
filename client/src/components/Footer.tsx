@@ -50,7 +50,7 @@ export function Footer() {
           </div>
         </div>
         <div className="border-t border-slate-800 mt-8 pt-8 text-center">
-          <p className="text-slate-400">Built with React & TypeScript.</p>
+          <p className="text-slate-400">Crafted with passion using React & TypeScript ✨</p>
         </div>
       </div>
     </footer>
