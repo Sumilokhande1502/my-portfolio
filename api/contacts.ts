@@ -41,7 +41,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const mailOptions = {
       from: process.env.EMAIL_USER,
       to: process.env.EMAIL_USER,
-      subject: `Portfolio Contact: ${validatedData.subject}`,
+      subject: `Portfolio Contact from ${validatedData.name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; border-radius: 8px 8px 0 0;">
@@ -53,7 +53,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
               <h3 style="color: #495057; margin-top: 0; border-bottom: 2px solid #007bff; padding-bottom: 10px;">Contact Details</h3>
               <p style="margin: 10px 0; color: #6c757d;"><strong style="color: #495057;">Name:</strong> ${validatedData.name}</p>
               <p style="margin: 10px 0; color: #6c757d;"><strong style="color: #495057;">Email:</strong> ${validatedData.email}</p>
-              <p style="margin: 10px 0; color: #6c757d;"><strong style="color: #495057;">Subject:</strong> ${validatedData.subject}</p>
             </div>
             
             <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">

@@ -45,11 +45,6 @@ const contactFormSchema = z.object({
     .email('Please enter a valid email address')
     .max(100, 'Email must be less than 100 characters'),
   
-  subject: z
-    .string()
-    .min(5, 'Subject must be at least 5 characters')
-    .max(200, 'Subject must be less than 200 characters'),
-  
   message: z
     .string()
     .min(10, 'Message must be at least 10 characters')
@@ -73,17 +68,6 @@ const contactInfo = [
     icon: (
       <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
         <path d="M22 4H2C0.9 4 0 4.9 0 6v12c0 1.1 0.9 2 2 2h20c1.1 0 2-0.9 2-2V6C24 4.9 23.1 4 22 4zM22 8l-10 6L2 8V6l10 6 10-6V8z"/>
-      </svg>
-    )
-  },
-  {
-    id: 'phone',
-    label: 'Phone',
-    value: PERSONAL_INFO.phone,
-    href: `tel:${PERSONAL_INFO.phone}`,
-    icon: (
-      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
       </svg>
     )
   },
@@ -150,7 +134,6 @@ export function Contact() {
     defaultValues: {
       name: '',
       email: '',
-      subject: '',
       message: ''
     }
   });
@@ -223,7 +206,7 @@ export function Contact() {
           <div className="section-divider decorative"></div>
           <p className="text-xl text-body-secondary max-w-3xl mx-auto">
             Ready to start your next project? I'd love to hear from you. 
-            Send me a message and I'll respond as soon as possible.
+            Send me a message and I'll respond via email or LinkedIn as soon as possible.
           </p>
         </div>
 
@@ -274,23 +257,7 @@ export function Contact() {
                   )}
                 </div>
 
-                {/* Subject field */}
-                <div>
-                  <Label htmlFor="subject" className="text-body-primary">
-                    Subject <span className="text-red-500">*</span>
-                  </Label>
-                  <Input
-                    id="subject"
-                    type="text"
-                    placeholder="What's this about?"
-                    {...register('subject')}
-                    className={`mt-1 ${errors.subject ? 'border-red-500' : ''}`}
-                    disabled={isSubmitting}
-                  />
-                  {errors.subject && (
-                    <p className="mt-1 text-sm text-red-500">{errors.subject.message}</p>
-                  )}
-                </div>
+
 
                 {/* Message field */}
                 <div>
