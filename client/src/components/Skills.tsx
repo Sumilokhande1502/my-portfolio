@@ -98,7 +98,7 @@ export function Skills() {
                 {category.skills.map((skill, skillIndex) => (
                   <div 
                     key={skillIndex} 
-                    className="flex items-center gap-3 hover:bg-slate-50 dark:hover:bg-slate-700/50 p-2 rounded-md transition-colors duration-200"
+                    className="flex items-center gap-3 p-2"
                   >
                     {/* Skill Icon */}
                     <div className="flex-shrink-0">
@@ -106,7 +106,7 @@ export function Skills() {
                     </div>
                     
                     {/* Skill Name */}
-                    <span className="text-body-primary font-medium">
+                    <span className="text-sm text-body-primary">
                       {skill.name}
                     </span>
                   </div>

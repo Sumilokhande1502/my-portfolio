@@ -41,8 +41,7 @@ const experienceData: ExperienceItem[] = [
     endDate: undefined, // Current position
     location: 'India',
     description: [
-      'Lead front-end development for web applications using React and Redux Toolkit, focusing on state management, performance optimization, and user-centric design.',
-      'Reduced page load times by 40% through React optimization and led development of a product increasing user engagement by 30%.'
+      'Lead front-end development for web applications using React and Redux Toolkit, achieving 40% improvement in page load times and 30% increase in user engagement.'
     ],
     technologies: ['React', 'Redux Toolkit', 'Reflux', 'TypeScript', 'Java Microservices', 'Oracle', 'Jenkins', 'GIT']
   },
@@ -54,8 +53,7 @@ const experienceData: ExperienceItem[] = [
     endDate: '2022-08',
     location: 'India',
     description: [
-      'Created dynamic, single-page applications (SPA) using Angular providing seamless experience across devices.',
-      'Developed reusable UI components with Angular, collaborating with backend teams to integrate Java Microservices and Oracle databases via RESTful APIs.'
+      'Built dynamic single-page applications with Angular and developed reusable UI components integrated with Java Microservices via RESTful APIs.'
     ],
     technologies: ['Angular', 'RESTful APIs', 'GIT', 'Gulp', 'TypeScript']
   },
@@ -67,8 +65,7 @@ const experienceData: ExperienceItem[] = [
     endDate: '2020-12',
     location: 'India',
     description: [
-      'Developed Front End online course pages using HTML, CSS by migrating content from various sources.',
-      'Oversaw technical issues and troubleshooting requests to resolve surfaced problems.'
+      'Developed responsive online course pages using HTML, CSS, and JavaScript while providing technical support and troubleshooting.'
     ],
     technologies: ['HTML', 'CSS', 'JavaScript', 'Frontend Development']
   },
@@ -80,8 +77,7 @@ const experienceData: ExperienceItem[] = [
     endDate: '2019-06',
     location: 'India',
     description: [
-      'Developed and expanded business by cold calling and follow-up calls to clients.',
-      'Pitched clients about company services and products while maintaining relationships.'
+      'Expanded business through strategic outreach and maintained strong client relationships while effectively communicating company services.'
     ],
     technologies: ['Business Development', 'Client Relations', 'Communication']
   }
