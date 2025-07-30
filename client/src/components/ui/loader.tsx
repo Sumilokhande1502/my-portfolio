@@ -15,7 +15,7 @@ export function Loader({ className, size = "lg" }: LoaderProps) {
 
   return (
     <div className="fixed inset-0 bg-gradient-to-br from-white via-blue-50 to-indigo-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 flex items-center justify-center z-50">
-      <div className="flex flex-col items-center space-y-6">
+      <div className="flex flex-col items-center justify-center space-y-8 min-h-screen w-full">
         {/* Enhanced animated spinner with multiple colorful rings */}
         <div className="relative drop-shadow-2xl">
           {/* Outer ring - primary color with glow */}
