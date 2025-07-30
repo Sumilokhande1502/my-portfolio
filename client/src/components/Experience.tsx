@@ -97,34 +97,6 @@ export function Experience() {
   // Enable scroll animations for this component
   useScrollAnimation();
 
-  // Direct animation implementation
-  useEffect(() => {
-    const handleScroll = () => {
-      const experienceSection = document.getElementById('experience');
-      if (!experienceSection) return;
-
-      const sectionTop = experienceSection.offsetTop;
-      const sectionHeight = experienceSection.offsetHeight;
-      const scrollPosition = window.scrollY + window.innerHeight;
-
-      // Check if section is in view
-      if (scrollPosition > sectionTop + 100) {
-        const animatedElements = experienceSection.querySelectorAll('.scroll-animate');
-        animatedElements.forEach((element, index) => {
-          setTimeout(() => {
-            element.classList.add('animate');
-          }, index * 200);
-        });
-      }
-    };
-
-    // Check on mount and scroll
-    handleScroll();
-    window.addEventListener('scroll', handleScroll);
-    
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   /**
    * Format date string to readable format
    * @param dateString - Date in YYYY-MM format
@@ -142,12 +114,12 @@ export function Experience() {
   return (
     <section 
       id="experience" 
-      className="py-20 bg-gradient-to-br from-slate-50 via-indigo-50 to-purple-50 dark:from-slate-900 dark:via-gray-900 dark:to-slate-800"
+      className="py-20 bg-gradient-to-br from-slate-50 via-indigo-50 to-purple-50 dark:from-slate-900 dark:via-gray-900 dark:to-slate-800 section-transition"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center mb-16 scroll-animate">
+        <div className="text-center mb-16 stagger-child">
           <h2 className="text-4xl text-heading-primary mb-4 section-heading-decoration experience">
             Work Experience
           </h2>
@@ -162,8 +134,7 @@ export function Experience() {
           {experienceData.map((experience, index) => (
             <div 
               key={experience.id}
-              className="experience-card bg-white dark:bg-slate-800 rounded-lg p-8 shadow-lg scroll-animate"
-              style={{ animationDelay: `${index * 0.2}s` }}
+              className="experience-card bg-white dark:bg-slate-800 rounded-lg p-8 shadow-lg stagger-child"
             >
               
               {/* Header */}

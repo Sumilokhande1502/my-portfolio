@@ -900,17 +900,7 @@
     transform: translateY(0);
   }
 
-  /* Force immediate animation for testing */
-  #experience .scroll-animate {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
-  }
 
-  #experience .scroll-animate.animate {
-    opacity: 1;
-    transform: translateY(0);
-  }
 
   /* Animation delays for staggered effects */
   .scroll-animate[style*="animation-delay"] {
