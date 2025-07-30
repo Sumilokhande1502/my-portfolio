@@ -1,3 +1,14 @@
+/**
+ * Skills Component - Displays technical skills organized by category
+ * 
+ * Features:
+ * - Categorized skill display (Frontend, Languages, Styling, Tools)
+ * - Scroll-triggered animations for better UX
+ * - Responsive grid layout
+ * - Brand-colored icons for each technology
+ * - Hover effects for interactivity
+ */
+
 import { 
   SiReact, 
   SiRedux, 
@@ -18,28 +29,19 @@ import {
   SiWebpack,
   SiVite
 } from 'react-icons/si';
-import { useEffect } from 'react';
-import { SCROLL_ANIMATION } from '@shared/constants';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 export function Skills() {
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate');
-        }
-      });
-    }, { 
-      threshold: SCROLL_ANIMATION.threshold, 
-      rootMargin: SCROLL_ANIMATION.rootMargin 
-    });
+  // Enable scroll-triggered animations for this component
+  useScrollAnimation();
 
-    const elements = document.querySelectorAll('.scroll-animate');
-    elements.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
-
+  /**
+   * Skills Data Structure
+   * - Organized by category for better readability
+   * - Each skill has name and brand-colored icon
+   * - Icons use official brand colors for authenticity
+   * - Small 4x4 icons for clean, minimal design
+   */
   const skillCategories = [
     {
       title: 'Frontend Frameworks',
@@ -94,25 +96,35 @@ export function Skills() {
           </p>
         </div>
 
+        {/* Skills Grid Layout - Responsive design with proper spacing */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
           {skillCategories.map((category, categoryIndex) => (
             <div 
               key={categoryIndex} 
               className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300 scroll-animate"
-              style={{ animationDelay: `${categoryIndex * 0.1}s` }}
+              style={{ 
+                // Stagger animation delays for smoother entrance
+                animationDelay: `${categoryIndex * 0.1}s` 
+              }}
             >
+              {/* Category Title */}
               <h3 className="text-lg font-semibold text-heading-secondary mb-4 text-center">
                 {category.title}
               </h3>
+              
+              {/* Skills List */}
               <div className="space-y-3">
                 {category.skills.map((skill, skillIndex) => (
                   <div 
                     key={skillIndex} 
                     className="flex items-center gap-3 p-2 rounded-md hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors duration-200"
                   >
+                    {/* Skill Icon */}
                     <div className="flex-shrink-0">
                       {skill.icon}
                     </div>
+                    
+                    {/* Skill Name */}
                     <span className="text-sm font-medium text-body-primary">
                       {skill.name}
                     </span>
