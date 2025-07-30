@@ -51,14 +51,14 @@ export const ANIMATION_CONSTANTS = {
 // Loader Colors
 export const LOADER_COLORS = {
   rings: {
-    outer: 'border-t-blue-500',
-    middle: 'border-r-purple-500', 
-    inner: 'border-b-teal-500',
+    outer: 'border-t-blue-500 border-r-blue-500',
+    middle: 'border-r-purple-500 border-b-purple-500', 
+    inner: 'border-b-teal-500 border-l-teal-500',
   },
   dots: {
-    first: 'text-blue-500',
-    second: 'text-purple-500',
-    third: 'text-teal-500',
+    first: 'text-blue-600 font-bold',
+    second: 'text-purple-600 font-bold',
+    third: 'text-teal-600 font-bold',
   },
   center: 'bg-gradient-to-r from-blue-500 via-purple-500 to-teal-500',
 } as const;
