@@ -38,7 +38,7 @@ const experienceData: ExperienceItem[] = [
   {
     id: 'experience-1',
     company: 'Citi',
-    position: 'Apps Dev Intmd Programmer Analyst - C11',
+    position: 'Senior Software Engineer',
     startDate: '2022-08',
     endDate: undefined, // Current position
     location: 'India',
