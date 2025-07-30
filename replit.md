@@ -212,7 +212,7 @@ The codebase is now highly maintainable with centralized configuration, making i
 - **Smooth Transitions**: Maintained 200ms transition durations for interactive elements
 
 ### Latest Updates (January 2025)
-- **Title Update**: Changed "Frontend Developer" to "Frontend Engineer" across all components
+- **Title Update**: Changed "Frontend Developer" to "Software Engineer" across all components
 - **Navbar Enhancement**: Styled name with primary solid color and improved tracking for better visual appeal
 - **Footer Simplification**: Removed Quick Links section, maintaining only About and Connect sections in a cleaner 2-column layout
 - **Skills Section Redesign**: Removed progress bars and replaced with authentic technology logos using react-icons library

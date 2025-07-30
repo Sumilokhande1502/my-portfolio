@@ -61,15 +61,7 @@ export function About() {
           <div className="scroll-animate stagger-child">
             <div className="space-y-8 text-center">
               
-              {/* Professional Title */}
-              <div>
-                <h3 className="text-3xl font-bold text-heading-primary mb-3">
-                  {PERSONAL_INFO.title}
-                </h3>
-                <p className="text-xl text-body-secondary">
-                  with <span className="text-accent-emphasis font-semibold">{PERSONAL_INFO.experience}+ years</span> of professional experience
-                </p>
-              </div>
+
 
               {/* Professional Summary */}
               <div className="space-y-6 max-w-3xl mx-auto">
