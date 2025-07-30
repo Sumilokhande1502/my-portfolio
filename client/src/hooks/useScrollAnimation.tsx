@@ -24,38 +24,118 @@ import { SCROLL_ANIMATION } from '@shared/constants';
 /**
  * Custom hook for scroll-triggered animations
  * 
- * Sets up Intersection Observer to add 'animate' class to elements
- * when they enter the viewport. Elements must have 'scroll-animate' class.
+ * Sets up multiple Intersection Observers for different animation types:
+ * - Basic scroll animations (.scroll-animate)
+ * - Section transitions (.section-transition) 
+ * - Staggered animations (.stagger-animate)
+ * - Parallax effects (.parallax-element)
  * 
  * @returns void - This hook doesn't return anything, it sets up side effects
  */
 export function useScrollAnimation(): void {
   useEffect(() => {
-    // Create observer with predefined settings from constants
-    const observer = new IntersectionObserver(
+    // Observer for basic scroll animations
+    const basicObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Add animation class when element becomes visible
             entry.target.classList.add('animate');
           }
         });
       },
       {
-        // Trigger when 10% of element is visible
         threshold: SCROLL_ANIMATION.threshold,
-        // Start observing 50px before element enters viewport
         rootMargin: SCROLL_ANIMATION.rootMargin,
       }
     );
 
-    // Find and observe all elements with scroll animation class
-    const animatedElements = document.querySelectorAll('.scroll-animate');
-    animatedElements.forEach((element) => observer.observe(element));
+    // Observer for section transitions with different threshold
+    const sectionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('section-visible');
+            // Add staggered animation to child elements
+            const staggerElements = entry.target.querySelectorAll('.stagger-child');
+            staggerElements.forEach((child, index) => {
+              setTimeout(() => {
+                child.classList.add('animate');
+              }, index * 100); // 100ms delay between each child
+            });
+          }
+        });
+      },
+      {
+        threshold: 0.2, // Trigger when 20% of section is visible
+        rootMargin: '-50px 0px',
+      }
+    );
 
-    // Cleanup function: disconnect observer when component unmounts
-    return () => {
-      observer.disconnect();
+    // Observer for parallax effects
+    const parallaxObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const element = entry.target as HTMLElement;
+            const rect = element.getBoundingClientRect();
+            const scrolled = window.pageYOffset;
+            const parallax = scrolled * 0.5;
+            element.style.transform = `translateY(${parallax}px)`;
+          }
+        });
+      },
+      { threshold: 0 }
+    );
+
+    // Find and observe different element types
+    const animatedElements = document.querySelectorAll('.scroll-animate');
+    const sectionElements = document.querySelectorAll('.section-transition');
+    const parallaxElements = document.querySelectorAll('.parallax-element');
+
+    animatedElements.forEach((element) => basicObserver.observe(element));
+    sectionElements.forEach((element) => sectionObserver.observe(element));
+    parallaxElements.forEach((element) => parallaxObserver.observe(element));
+
+    // Enhanced scroll listener for smooth transitions
+    const handleScroll = () => {
+      const scrolled = window.pageYOffset;
+      const rate = scrolled * -0.5;
+      
+      // Apply parallax to hero background elements
+      const heroElements = document.querySelectorAll('.hero-parallax');
+      heroElements.forEach((element) => {
+        const htmlElement = element as HTMLElement;
+        htmlElement.style.transform = `translateY(${rate}px)`;
+      });
+
+      // Update navbar transparency based on scroll
+      const navbar = document.querySelector('.navbar-scroll');
+      if (navbar) {
+        const opacity = Math.min(scrolled / 100, 1);
+        (navbar as HTMLElement).style.background = `rgba(255, 255, 255, ${opacity})`;
+      }
     };
-  }, []); // Empty dependency array - effect runs once on mount
+
+    // Throttle scroll events for performance
+    let ticking = false;
+    const throttledScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', throttledScroll, { passive: true });
+
+    // Cleanup function
+    return () => {
+      basicObserver.disconnect();
+      sectionObserver.disconnect();
+      parallaxObserver.disconnect();
+      window.removeEventListener('scroll', throttledScroll);
+    };
+  }, []);
 }

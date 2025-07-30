@@ -28,12 +28,12 @@ export function About() {
   return (
     <section 
       id="about" 
-      className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-gray-900 dark:to-slate-800"
+      className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-gray-900 dark:to-slate-800 section-transition"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center mb-16 scroll-animate">
+        <div className="text-center mb-16 stagger-child">
           <h2 className="text-4xl text-heading-primary mb-4 section-heading-decoration about">
             About Me
           </h2>
@@ -47,7 +47,7 @@ export function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
           {/* Left Column: Profile Image */}
-          <div className="scroll-animate">
+          <div className="scroll-animate-slide-left stagger-child">
             <div className="relative">
               {/* Decorative background element */}
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-2xl transform rotate-3"></div>
@@ -65,7 +65,7 @@ export function About() {
           </div>
 
           {/* Right Column: Content */}
-          <div className="scroll-animate">
+          <div className="scroll-animate-slide-right stagger-child">
             <div className="space-y-6">
               
               {/* Professional Title */}

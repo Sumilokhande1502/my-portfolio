@@ -673,6 +673,84 @@
     transform: translateY(0);
   }
 
+  /* Section transition animations */
+  .section-transition {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .section-transition.section-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Staggered child animations */
+  .stagger-child {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .stagger-child.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Enhanced animation variants */
+  .scroll-animate-fade {
+    opacity: 0;
+    transition: opacity 0.8s ease-out;
+  }
+
+  .scroll-animate-fade.animate {
+    opacity: 1;
+  }
+
+  .scroll-animate-slide-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .scroll-animate-slide-left.animate {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .scroll-animate-slide-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .scroll-animate-slide-right.animate {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .scroll-animate-scale {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .scroll-animate-scale.animate {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Parallax elements */
+  .parallax-element {
+    will-change: transform;
+  }
+
+  /* Hero parallax background */
+  .hero-parallax {
+    will-change: transform;
+    transition: transform 0.1s ease-out;
+  }
+
   /* Enhanced loader animations */
   @keyframes spin-glow {
     0% {

@@ -212,12 +212,12 @@ export function Contact() {
   return (
     <section 
       id="contact" 
-      className="py-20 bg-gradient-to-br from-purple-50 via-teal-50 to-blue-50 dark:from-slate-900 dark:via-gray-900 dark:to-slate-800"
+      className="py-20 bg-gradient-to-br from-purple-50 via-teal-50 to-blue-50 dark:from-slate-900 dark:via-gray-900 dark:to-slate-800 section-transition"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center mb-16 scroll-animate">
+        <div className="text-center mb-16 stagger-child">
           <h2 className="text-4xl text-heading-primary mb-4 section-heading-decoration contact">
             Get In Touch
           </h2>

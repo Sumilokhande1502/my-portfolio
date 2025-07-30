@@ -86,9 +86,9 @@ export function Skills() {
 
 
   return (
-    <section id="skills" className="py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-slate-800 dark:via-gray-800 dark:to-slate-900">
+    <section id="skills" className="py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-slate-800 dark:via-gray-800 dark:to-slate-900 section-transition">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 scroll-animate">
+        <div className="text-center mb-16 stagger-child">
           <h2 className="text-4xl text-heading-primary mb-4 section-heading-decoration skills">Skills & Technologies</h2>
           <div className="section-divider decorative"></div>
           <p className="text-xl text-body-secondary">
@@ -101,11 +101,7 @@ export function Skills() {
           {skillCategories.map((category, categoryIndex) => (
             <div 
               key={categoryIndex} 
-              className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300 scroll-animate"
-              style={{ 
-                // Stagger animation delays for smoother entrance
-                animationDelay: `${categoryIndex * 0.1}s` 
-              }}
+              className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300 scroll-animate-scale stagger-child"
             >
               {/* Category Title */}
               <h3 className="text-lg font-semibold text-heading-secondary mb-4 text-center">

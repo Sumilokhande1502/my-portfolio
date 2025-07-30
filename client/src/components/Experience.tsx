@@ -159,12 +159,12 @@ export function Experience() {
   return (
     <section 
       id="experience" 
-      className="py-20 bg-gradient-to-br from-slate-50 via-indigo-50 to-purple-50 dark:from-slate-900 dark:via-gray-900 dark:to-slate-800"
+      className="py-20 bg-gradient-to-br from-slate-50 via-indigo-50 to-purple-50 dark:from-slate-900 dark:via-gray-900 dark:to-slate-800 section-transition"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center mb-16 scroll-animate">
+        <div className="text-center mb-16 stagger-child">
           <h2 className="text-4xl text-heading-primary mb-4 section-heading-decoration experience">
             Professional Experience
           </h2>
@@ -185,10 +185,9 @@ export function Experience() {
             {experienceData.map((experience, index) => (
               <div 
                 key={experience.id}
-                className={`relative scroll-animate ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                } flex flex-col md:flex md:items-center`}
-                style={{ animationDelay: `${index * 0.2}s` }}
+                className={`relative ${
+                  index % 2 === 0 ? 'scroll-animate-slide-left md:flex-row' : 'scroll-animate-slide-right md:flex-row-reverse'
+                } stagger-child flex flex-col md:flex md:items-center`}
               >
                 
                 {/* Timeline marker */}
