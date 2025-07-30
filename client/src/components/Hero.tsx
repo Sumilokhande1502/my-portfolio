@@ -51,7 +51,7 @@ export function Hero() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
           
           {/* Left content */}
           <div className="text-left text-white">
@@ -148,9 +148,9 @@ export function Hero() {
           </div>
 
           {/* Right content - Profile Image */}
-          <div className="scroll-animate flex justify-center lg:justify-end" style={{ animationDelay: '0.3s' }}>
+          <div className="scroll-animate flex justify-center lg:justify-end mt-8 lg:mt-0" style={{ animationDelay: '0.3s' }}>
             <div className="relative">
-              <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-4 border-white shadow-2xl">
+              <div className="w-56 h-56 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-white shadow-2xl">
                 <img
                   src="/attached_assets/20231120_210945_IMG_0457_1753609330229.JPG"
                   alt="Sumit Lokhande - Frontend Engineer"
