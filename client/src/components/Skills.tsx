@@ -94,7 +94,7 @@ export function Skills() {
               </h3>
               
               {/* Skills List */}
-              <div className="space-y-4">
+              <div className="space-y-2">
                 {category.skills.map((skill, skillIndex) => (
                   <div 
                     key={skillIndex} 
