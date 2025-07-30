@@ -95,16 +95,10 @@ export function Hero() {
                 Get In Touch
                 <svg 
                   className="ml-2 w-5 h-5" 
-                  fill="none" 
-                  stroke="currentColor" 
+                  fill="currentColor" 
                   viewBox="0 0 24 24"
                 >
-                  <path 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    strokeWidth={2} 
-                    d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 002 2z" 
-                  />
+                  <path d="M22 4H2C0.9 4 0 4.9 0 6v12c0 1.1 0.9 2 2 2h20c1.1 0 2-0.9 2-2V6C24 4.9 23.1 4 22 4zM22 8l-10 6L2 8V6l10 6 10-6V8z"/>
                 </svg>
               </button>
             </div>
