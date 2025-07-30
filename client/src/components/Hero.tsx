@@ -42,12 +42,12 @@ export function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center hero-gradient relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 via-purple-600 to-teal-600 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800 relative overflow-hidden">
       
       {/* Background decorative elements with parallax */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl hero-parallax"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-white/10 rounded-full blur-3xl hero-parallax"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 dark:bg-blue-400/20 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-white/10 dark:bg-purple-400/20 rounded-full blur-3xl"></div>
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -57,22 +57,22 @@ export function Hero() {
           <div className="text-left">
             {/* Main heading */}
             <div className="scroll-animate" style={{ animationDelay: '0.1s' }}>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white dark:text-white mb-6 hidden md:block">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white dark:text-slate-100 mb-6 hidden md:block">
                 {PERSONAL_INFO.name}
               </h1>
             </div>
 
             {/* Professional title */}
             <div className="scroll-animate" style={{ animationDelay: '0.2s' }}>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl text-white/90 dark:text-white/90 mb-8">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl text-white/90 dark:text-slate-200 mb-8">
                 {PERSONAL_INFO.title}
               </h2>
             </div>
 
             {/* Professional summary */}
             <div className="scroll-animate" style={{ animationDelay: '0.3s' }}>
-              <p className="text-lg text-white/80 dark:text-white/80 mb-12 leading-relaxed">
-                Frontend Engineer with <span className="text-white dark:text-white font-medium">{PERSONAL_INFO.experience}+ years</span> of experience developing responsive web applications using React, Redux Toolkit, Angular, JavaScript, and TypeScript. Skilled in designing user-focused interfaces and integrating RESTful APIs.
+              <p className="text-lg text-white/80 dark:text-slate-300 mb-12 leading-relaxed">
+                Frontend Engineer with <span className="text-white dark:text-slate-100 font-medium">{PERSONAL_INFO.experience}+ years</span> of experience developing responsive web applications using React, Redux Toolkit, Angular, JavaScript, and TypeScript. Skilled in designing user-focused interfaces and integrating RESTful APIs.
               </p>
             </div>
 
@@ -144,7 +144,7 @@ export function Hero() {
           {/* Right content - Profile Image */}
           <div className="scroll-animate flex justify-center lg:justify-start mt-8 lg:mt-0" style={{ animationDelay: '0.3s' }}>
             <div className="relative">
-              <div className="w-56 h-56 sm:w-72 sm:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full overflow-hidden border-4 border-white shadow-2xl">
+              <div className="w-56 h-56 sm:w-72 sm:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full overflow-hidden border-4 border-white dark:border-slate-300 shadow-2xl">
                 <img
                   src="/attached_assets/20231120_210945_IMG_0457_1753609330229.JPG"
                   alt="Sumit Lokhande - Frontend Engineer"
