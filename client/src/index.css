@@ -404,13 +404,13 @@
 
   /* Hero gradient with animation */
   .hero-gradient {
-    background: linear-gradient(-45deg, #1e293b, #334155, #1e40af, #3730a3);
+    background: linear-gradient(-45deg, #374151, #4b5563, #6b7280, #9ca3af);
     background-size: 400% 400%;
     animation: gradientShift 15s ease infinite;
   }
   
   .light .hero-gradient {
-    background: linear-gradient(-45deg, #3b82f6, #8b5cf6, #6366f1, #a855f7);
+    background: linear-gradient(-45deg, #9ca3af, #6b7280, #4b5563, #374151);
     background-size: 400% 400%;
     animation: gradientShift 15s ease infinite;
   }
