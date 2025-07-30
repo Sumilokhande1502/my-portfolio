@@ -71,7 +71,7 @@ const experienceData: ExperienceItem[] = [
     ],
     technologies: ['Angular', 'RESTful APIs', 'GIT', 'Gulp', 'TypeScript'],
     logo: (
-      <div className="w-12 h-12 flex items-center justify-center">
+      <div className="w-12 h-12 flex items-center justify-center bg-white rounded-lg p-2">
         <img 
           src={neosoftLogo} 
           alt="NeoSoft Technologies" 
@@ -92,7 +92,7 @@ const experienceData: ExperienceItem[] = [
     ],
     technologies: ['HTML', 'CSS', 'JavaScript', 'Frontend Development'],
     logo: (
-      <div className="w-12 h-12 flex items-center justify-center">
+      <div className="w-12 h-12 flex items-center justify-center bg-white rounded-lg p-2">
         <img 
           src={learningmateLogo} 
           alt="LearningMate Solutions" 
@@ -113,7 +113,7 @@ const experienceData: ExperienceItem[] = [
     ],
     technologies: ['Business Development', 'Client Relations', 'Communication'],
     logo: (
-      <div className="w-12 h-12 flex items-center justify-center">
+      <div className="w-12 h-12 flex items-center justify-center bg-white rounded-lg p-2">
         <img 
           src={aoneLogo} 
           alt="A One Salasar" 
