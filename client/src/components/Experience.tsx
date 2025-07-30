@@ -188,7 +188,7 @@ export function Experience() {
                 className={`relative scroll-animate flex flex-col md:flex md:items-center ${
                   index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
                 }`}
-                style={{ animationDelay: `${index * 0.2}s` }}
+                style={{ '--animation-delay': `${index * 0.2}s` } as React.CSSProperties}
               >
                 
                 {/* Timeline marker */}

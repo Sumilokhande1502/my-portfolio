@@ -49,6 +49,18 @@ export function useScrollAnimation(): void {
       }
     );
 
+    // Trigger animations for elements already in view on component mount
+    const triggerInitialAnimations = () => {
+      const animatedElements = document.querySelectorAll('.scroll-animate');
+      animatedElements.forEach((element) => {
+        const rect = element.getBoundingClientRect();
+        const isInView = rect.top < window.innerHeight && rect.bottom > 0;
+        if (isInView) {
+          element.classList.add('animate');
+        }
+      });
+    };
+
     // Observer for section transitions with different threshold
     const sectionObserver = new IntersectionObserver(
       (entries) => {
@@ -91,6 +103,9 @@ export function useScrollAnimation(): void {
     const animatedElements = document.querySelectorAll('.scroll-animate');
     const sectionElements = document.querySelectorAll('.section-transition');
     const parallaxElements = document.querySelectorAll('.parallax-element');
+
+    // Trigger initial animations for elements already in view
+    triggerInitialAnimations();
 
     animatedElements.forEach((element) => basicObserver.observe(element));
     sectionElements.forEach((element) => sectionObserver.observe(element));
