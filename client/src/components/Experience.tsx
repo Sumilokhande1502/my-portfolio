@@ -46,7 +46,7 @@ const experienceData: ExperienceItem[] = [
     endDate: undefined, // Current position
     location: 'India',
     description: [
-      'Lead front-end development for web applications using React and Redux Toolkit, achieving 40% improvement in page load times and 30% increase in user engagement.'
+      'Engineering high-performance React.js applications with Redux Toolkit, implementing scalable component architectures, and accelerating product delivery through modern development practices.'
     ],
     technologies: ['React', 'Redux Toolkit', 'Reflux', 'TypeScript', 'Java Microservices', 'Oracle', 'Jenkins', 'GIT'],
     logo: (
