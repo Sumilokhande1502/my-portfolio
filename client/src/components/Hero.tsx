@@ -71,8 +71,8 @@ export function Hero() {
 
             {/* Professional summary */}
             <div className="scroll-animate" style={{ animationDelay: '0.3s' }}>
-              <p className="text-lg text-white/80 dark:text-slate-300 mb-12 leading-relaxed">
-                Software Engineer with <span className="text-white dark:text-slate-100 font-medium">{PERSONAL_INFO.experience}+ years</span> of experience developing responsive web applications using React, Redux Toolkit, Angular, JavaScript, and TypeScript. Skilled in designing user-focused interfaces and integrating RESTful APIs.
+              <p className="text-xl text-white/90 dark:text-slate-200 mb-12 leading-relaxed font-light">
+                Transforming ideas into powerful digital experiences. Building modern web applications that users love.
               </p>
             </div>
 
