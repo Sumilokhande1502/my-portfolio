@@ -97,24 +97,32 @@ export function Experience() {
   // Enable scroll animations for this component
   useScrollAnimation();
 
-  // Additional effect to ensure animations work
+  // Direct animation implementation
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate');
-          }
+    const handleScroll = () => {
+      const experienceSection = document.getElementById('experience');
+      if (!experienceSection) return;
+
+      const sectionTop = experienceSection.offsetTop;
+      const sectionHeight = experienceSection.offsetHeight;
+      const scrollPosition = window.scrollY + window.innerHeight;
+
+      // Check if section is in view
+      if (scrollPosition > sectionTop + 100) {
+        const animatedElements = experienceSection.querySelectorAll('.scroll-animate');
+        animatedElements.forEach((element, index) => {
+          setTimeout(() => {
+            element.classList.add('animate');
+          }, index * 200);
         });
-      },
-      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
-    );
+      }
+    };
 
-    // Observe all scroll-animate elements in this section
-    const animatedElements = document.querySelectorAll('#experience .scroll-animate');
-    animatedElements.forEach((element) => observer.observe(element));
-
-    return () => observer.disconnect();
+    // Check on mount and scroll
+    handleScroll();
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   /**
