@@ -42,7 +42,7 @@ export function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 via-purple-600 to-teal-600 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800 relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center hero-gradient relative overflow-hidden">
       
       {/* Background decorative elements with parallax */}
       <div className="absolute inset-0 overflow-hidden">
