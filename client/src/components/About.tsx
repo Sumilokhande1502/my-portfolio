@@ -158,7 +158,7 @@ export function About() {
                   </svg>
                   Download Resume
                 </a>
-                <p className="text-sm text-body-secondary mt-2">• Updated {getResumeUpdateDate()}</p>
+                <p className="text-sm text-body-secondary mt-2">• Updated in {getResumeUpdateDate()}</p>
               </div>
             </div>
           </div>
