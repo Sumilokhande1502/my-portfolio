@@ -27,6 +27,7 @@ interface ExperienceItem {
   description: string[];
   technologies: string[];
   achievements?: string[];
+  logo?: React.ReactNode;
 }
 
 /**
@@ -43,7 +44,12 @@ const experienceData: ExperienceItem[] = [
     description: [
       'Lead front-end development for web applications using React and Redux Toolkit, achieving 40% improvement in page load times and 30% increase in user engagement.'
     ],
-    technologies: ['React', 'Redux Toolkit', 'Reflux', 'TypeScript', 'Java Microservices', 'Oracle', 'Jenkins', 'GIT']
+    technologies: ['React', 'Redux Toolkit', 'Reflux', 'TypeScript', 'Java Microservices', 'Oracle', 'Jenkins', 'GIT'],
+    logo: (
+      <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">
+        Citi
+      </div>
+    )
   },
   {
     id: 'experience-2',
@@ -55,7 +61,12 @@ const experienceData: ExperienceItem[] = [
     description: [
       'Built dynamic single-page applications with Angular and developed reusable UI components integrated with Java Microservices via RESTful APIs.'
     ],
-    technologies: ['Angular', 'RESTful APIs', 'GIT', 'Gulp', 'TypeScript']
+    technologies: ['Angular', 'RESTful APIs', 'GIT', 'Gulp', 'TypeScript'],
+    logo: (
+      <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-lg">
+        NS
+      </div>
+    )
   },
   {
     id: 'experience-3',
@@ -67,7 +78,12 @@ const experienceData: ExperienceItem[] = [
     description: [
       'Developed responsive online course pages using HTML, CSS, and JavaScript while providing technical support and troubleshooting.'
     ],
-    technologies: ['HTML', 'CSS', 'JavaScript', 'Frontend Development']
+    technologies: ['HTML', 'CSS', 'JavaScript', 'Frontend Development'],
+    logo: (
+      <div className="w-12 h-12 bg-teal-600 rounded-lg flex items-center justify-center text-white font-bold text-lg">
+        LM
+      </div>
+    )
   },
   {
     id: 'experience-4',
@@ -79,7 +95,12 @@ const experienceData: ExperienceItem[] = [
     description: [
       'Expanded business through strategic outreach and maintained strong client relationships while effectively communicating company services.'
     ],
-    technologies: ['Business Development', 'Client Relations', 'Communication']
+    technologies: ['Business Development', 'Client Relations', 'Communication'],
+    logo: (
+      <div className="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center text-white font-bold text-lg">
+        A1
+      </div>
+    )
   }
 ];
 
@@ -131,20 +152,30 @@ export function Experience() {
               className="experience-card bg-white dark:bg-slate-800 rounded-lg p-4 sm:p-8 shadow-lg stagger-child"
             >
               
-              {/* Header */}
-              <div className="mb-6">
-                <h3 className="text-lg sm:text-2xl font-bold text-heading-primary mb-2 leading-tight">
-                  {experience.position}
-                </h3>
-                <h4 className="text-base sm:text-xl font-semibold text-accent-emphasis mb-3">
-                  {experience.company}
-                </h4>
+              {/* Header with Logo */}
+              <div className="flex items-start gap-4 mb-6">
+                {/* Company Logo */}
+                {experience.logo && (
+                  <div className="flex-shrink-0">
+                    {experience.logo}
+                  </div>
+                )}
                 
-                {/* Date */}
-                <div className="text-body-secondary">
-                  <span className="font-medium">
-                    {formatDate(experience.startDate)} - {experience.endDate ? formatDate(experience.endDate) : 'Present'}
-                  </span>
+                {/* Experience Details */}
+                <div className="flex-1">
+                  <h3 className="text-lg sm:text-2xl font-bold text-heading-primary mb-2 leading-tight">
+                    {experience.position}
+                  </h3>
+                  <h4 className="text-base sm:text-xl font-semibold text-accent-emphasis mb-3">
+                    {experience.company}
+                  </h4>
+                  
+                  {/* Date */}
+                  <div className="text-body-secondary">
+                    <span className="font-medium">
+                      {formatDate(experience.startDate)} - {experience.endDate ? formatDate(experience.endDate) : 'Present'}
+                    </span>
+                  </div>
                 </div>
               </div>
 
