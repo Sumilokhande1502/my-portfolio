@@ -567,6 +567,86 @@
     border-width: 6px;
   }
 
+  /* Catchy loader animations */
+  @keyframes bounce-gentle {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes pulse-scale {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+      opacity: 1;
+    }
+    33% {
+      transform: translateY(-20px) rotate(120deg);
+      opacity: 0.7;
+    }
+    66% {
+      transform: translateY(10px) rotate(240deg);
+      opacity: 0.4;
+    }
+  }
+
+  @keyframes progress-bar {
+    0% {
+      width: 0%;
+      transform: translateX(-100%);
+    }
+    50% {
+      width: 70%;
+      transform: translateX(0%);
+    }
+    100% {
+      width: 100%;
+      transform: translateX(0%);
+    }
+  }
+
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-bounce-gentle {
+    animation: bounce-gentle 2s ease-in-out infinite;
+  }
+
+  .animate-pulse-scale {
+    animation: pulse-scale 2s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-progress-bar {
+    animation: progress-bar 2s ease-in-out infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 3s linear infinite;
+  }
+
   /* Page transition animations */
   @keyframes fade-in-up {
     from {

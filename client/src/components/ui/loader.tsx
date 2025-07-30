@@ -16,60 +16,54 @@ export function Loader({ className, size = "lg" }: LoaderProps) {
   return (
     <div className="fixed inset-0 bg-gradient-to-br from-white via-blue-50 to-indigo-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 flex items-center justify-center z-50">
       <div className="flex flex-col items-center justify-center space-y-8 min-h-screen w-full">
-        {/* Enhanced animated spinner with multiple colorful rings */}
-        <div className="relative drop-shadow-2xl">
-          {/* Outer ring - primary color with glow */}
-          <div className={cn(
-            `animate-spin rounded-full border-6 border-transparent ${LOADER_COLORS.rings.outer} shadow-lg`,
-            sizeClasses[size],
-            className
-          )} style={{ 
-            animationDuration: ANIMATION_CONSTANTS.durations.spin,
-            filter: 'drop-shadow(0 0 8px rgba(59, 130, 246, 0.4))'
-          }}></div>
+        
+        {/* Catchy animated logo/brand loader */}
+        <div className="relative">
+          {/* Main logo container with bounce animation */}
+          <div className="flex items-center justify-center space-x-3 animate-bounce-gentle">
+            {/* Animated "S" letter */}
+            <div className="relative">
+              <div className="text-6xl font-bold text-blue-600 dark:text-blue-400 animate-pulse-scale" style={{ animationDelay: '0ms' }}>
+                S
+              </div>
+              <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-r from-purple-500 to-teal-500 rounded-full animate-ping"></div>
+            </div>
+            
+            {/* Animated "L" letter */}
+            <div className="relative">
+              <div className="text-6xl font-bold text-purple-600 dark:text-purple-400 animate-pulse-scale" style={{ animationDelay: '200ms' }}>
+                L
+              </div>
+              <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-ping" style={{ animationDelay: '100ms' }}></div>
+            </div>
+          </div>
           
-          {/* Middle ring - secondary color with glow */}
-          <div className={cn(
-            `absolute inset-2 animate-spin rounded-full border-4 border-transparent ${LOADER_COLORS.rings.middle} shadow-md`,
-            className
-          )} style={{ 
-            animationDuration: '1.5s', 
-            animationDirection: 'reverse',
-            filter: 'drop-shadow(0 0 6px rgba(147, 51, 234, 0.4))'
-          }}></div>
-          
-          {/* Inner ring - accent color with glow */}
-          <div className={cn(
-            `absolute inset-4 animate-spin rounded-full border-3 border-transparent ${LOADER_COLORS.rings.inner} shadow-sm`,
-            className
-          )} style={{ 
-            animationDuration: '2s',
-            filter: 'drop-shadow(0 0 4px rgba(20, 184, 166, 0.4))'
-          }}></div>
-          
-          {/* Center dot with enhanced pulse and glow */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className={cn(
-              "w-6 h-6 rounded-full animate-pulse", 
-              LOADER_COLORS.center
-            )} style={{
-              filter: 'drop-shadow(0 0 8px rgba(59, 130, 246, 0.6))',
-              animationDuration: '1.5s'
-            }}></div>
+          {/* Floating particles around the letters */}
+          <div className="absolute -inset-8">
+            <div className="w-2 h-2 bg-blue-500 rounded-full absolute top-0 left-4 animate-float" style={{ animationDelay: '0s' }}></div>
+            <div className="w-1.5 h-1.5 bg-purple-500 rounded-full absolute top-8 right-2 animate-float" style={{ animationDelay: '0.5s' }}></div>
+            <div className="w-2 h-2 bg-teal-500 rounded-full absolute bottom-2 left-2 animate-float" style={{ animationDelay: '1s' }}></div>
+            <div className="w-1.5 h-1.5 bg-blue-400 rounded-full absolute bottom-8 right-6 animate-float" style={{ animationDelay: '1.5s' }}></div>
           </div>
         </div>
         
-        {/* Animated text content */}
+        {/* Animated progress bar */}
+        <div className="w-64 h-1 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+          <div className="h-full bg-gradient-to-r from-blue-500 via-purple-500 to-teal-500 rounded-full animate-progress-bar"></div>
+        </div>
+        
+        {/* Dynamic text with typewriter effect */}
         <div className="text-center animate-fade-in">
-          <div className="flex items-center justify-center space-x-1">
-            <p className="text-heading-secondary text-xl font-semibold tracking-wide">Loading portfolio</p>
-            <div className="flex space-x-1 ml-2">
-              <span className={cn("animate-bounce text-2xl", LOADER_COLORS.dots.first)} style={{ animationDelay: '0ms' }}>.</span>
-              <span className={cn("animate-bounce text-2xl", LOADER_COLORS.dots.second)} style={{ animationDelay: '150ms' }}>.</span>
-              <span className={cn("animate-bounce text-2xl", LOADER_COLORS.dots.third)} style={{ animationDelay: '300ms' }}>.</span>
-            </div>
+          <div className="flex items-center justify-center space-x-2">
+            <span className="text-2xl">⚡</span>
+            <p className="text-heading-secondary text-xl font-semibold tracking-wide">
+              Loading Portfolio
+            </p>
+            <span className="text-2xl animate-spin-slow">✨</span>
           </div>
-          <p className="text-body-secondary text-sm mt-2 opacity-80">Crafting amazing experiences</p>
+          <p className="text-body-secondary text-sm mt-2 opacity-80 animate-pulse">
+            Preparing something awesome for you...
+          </p>
         </div>
       </div>
     </div>
