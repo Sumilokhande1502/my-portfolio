@@ -20,7 +20,9 @@ import {
   SiExpress,
   SiMongodb,
   SiGit, 
-  SiJest
+  SiJest,
+  SiWebpack,
+  SiJenkins
 } from 'react-icons/si';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
@@ -39,6 +41,7 @@ export function Skills() {
       title: 'Frontend',
       skills: [
         { name: 'React', icon: <SiReact className="w-5 h-5 text-[#61DAFB]" /> },
+        { name: 'Angular', icon: <SiAngular className="w-5 h-5 text-[#DD0031]" /> },
         { name: 'JavaScript', icon: <SiJavascript className="w-5 h-5 text-[#F7DF1E]" /> },
         { name: 'TypeScript', icon: <SiTypescript className="w-5 h-5 text-[#3178C6]" /> },
         { name: 'HTML', icon: <SiHtml5 className="w-5 h-5 text-[#E34F26]" /> },
@@ -57,6 +60,8 @@ export function Skills() {
       title: 'DevOps & Tools',
       skills: [
         { name: 'Git', icon: <SiGit className="w-5 h-5 text-[#F05032]" /> },
+        { name: 'Webpack', icon: <SiWebpack className="w-5 h-5 text-[#8DD6F9]" /> },
+        { name: 'Jenkins', icon: <SiJenkins className="w-5 h-5 text-[#D33833]" /> },
         { name: 'Jest', icon: <SiJest className="w-5 h-5 text-[#C21325]" /> },
         { name: 'CI/CD', icon: <div className="w-5 h-5 bg-gradient-to-r from-orange-500 to-red-500 rounded flex items-center justify-center text-white text-xs font-bold">⚡</div> },
       ]
