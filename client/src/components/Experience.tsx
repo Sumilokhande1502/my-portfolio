@@ -16,6 +16,7 @@ import { useEffect } from 'react';
 import citiLogo from '@assets/image_1753891620825.png';
 import neosoftLogo from '@assets/image_1753891886557.png';
 import learningmateLogo from '@assets/image_1753892028905.png';
+import aoneLogo from '@assets/image_1753892111185.png';
 
 /**
  * Experience data interface
@@ -113,13 +114,11 @@ const experienceData: ExperienceItem[] = [
     technologies: ['Business Development', 'Client Relations', 'Communication'],
     logo: (
       <div className="w-12 h-12 flex items-center justify-center">
-        <div className="w-full h-full bg-gradient-to-br from-orange-500 to-red-600 rounded-lg flex items-center justify-center shadow-sm">
-          <svg viewBox="0 0 100 100" className="w-8 h-8">
-            <text x="50%" y="50%" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="32" fontWeight="bold" fontFamily="Arial, sans-serif">
-              A1
-            </text>
-          </svg>
-        </div>
+        <img 
+          src={aoneLogo} 
+          alt="A One Salasar" 
+          className="w-full h-full object-contain"
+        />
       </div>
     )
   }
@@ -204,14 +203,18 @@ export function Experience() {
 
               {/* Job description */}
               <div className="mb-6">
-                <ul className="space-y-3">
+                <div className="space-y-3">
                   {experience.description.map((item, itemIndex) => (
-                    <li key={itemIndex} className="text-body-primary flex items-start">
-                      <span className="text-primary mr-3 mt-1">•</span>
+                    <div key={itemIndex} className="text-body-primary flex items-start">
+                      <span className="text-primary mr-3 mt-0.5 flex-shrink-0">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </span>
                       <span className="leading-relaxed">{item}</span>
-                    </li>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
 
               {/* Technologies used */}
