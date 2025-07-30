@@ -88,6 +88,19 @@ const projectsData: Project[] = [
     featured: false,
     completedDate: '2020-12'
   },
+  {
+    id: 'project-4',
+    title: 'Portfolio Website',
+    description: 'Personal portfolio showcasing frontend development skills',
+    longDescription: 'A modern, responsive portfolio website built with React and TypeScript. Features include dark/light theme toggle, smooth animations, contact form with email integration, and optimized performance. Showcases professional experience and technical skills.',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Nodemailer', 'Express'],
+    category: 'web',
+    imageUrl: '/api/placeholder/600/400',
+    liveUrl: 'https://portfolio-sumit-lokhande.replit.app/',
+    githubUrl: `${SOCIAL_LINKS.github}`,
+    featured: true,
+    completedDate: '2025-01'
+  }
 
 ];
 
@@ -154,8 +167,7 @@ export function Projects() {
           </h2>
           <div className="section-divider decorative"></div>
           <p className="text-xl text-body-secondary max-w-3xl mx-auto">
-            A showcase of my recent work, featuring modern web applications built with 
-            cutting-edge technologies and best practices.
+            Some of my recent work that I'm proud to share
           </p>
         </div>
 
@@ -177,8 +189,31 @@ export function Projects() {
           ))}
         </div>
 
-        {/* Projects grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Projects Coming Soon Notice */}
+        <div className="text-center mb-16 scroll-animate">
+          <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-lg p-8 border border-primary/20 max-w-2xl mx-auto">
+            <div className="text-6xl mb-4">🚧</div>
+            <h3 className="text-2xl font-bold text-heading-primary mb-4">Projects Coming Soon</h3>
+            <p className="text-body-secondary leading-relaxed mb-6">
+              I'm currently working on showcasing my best projects. Check back soon to see detailed case studies 
+              of my work at Citi, NeoSoft Technologies, and other exciting projects.
+            </p>
+            <a
+              href={SOCIAL_LINKS.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl transform hover:scale-105"
+            >
+              View GitHub Projects
+              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        {/* Hidden Projects grid for future use */}
+        <div className="hidden grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (
             <div
               key={project.id}

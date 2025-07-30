@@ -81,23 +81,16 @@ export function About() {
               {/* Professional Summary */}
               <div className="space-y-4">
                 <p className="text-body-primary leading-relaxed">
-                  I'm a passionate <span className="text-accent-emphasis font-medium">{PERSONAL_INFO.title}</span> specializing in 
-                  modern web technologies and user experience design. With over <span className="text-accent-emphasis font-medium">{PERSONAL_INFO.experience} years</span> of 
-                  experience, I've had the privilege of working with diverse teams and creating digital solutions that make a real impact.
+                  I'm a <span className="text-accent-emphasis font-medium">{PERSONAL_INFO.title}</span> with <span className="text-accent-emphasis font-medium">{PERSONAL_INFO.experience}+ years</span> of 
+                  experience developing responsive web applications using React, Redux Toolkit, Angular, JavaScript, and TypeScript. 
+                  I have proven expertise in designing user-focused interfaces, integrating RESTful APIs with frontend components, 
+                  and working in Agile environments.
                 </p>
                 
                 <p className="text-body-primary leading-relaxed">
-                  My expertise spans across <span className="text-accent-emphasis font-medium">React</span>, 
-                  <span className="text-accent-emphasis font-medium"> TypeScript</span>, 
-                  <span className="text-accent-emphasis font-medium"> Redux</span>, and modern frontend architectures. 
-                  I'm passionate about writing clean, maintainable code and creating intuitive user interfaces that 
-                  provide exceptional user experiences.
-                </p>
-
-                <p className="text-body-primary leading-relaxed">
-                  When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, 
-                  or sharing knowledge with the developer community. I believe in continuous learning and staying 
-                  up-to-date with the latest industry trends and best practices.
+                  I'm skilled in version control and DevOps practices using Jenkins and GIT to streamline deployment and 
+                  maintain code integrity. I believe in creating optimized, user-centric applications that deliver 
+                  exceptional performance and user experience.
                 </p>
               </div>
 
@@ -111,8 +104,8 @@ export function About() {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-heading-primary">50+ Projects</h4>
-                      <p className="text-sm text-body-secondary">Successfully delivered</p>
+                      <h4 className="font-semibold text-heading-primary">Quality Code</h4>
+                      <p className="text-sm text-body-secondary">Clean & maintainable</p>
                     </div>
                   </div>
                 </div>
@@ -160,17 +153,19 @@ export function About() {
                 </div>
               </div>
 
-              {/* Call to Action */}
+              {/* Download Resume Button */}
               <div className="pt-6">
                 <a
-                  href="#contact"
-                  className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors duration-200 font-medium shadow-lg hover:shadow-xl"
+                  href="/resume.pdf"
+                  download="Sumit_Lokhande_Resume.pdf"
+                  className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl transform hover:scale-105"
                 >
-                  Let's Work Together
-                  <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  <svg className="mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
+                  Download Resume
                 </a>
+                <p className="text-sm text-body-secondary mt-2">• Updated January 2025</p>
               </div>
             </div>
           </div>
