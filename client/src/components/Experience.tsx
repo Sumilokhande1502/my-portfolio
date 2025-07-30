@@ -125,7 +125,7 @@ export function Experience() {
           </h2>
           <div className="section-divider decorative"></div>
           <p className="text-xl text-body-secondary">
-            Building exceptional digital experiences across industries with cutting-edge technologies
+            5+ years delivering scalable web solutions across diverse industries
           </p>
         </div>
 
