@@ -25,6 +25,19 @@ export function About() {
   // Enable scroll animations for this component
   useScrollAnimation();
 
+  /**
+   * Generate dynamic resume update date
+   * @returns Current month and year string
+   */
+  const getResumeUpdateDate = (): string => {
+    const now = new Date();
+    const months = [
+      'January', 'February', 'March', 'April', 'May', 'June',
+      'July', 'August', 'September', 'October', 'November', 'December'
+    ];
+    return `${months[now.getMonth()]} ${now.getFullYear()}`;
+  };
+
   return (
     <section 
       id="about" 
@@ -145,7 +158,7 @@ export function About() {
                   </svg>
                   Download Resume
                 </a>
-                <p className="text-sm text-body-secondary mt-2">• Updated January 2025</p>
+                <p className="text-sm text-body-secondary mt-2">• Updated {getResumeUpdateDate()}</p>
               </div>
             </div>
           </div>
