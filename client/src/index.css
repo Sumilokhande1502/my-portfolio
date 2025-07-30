@@ -955,36 +955,41 @@
 
   /* Section transition animations */
   .section-transition {
-    opacity: 1;
-    transform: translateY(0);
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* Only apply animations on larger screens */
-  @media (min-width: 768px) {
+  .section-transition.section-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Lighter animations on mobile for better performance */
+  @media (max-width: 767px) {
     .section-transition {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    
-    .section-transition.section-visible {
-      opacity: 1;
-      transform: translateY(0);
+      transform: translateY(10px);
+      transition: all 0.4s ease-out;
     }
   }
 
   /* Staggered child animations */
   .stagger-child {
-    opacity: 1;
-    transform: translateY(0);
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* Only apply animations on larger screens */
-  @media (min-width: 768px) {
+  .stagger-child.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Lighter animations on mobile */
+  @media (max-width: 767px) {
     .stagger-child {
-      opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(8px);
+      transition: all 0.3s ease-out;
     }
   }
 

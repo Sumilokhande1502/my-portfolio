@@ -34,7 +34,7 @@ import { SCROLL_ANIMATION } from '@shared/constants';
  */
 export function useScrollAnimation(): void {
   useEffect(() => {
-    // Observer for basic scroll animations
+    // Observer for basic scroll animations with mobile optimization
     const basicObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -44,8 +44,8 @@ export function useScrollAnimation(): void {
         });
       },
       {
-        threshold: SCROLL_ANIMATION.threshold,
-        rootMargin: SCROLL_ANIMATION.rootMargin,
+        threshold: window.innerWidth < 768 ? 0.1 : SCROLL_ANIMATION.threshold,
+        rootMargin: window.innerWidth < 768 ? '-10px 0px' : SCROLL_ANIMATION.rootMargin,
       }
     );
 
@@ -61,7 +61,7 @@ export function useScrollAnimation(): void {
       });
     };
 
-    // Observer for section transitions with different threshold
+    // Observer for section transitions with mobile-optimized threshold
     const sectionObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -70,16 +70,17 @@ export function useScrollAnimation(): void {
             // Add staggered animation to child elements
             const staggerElements = entry.target.querySelectorAll('.stagger-child');
             staggerElements.forEach((child, index) => {
+              const delay = window.innerWidth < 768 ? index * 50 : index * 100; // Faster on mobile
               setTimeout(() => {
                 child.classList.add('animate');
-              }, index * 100); // 100ms delay between each child
+              }, delay);
             });
           }
         });
       },
       {
-        threshold: 0.2, // Trigger when 20% of section is visible
-        rootMargin: '-50px 0px',
+        threshold: window.innerWidth < 768 ? 0.1 : 0.2, // Lower threshold on mobile
+        rootMargin: window.innerWidth < 768 ? '-20px 0px' : '-50px 0px', // Smaller margin on mobile
       }
     );
 
