@@ -117,7 +117,7 @@ export function Experience() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 scroll-animate">
           <h2 className="text-4xl text-heading-primary mb-4 section-heading-decoration experience">
             Work Experience
           </h2>
@@ -132,7 +132,8 @@ export function Experience() {
           {experienceData.map((experience, index) => (
             <div 
               key={experience.id}
-              className="experience-card bg-white dark:bg-slate-800 rounded-lg p-8 shadow-lg"
+              className="experience-card bg-white dark:bg-slate-800 rounded-lg p-8 shadow-lg scroll-animate"
+              style={{ animationDelay: `${index * 0.2}s` }}
             >
               
               {/* Header */}
