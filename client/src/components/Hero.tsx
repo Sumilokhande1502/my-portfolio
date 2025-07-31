@@ -151,7 +151,7 @@ export function Hero() {
               <div className="w-40 h-40 sm:w-56 sm:h-56 lg:w-64 lg:h-64 xl:w-72 xl:h-72 rounded-full overflow-hidden border-4 border-white dark:border-slate-300 shadow-2xl">
                 <img
                   src="/20231120_210945_IMG_0457_1753609330229.JPG"
-                  alt="Sumit Lokhande - Frontend Engineer"
+                  alt="Sumit Lokhande - Software Engineer"
                   className="w-full h-full object-cover"
                 />
               </div>

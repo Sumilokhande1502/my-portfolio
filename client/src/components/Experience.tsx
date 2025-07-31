@@ -48,7 +48,7 @@ const experienceData: ExperienceItem[] = [
     description: [
       'Engineering high-performance React.js applications with Redux Toolkit, implementing scalable component architectures, and accelerating product delivery through modern development practices.'
     ],
-    technologies: ['React', 'Redux Toolkit', 'Reflux', 'TypeScript', 'Java Microservices', 'Oracle', 'Jenkins', 'GIT'],
+    technologies: ['React', 'Redux Toolkit', 'Reflux', 'JavaScript', 'TypeScript', 'Java Microservices', 'Oracle', 'Jenkins', 'GIT'],
     logo: (
       <div className="w-12 h-12 flex items-center justify-center bg-white rounded-lg p-2">
         <img 
@@ -69,7 +69,7 @@ const experienceData: ExperienceItem[] = [
     description: [
       'Built dynamic single-page applications with Angular and developed reusable UI components integrated with Java Microservices via RESTful APIs.'
     ],
-    technologies: ['Angular', 'RESTful APIs', 'GIT', 'Gulp', 'TypeScript'],
+    technologies: ['Angular', 'RESTful APIs', 'GIT', 'Grunt', 'TypeScript'],
     logo: (
       <div className="w-12 h-12 flex items-center justify-center bg-white rounded-lg p-2">
         <img 

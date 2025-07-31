@@ -5,7 +5,6 @@ import { toggleTheme } from '@/store/slices/themeSlice';
 import { toggleMobileMenu, closeMobileMenu } from '@/store/slices/uiSlice';
 import { NAVIGATION_ITEMS, PERSONAL_INFO } from '@shared/constants';
 import { Moon, Sun, Menu, X } from 'lucide-react';
-import { useLocation } from 'wouter';
 
 export function Navbar() {
   const dispatch = useDispatch();
