@@ -1,16 +1,18 @@
+import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '@/store';
 import { toggleTheme } from '@/store/slices/themeSlice';
 import { toggleMobileMenu, closeMobileMenu } from '@/store/slices/uiSlice';
 import { NAVIGATION_ITEMS, PERSONAL_INFO } from '@shared/constants';
 import { Moon, Sun, Menu, X } from 'lucide-react';
-import { Link, useLocation } from 'wouter';
+import { useLocation } from 'wouter';
 
 export function Navbar() {
   const dispatch = useDispatch();
   const { isDarkMode } = useSelector((state: RootState) => state.theme);
   const { isMobileMenuOpen } = useSelector((state: RootState) => state.ui);
-  const [location] = useLocation();
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isScrolling, setIsScrolling] = useState(false);
 
   const handleThemeToggle = () => {
     dispatch(toggleTheme());
@@ -20,11 +22,37 @@ export function Navbar() {
     dispatch(toggleMobileMenu());
   };
 
-  const handleNavClick = () => {
-    dispatch(closeMobileMenu());
-  };
+  // Update active index on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isScrolling) return;
+      if (window.scrollY === 0) {
+        setActiveIndex(0);
+        return;
+      }
+      const navHeight = 80;
+      const offsets = NAVIGATION_ITEMS.map(item => {
+        const el = document.getElementById(item.id);
+        if (!el) return Infinity;
+        const rect = el.getBoundingClientRect();
+        return Math.abs(rect.top - navHeight);
+      });
+      // Find the section whose top is closest to the navbar
+      const current = offsets.indexOf(Math.min(...offsets));
+      setActiveIndex(current);
+    };
 
-  const scrollToSection = (sectionId: string) => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isScrolling]);
+
+  // Scroll to section and set active index on click
+  const scrollToSection = (index: number, sectionId: string) => {
+    setActiveIndex(index);
+    setIsScrolling(true);
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    setTimeout(() => setIsScrolling(false), 700); // Adjust timeout as needed
     // For home section, scroll to top of page
     if (sectionId === 'home') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -50,7 +78,7 @@ export function Navbar() {
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
             <button 
-              onClick={() => scrollToSection('home')}
+              onClick={() => scrollToSection(0,'home')}
               className="flex items-center space-x-3 cursor-pointer group"
             >
               <img 
@@ -67,11 +95,11 @@ export function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              {NAVIGATION_ITEMS.slice(0, 6).map((item) => (
+              {NAVIGATION_ITEMS.slice(0, 6).map((item, index) => (
                 <button 
                   key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="text-body-primary hover:text-accent-emphasis transition-colors duration-200 font-medium"
+                  onClick={() => scrollToSection(index, item.id)}
+                  className={`font-bold border-b-2 border-transparent transition-all duration-200 text-black dark:text-white ${activeIndex === index ? 'border-primary' : ''}`}
                 >
                   {item.label}
                 </button>
@@ -110,11 +138,11 @@ export function Navbar() {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-700">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            {NAVIGATION_ITEMS.slice(0, 6).map((item) => (
+            {NAVIGATION_ITEMS.slice(0, 6).map((item, index) => (
               <button 
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="block w-full text-left px-3 py-2 text-body-primary hover:text-primary-solid font-medium"
+                onClick={() => scrollToSection(index, item.id)}
+                className={`block w-full text-left px-3 py-2 text-body-primary hover:text-primary-solid font-medium border-l-4 border-transparent ${activeIndex === index ? 'border-primary text-primary font-bold bg-primary/10' : ''}`}
               >
                 {item.label}
               </button>

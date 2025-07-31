@@ -152,55 +152,49 @@ export function Contact() {
   /**
    * Submit contact form mutation
    */
-  const submitContactForm = useMutation({
-    mutationFn: async (data: ContactFormData) => {
-      const response = await fetch('/api/contacts', {
+  // Formspree endpoint for static form submission
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xyzpppnr'; // Replace with your Formspree form ID
+
+  const onSubmit = async (data: ContactFormData) => {
+    setIsSubmitting(true);
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
         method: 'POST',
         headers: {
+          'Accept': 'application/json',
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(data),
       });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || 'Failed to send message');
+      if (response.ok) {
+        toast({
+          title: 'Message Sent Successfully!',
+          description: 'Thank you for your message. I\'ll get back to you soon.',
+          variant: 'default',
+        });
+        reset();
+      } else {
+        toast({
+          title: 'Failed to Send Message',
+          description: 'Please try again later or contact me directly.',
+          variant: 'destructive',
+        });
       }
-
-      return response.json();
-    },
-    onSuccess: () => {
-      // Show success message
-      toast({
-        title: 'Message Sent Successfully!',
-        description: 'Thank you for your message. I\'ll get back to you soon.',
-        variant: 'default',
-      });
-      
-      // Reset form
-      reset();
-      setIsSubmitting(false);
-    },
-    onError: (error: Error) => {
-      // Show error message
+    } catch (error) {
       toast({
         title: 'Failed to Send Message',
-        description: error.message || 'Please try again later or contact me directly.',
+        description: 'Please try again later or contact me directly.',
         variant: 'destructive',
       });
-      
-      setIsSubmitting(false);
     }
-  });
+    setIsSubmitting(false);
+  };
 
   /**
    * Handle form submission
    * @param data - Validated form data
    */
-  const onSubmit = (data: ContactFormData) => {
-    setIsSubmitting(true);
-    submitContactForm.mutate(data);
-  };
+  // ...existing code...
 
   return (
     <section 
