@@ -138,7 +138,7 @@ export function About() {
               {/* Download Resume Button */}
               <div className="pt-6">
                 <a
-                  href="/attached_assets/Resume_Updated_2025_1753601334419.pdf"
+                  href="/resume.pdf"
                   download="Sumit_Lokhande_Resume.pdf"
                   className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-200 font-medium shadow-lg hover:shadow-xl transform hover:scale-105"
                 >

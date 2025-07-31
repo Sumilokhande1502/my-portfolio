@@ -6,7 +6,8 @@ export const PERSONAL_INFO = {
   location: 'Maharashtra, India',
   title: 'Software Engineer',
   experience: 5,
-  profileImage: '/attached_assets/20231120_210945_IMG_0457_1753609330229.JPG',
+  profileImage: '/20231120_210945_IMG_0457_1753609330229.JPG',
+  bio: 'Delivering high-impact, user-centric web applications. Let’s build something extraordinary together.'
 } as const;
 
 // Social Media Links (Client-safe constants)

@@ -2,10 +2,12 @@ import { createSlice } from '@reduxjs/toolkit';
 
 interface UiState {
   isMobileMenuOpen: boolean;
+  activeProjectFilter: string;
 }
 
 const initialState: UiState = {
   isMobileMenuOpen: false,
+  activeProjectFilter: 'all',
 };
 
 const uiSlice = createSlice({
@@ -18,8 +20,11 @@ const uiSlice = createSlice({
     closeMobileMenu: (state) => {
       state.isMobileMenuOpen = false;
     },
+    setProjectFilter: (state, action) => {
+      state.activeProjectFilter = action.payload;
+    },
   },
 });
 
-export const { toggleMobileMenu, closeMobileMenu } = uiSlice.actions;
+export const { toggleMobileMenu, closeMobileMenu, setProjectFilter } = uiSlice.actions;
 export default uiSlice.reducer;
