@@ -183,23 +183,18 @@ export function Experience() {
                 
                 {/* Experience Details */}
                 <div className="flex-1 flex justify-between items-start">
-                  <div className="w-full sm:w-auto">
-                    <h3 className="text-sm sm:text-2xl font-bold text-heading-primary mb-2 leading-tight">
+                  <div>
+                    <h3 className="text-lg sm:text-2xl font-bold text-heading-primary mb-2 leading-tight">
                       {experience.position}
                     </h3>
-                    <h4 className="text-xs sm:text-xl font-semibold text-accent-emphasis">
+                    <h4 className="text-base sm:text-xl font-semibold text-accent-emphasis">
                       {experience.company}
                     </h4>
-                    {/* Date on the next line, right-aligned only for mobile */}
-                    <div className="block sm:hidden w-full">
-                      <span className="block text-body-secondary text-right font-medium text-xs mt-1">
-                        {formatDate(experience.startDate)} - {experience.endDate ? formatDate(experience.endDate) : 'Present'}
-                      </span>
-                    </div>
                   </div>
-                  {/* Date on the right for larger screens */}
-                  <div className="hidden sm:block text-body-secondary text-right ml-4">
-                    <span className="font-medium text-base">
+                  
+                  {/* Date on the right */}
+                  <div className="text-body-secondary text-right ml-4">
+                    <span className="font-medium text-sm sm:text-base">
                       {formatDate(experience.startDate)} - {experience.endDate ? formatDate(experience.endDate) : 'Present'}
                     </span>
                   </div>
@@ -210,13 +205,13 @@ export function Experience() {
               <div className="mb-6">
                 <div className="space-y-3">
                   {experience.description.map((item, itemIndex) => (
-                    <div key={itemIndex} className="text-body-primary flex items-start text-sm sm:text-base">
+                    <div key={itemIndex} className="text-body-primary flex items-start">
                       <span className="text-primary mr-3 mt-0.5 flex-shrink-0">
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
                       </span>
-                      <span className="leading-relaxed text-sm sm:text-base">{item}</span>
+                      <span className="leading-relaxed">{item}</span>
                     </div>
                   ))}
                 </div>
