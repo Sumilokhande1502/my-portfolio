@@ -63,7 +63,7 @@ const experienceData: ExperienceItem[] = [
     id: 'experience-2',
     company: 'NeoSoft Technologies Pvt. Ltd.',
     position: 'Software Engineer',
-    startDate: '2020-04',
+    startDate: '2021-04',
     endDate: '2022-08',
     location: 'India',
     description: [
