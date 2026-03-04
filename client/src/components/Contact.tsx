@@ -254,8 +254,7 @@ export function Contact() {
                         {"href" in item ? (
                           (() => {
                             const href = (item as any).href as string;
-                            const isExternal = typeof href === "string" && /^https?:\/\
-                            
+                            const isExternal = typeof href === "string" && /^https?:\/\//.test(href);
                             return (
                               <a
                                 href={href}
