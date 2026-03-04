@@ -296,7 +296,7 @@ export const SOCIAL_MEDIA = [
 
 // Form endpoints and third-party integrations (data-only)
 export const FORM_ENDPOINTS = {
-  FORMSPREE: "https://formspree.io/f/xyzpppnr", // Replace with your Formspree form ID in deployment
+  FORMSPREE: "https://formspree.io/f/xlgwqajy", // Replace with your Formspree form ID in deployment
 } as const;
 
 // Project type and sample projects data

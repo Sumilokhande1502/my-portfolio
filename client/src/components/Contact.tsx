@@ -68,10 +68,14 @@ export function Contact() {
     register,
     handleSubmit,
     reset,
+    clearErrors,
+    trigger,
     formState: { errors, isValid },
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
-    mode: "onBlur", // Validate on blur for better UX
+    // Validate on change so errors clear as the user types correct values
+    mode: "onChange",
+    reValidateMode: "onChange",
     defaultValues: {
       name: "",
       email: "",
@@ -162,7 +166,14 @@ export function Contact() {
                     id="name"
                     type="text"
                     placeholder="Your full name"
-                    {...register("name")}
+                    {...register("name", {
+                      onChange: () => {
+                        // Clear any existing error for this field and trigger validation
+                        clearErrors("name");
+                        // trigger ensures the resolver re-runs for the single field
+                        void trigger("name");
+                      },
+                    })}
                     className={`mt-1 ${errors.name ? "border-red-500" : ""}`}
                     disabled={isSubmitting}
                   />
@@ -183,7 +194,12 @@ export function Contact() {
                     id="email"
                     type="email"
                     placeholder="your.email@example.com"
-                    {...register("email")}
+                    {...register("email", {
+                      onChange: () => {
+                        clearErrors("email");
+                        void trigger("email");
+                      },
+                    })}
                     className={`mt-1 ${errors.email ? "border-red-500" : ""}`}
                     disabled={isSubmitting}
                   />
@@ -204,7 +220,12 @@ export function Contact() {
                     id="message"
                     placeholder="Tell me about your project, ideas, or just say hello!"
                     rows={6}
-                    {...register("message")}
+                    {...register("message", {
+                      onChange: () => {
+                        clearErrors("message");
+                        void trigger("message");
+                      },
+                    })}
                     className={`mt-1 resize-none ${errors.message ? "border-red-500" : ""}`}
                     disabled={isSubmitting}
                   />
@@ -260,12 +281,22 @@ export function Contact() {
                           {item.label}
                         </p>
                         {"href" in item ? (
-                          <a
-                            href={(item as any).href}
-                            className="text-body-primary hover:text-primary transition-colors duration-200"
-                          >
-                            {item.value}
-                          </a>
+                          (() => {
+                            const href = (item as any).href as string;
+                            const isExternal = typeof href === "string" && /^https?:\/\//.test(href);
+                            // Open external http(s) links in a new tab; keep mailto and other schemes in same context
+                            return (
+                              <a
+                                href={href}
+                                className="text-body-primary hover:text-primary transition-colors duration-200"
+                                {...(isExternal
+                                  ? { target: "_blank", rel: "noopener noreferrer" }
+                                  : {})}
+                              >
+                                {item.value}
+                              </a>
+                            );
+                          })()
                         ) : (
                           <p className="text-body-primary">{item.value}</p>
                         )}
