@@ -1,6 +1,6 @@
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { initializeTheme } from "@/store/slices/themeSlice";
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { initializeTheme } from '@/store/slices/themeSlice';
 
 interface ThemeProviderProps {
   children: React.ReactNode;
