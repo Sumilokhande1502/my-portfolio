@@ -1,24 +1,18 @@
-
-
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { PERSONAL_INFO, SOCIAL_LINKS, TEXT } from "@shared/constants";
-import { scrollToElement } from "@/utils/helpers";
-import { SiGithub, SiLinkedin } from "react-icons/si";
-import { HiOutlineMail } from "react-icons/hi";
-
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { PERSONAL_INFO, SOCIAL_LINKS, TEXT } from '@shared/constants';
+import { scrollToElement } from '@/utils/helpers';
+import { SiGithub, SiLinkedin } from 'react-icons/si';
+import { HiOutlineMail } from 'react-icons/hi';
 
 export function Hero() {
-  
   useScrollAnimation();
 
-  
   const handleContactClick = () => {
-    scrollToElement("contact", -100);
+    scrollToElement('contact', -100);
   };
 
-  
   const handleProjectsClick = () => {
-    scrollToElement("projects", -100);
+    scrollToElement('projects', -100);
   };
 
   return (
@@ -38,21 +32,21 @@ export function Hero() {
           {}
           <div className="text-left">
             {}
-            <div className="scroll-animate" style={{ animationDelay: "0.1s" }}>
+            <div className="scroll-animate" style={{ animationDelay: '0.1s' }}>
               <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white dark:text-slate-100 mb-6 hidden md:block">
                 {PERSONAL_INFO.name}
               </h2>
             </div>
 
             {}
-            <div className="scroll-animate" style={{ animationDelay: "0.2s" }}>
+            <div className="scroll-animate" style={{ animationDelay: '0.2s' }}>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl text-white/90 dark:text-slate-200 mb-8">
                 {PERSONAL_INFO.title}
               </h2>
             </div>
 
             {}
-            <div className="scroll-animate" style={{ animationDelay: "0.3s" }}>
+            <div className="scroll-animate" style={{ animationDelay: '0.3s' }}>
               <p className="text-xl text-white/90 dark:text-slate-200 mb-12 leading-relaxed font-light">
                 {PERSONAL_INFO.bio}
               </p>
@@ -61,7 +55,7 @@ export function Hero() {
             {}
             <div
               className="scroll-animate flex flex-col sm:flex-row gap-4 mb-8"
-              style={{ animationDelay: "0.4s" }}
+              style={{ animationDelay: '0.4s' }}
             >
               {}
               <button
@@ -82,10 +76,7 @@ export function Hero() {
             </div>
 
             {}
-            <div
-              className="scroll-animate flex space-x-4"
-              style={{ animationDelay: "0.5s" }}
-            >
+            <div className="scroll-animate flex space-x-4" style={{ animationDelay: '0.5s' }}>
               <a
                 href={SOCIAL_LINKS.github}
                 target="_blank"
@@ -119,7 +110,7 @@ export function Hero() {
           {}
           <div
             className="scroll-animate flex justify-center mt-8 lg:mt-0"
-            style={{ animationDelay: "0.3s" }}
+            style={{ animationDelay: '0.3s' }}
           >
             <div className="relative">
               <div className="w-40 h-40 sm:w-56 sm:h-56 lg:w-64 lg:h-64 xl:w-72 xl:h-72 rounded-full overflow-hidden border-4 border-white dark:border-slate-300 shadow-2xl">

@@ -1,29 +1,17 @@
-
-
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import {
-  contactFormSchema,
-  type ContactFormData,
-} from "@shared/contactFormSchema";
-import { useToast } from "@/hooks/use-toast";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { TEXT, CONTACT_DETAILS, FORM_ENDPOINTS } from "@shared/constants";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { SiLinkedin } from "react-icons/si";
-import {
-  HiOutlineMail,
-  HiOutlineLocationMarker,
-  HiOutlineInformationCircle,
-} from "react-icons/hi";
-import { FiLoader, FiSend } from "react-icons/fi";
-
-
-
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { contactFormSchema, type ContactFormData } from '@shared/contactFormSchema';
+import { useToast } from '@/hooks/use-toast';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { TEXT, CONTACT_DETAILS, FORM_ENDPOINTS } from '@shared/constants';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Label } from '@/components/ui/label';
+import { SiLinkedin } from 'react-icons/si';
+import { HiOutlineMail, HiOutlineLocationMarker, HiOutlineInformationCircle } from 'react-icons/hi';
+import { FiLoader, FiSend } from 'react-icons/fi';
 
 const contactIconMap: Record<string, JSX.Element> = {
   email: <HiOutlineMail className="w-6 h-6" aria-hidden />,
@@ -31,15 +19,12 @@ const contactIconMap: Record<string, JSX.Element> = {
   location: <HiOutlineLocationMarker className="w-6 h-6" aria-hidden />,
 };
 
-
 export function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  
   useScrollAnimation();
 
-  
   const {
     register,
     handleSubmit,
@@ -49,57 +34,52 @@ export function Contact() {
     formState: { errors, isValid },
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
-    
-    mode: "onChange",
-    reValidateMode: "onChange",
+
+    mode: 'onChange',
+    reValidateMode: 'onChange',
     defaultValues: {
-      name: "",
-      email: "",
-      message: "",
+      name: '',
+      email: '',
+      message: '',
     },
   });
 
-  
-  
   const FORMSPREE_ENDPOINT = FORM_ENDPOINTS.FORMSPREE;
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
     try {
       const response = await fetch(FORMSPREE_ENDPOINT, {
-        method: "POST",
+        method: 'POST',
         headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(data),
       });
       if (response.ok) {
         toast({
-          title: "Message Sent Successfully!",
+          title: 'Message Sent Successfully!',
           description: "Thank you for your message. I'll get back to you soon.",
-          variant: "default",
+          variant: 'default',
         });
         reset();
       } else {
         toast({
-          title: "Failed to Send Message",
-          description: "Please try again later or contact me directly.",
-          variant: "destructive",
+          title: 'Failed to Send Message',
+          description: 'Please try again later or contact me directly.',
+          variant: 'destructive',
         });
       }
     } catch {
       toast({
-        title: "Failed to Send Message",
-        description: "Please try again later or contact me directly.",
-        variant: "destructive",
+        title: 'Failed to Send Message',
+        description: 'Please try again later or contact me directly.',
+        variant: 'destructive',
       });
     }
     setIsSubmitting(false);
   };
-
-  
-  
 
   return (
     <section
@@ -113,9 +93,7 @@ export function Contact() {
             {TEXT.contact.sectionHeading}
           </h2>
           <div className="section-divider decorative"></div>
-          <p className="text-xl text-body-secondary max-w-3xl mx-auto">
-            {TEXT.contact.intro}
-          </p>
+          <p className="text-xl text-body-secondary max-w-3xl mx-auto">{TEXT.contact.intro}</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -130,95 +108,78 @@ export function Contact() {
                 {}
                 <div>
                   <Label htmlFor="name" className="text-body-primary">
-                    {TEXT.contact.nameLabel}{" "}
-                    <span className="text-red-500">*</span>
+                    {TEXT.contact.nameLabel} <span className="text-red-500">*</span>
                   </Label>
                   <Input
                     id="name"
                     type="text"
                     placeholder="Your full name"
-                    {...register("name", {
+                    {...register('name', {
                       onChange: () => {
-                        
-                        clearErrors("name");
-                        
-                        void trigger("name");
+                        clearErrors('name');
+
+                        void trigger('name');
                       },
                     })}
-                    className={`mt-1 ${errors.name ? "border-red-500" : ""}`}
+                    className={`mt-1 ${errors.name ? 'border-red-500' : ''}`}
                     disabled={isSubmitting}
                   />
                   {errors.name && (
-                    <p className="mt-1 text-sm text-red-500">
-                      {errors.name.message}
-                    </p>
+                    <p className="mt-1 text-sm text-red-500">{errors.name.message}</p>
                   )}
                 </div>
 
                 {}
                 <div>
                   <Label htmlFor="email" className="text-body-primary">
-                    {TEXT.contact.emailLabel}{" "}
-                    <span className="text-red-500">*</span>
+                    {TEXT.contact.emailLabel} <span className="text-red-500">*</span>
                   </Label>
                   <Input
                     id="email"
                     type="email"
                     placeholder="your.email@example.com"
-                    {...register("email", {
+                    {...register('email', {
                       onChange: () => {
-                        clearErrors("email");
-                        void trigger("email");
+                        clearErrors('email');
+                        void trigger('email');
                       },
                     })}
-                    className={`mt-1 ${errors.email ? "border-red-500" : ""}`}
+                    className={`mt-1 ${errors.email ? 'border-red-500' : ''}`}
                     disabled={isSubmitting}
                   />
                   {errors.email && (
-                    <p className="mt-1 text-sm text-red-500">
-                      {errors.email.message}
-                    </p>
+                    <p className="mt-1 text-sm text-red-500">{errors.email.message}</p>
                   )}
                 </div>
 
                 {}
                 <div>
                   <Label htmlFor="message" className="text-body-primary">
-                    {TEXT.contact.messageLabel}{" "}
-                    <span className="text-red-500">*</span>
+                    {TEXT.contact.messageLabel} <span className="text-red-500">*</span>
                   </Label>
                   <Textarea
                     id="message"
                     placeholder="Tell me about your project, ideas, or just say hello!"
                     rows={6}
-                    {...register("message", {
+                    {...register('message', {
                       onChange: () => {
-                        clearErrors("message");
-                        void trigger("message");
+                        clearErrors('message');
+                        void trigger('message');
                       },
                     })}
-                    className={`mt-1 resize-none ${errors.message ? "border-red-500" : ""}`}
+                    className={`mt-1 resize-none ${errors.message ? 'border-red-500' : ''}`}
                     disabled={isSubmitting}
                   />
                   {errors.message && (
-                    <p className="mt-1 text-sm text-red-500">
-                      {errors.message.message}
-                    </p>
+                    <p className="mt-1 text-sm text-red-500">{errors.message.message}</p>
                   )}
                 </div>
 
                 {}
-                <Button
-                  type="submit"
-                  className="w-full"
-                  disabled={isSubmitting || !isValid}
-                >
+                <Button type="submit" className="w-full" disabled={isSubmitting || !isValid}>
                   {isSubmitting ? (
                     <>
-                      <FiLoader
-                        className="animate-spin -ml-1 mr-3 h-5 w-5"
-                        aria-hidden
-                      />
+                      <FiLoader className="animate-spin -ml-1 mr-3 h-5 w-5" aria-hidden />
                       {TEXT.contact.submit.sending}
                     </>
                   ) : (
@@ -248,19 +209,18 @@ export function Contact() {
                         {contactIconMap[item.id] ?? null}
                       </div>
                       <div>
-                        <p className="text-sm font-medium text-heading-secondary">
-                          {item.label}
-                        </p>
-                        {"href" in item ? (
+                        <p className="text-sm font-medium text-heading-secondary">{item.label}</p>
+                        {'href' in item ? (
                           (() => {
                             const href = (item as any).href as string;
-                            const isExternal = typeof href === "string" && /^https?:\/\//.test(href);
+                            const isExternal =
+                              typeof href === 'string' && /^https?:\/\//.test(href);
                             return (
                               <a
                                 href={href}
                                 className="text-body-primary hover:text-primary transition-colors duration-200"
                                 {...(isExternal
-                                  ? { target: "_blank", rel: "noopener noreferrer" }
+                                  ? { target: '_blank', rel: 'noopener noreferrer' }
                                   : {})}
                               >
                                 {item.value}
@@ -280,18 +240,13 @@ export function Contact() {
               <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-lg p-6 border border-primary/20">
                 <div className="flex items-start space-x-3">
                   <div className="flex-shrink-0 w-6 h-6 text-primary mt-0.5">
-                    <HiOutlineInformationCircle
-                      className="w-6 h-6"
-                      aria-hidden
-                    />
+                    <HiOutlineInformationCircle className="w-6 h-6" aria-hidden />
                   </div>
                   <div>
                     <h4 className="font-semibold text-heading-primary mb-1">
                       {TEXT.contact.quickResponseTitle}
                     </h4>
-                    <p className="text-sm text-body-secondary">
-                      {TEXT.contact.quickResponseText}
-                    </p>
+                    <p className="text-sm text-body-secondary">{TEXT.contact.quickResponseText}</p>
                   </div>
                 </div>
               </div>

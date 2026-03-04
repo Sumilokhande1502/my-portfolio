@@ -1,26 +1,18 @@
-import { SiGithub, SiLinkedin } from "react-icons/si";
-import { HiOutlineMail } from "react-icons/hi";
-import { SOCIAL_LINKS, PERSONAL_INFO, TEXT } from "@shared/constants";
+import { SiGithub, SiLinkedin } from 'react-icons/si';
+import { HiOutlineMail } from 'react-icons/hi';
+import { SOCIAL_LINKS, PERSONAL_INFO, TEXT } from '@shared/constants';
 
 export function Footer() {
-  
-
   return (
     <footer className="bg-slate-900 dark:bg-slate-950 text-white py-12">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4 text-white">
-              {PERSONAL_INFO.name}
-            </h3>
-            <p className="text-slate-300 leading-relaxed">
-              © 2025 All rights reserved
-            </p>
+            <h3 className="text-xl font-bold mb-4 text-white">{PERSONAL_INFO.name}</h3>
+            <p className="text-slate-300 leading-relaxed">© 2025 All rights reserved</p>
           </div>
           <div className="md:text-right">
-            <h4 className="font-semibold mb-4 text-white">
-              {TEXT.footer.connect}
-            </h4>
+            <h4 className="font-semibold mb-4 text-white">{TEXT.footer.connect}</h4>
             <div className="flex space-x-4 md:justify-end">
               <a
                 href={SOCIAL_LINKS.github}

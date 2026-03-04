@@ -1,16 +1,16 @@
-import { sql } from "drizzle-orm";
-import { pgTable, text, varchar, timestamp, json } from "drizzle-orm/pg-core";
-import { createInsertSchema } from "drizzle-zod";
-import { z } from "zod";
+import { sql } from 'drizzle-orm';
+import { pgTable, text, varchar, timestamp, json } from 'drizzle-orm/pg-core';
+import { createInsertSchema } from 'drizzle-zod';
+import { z } from 'zod';
 
-export const contacts = pgTable("contacts", {
-  id: varchar("id")
+export const contacts = pgTable('contacts', {
+  id: varchar('id')
     .primaryKey()
     .default(sql`gen_random_uuid()`),
-  name: text("name").notNull(),
-  email: text("email").notNull(),
-  message: text("message").notNull(),
-  createdAt: timestamp("created_at").defaultNow().notNull(),
+  name: text('name').notNull(),
+  email: text('email').notNull(),
+  message: text('message').notNull(),
+  createdAt: timestamp('created_at').defaultNow().notNull(),
 });
 
 export const insertContactSchema = createInsertSchema(contacts).omit({
@@ -21,7 +21,6 @@ export const insertContactSchema = createInsertSchema(contacts).omit({
 export type InsertContact = z.infer<typeof insertContactSchema>;
 export type Contact = typeof contacts.$inferSelect;
 
-
 export interface Project {
   id: string;
   title: string;
@@ -30,7 +29,7 @@ export interface Project {
   technologies: string[];
   githubUrl?: string;
   liveUrl?: string;
-  category: "react" | "typescript" | "fullstack" | "all";
+  category: 'react' | 'typescript' | 'fullstack' | 'all';
   featured: boolean;
 }
 
@@ -47,5 +46,5 @@ export interface Experience {
 export interface Skill {
   name: string;
   level: number;
-  category: "frontend" | "backend" | "devops";
+  category: 'frontend' | 'backend' | 'devops';
 }

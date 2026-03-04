@@ -1,30 +1,21 @@
-
-
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { FiExternalLink } from "react-icons/fi";
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { FiExternalLink } from 'react-icons/fi';
 import {
   SOCIAL_LINKS,
   TEXT,
   PROJECT_CATEGORIES,
   PROJECTS_DATA,
   type Project,
-} from "@shared/constants";
-
-
+} from '@shared/constants';
 
 const categories = PROJECT_CATEGORIES.map((c) => ({
   ...c,
   count:
-    c.id === "all"
-      ? PROJECTS_DATA.length
-      : PROJECTS_DATA.filter((p) => p.category === c.id).length,
+    c.id === 'all' ? PROJECTS_DATA.length : PROJECTS_DATA.filter((p) => p.category === c.id).length,
 }));
 
-
 export function Projects() {
-  
   useScrollAnimation();
-  
 
   return (
     <section
@@ -38,9 +29,7 @@ export function Projects() {
             {TEXT.projects.heading}
           </h2>
           <div className="section-divider decorative"></div>
-          <p className="text-xl text-body-secondary max-w-3xl mx-auto">
-            {TEXT.projects.intro}
-          </p>
+          <p className="text-xl text-body-secondary max-w-3xl mx-auto">{TEXT.projects.intro}</p>
         </div>
 
         {}

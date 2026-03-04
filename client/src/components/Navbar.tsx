@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "@/store";
-import { toggleTheme } from "@/store/slices/themeSlice";
-import { toggleMobileMenu, closeMobileMenu } from "@/store/slices/uiSlice";
-import { NAVIGATION_ITEMS, PERSONAL_INFO } from "@shared/constants";
-import { Moon, Sun, Menu, X } from "lucide-react";
-import { useLocation } from "wouter";
+import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '@/store';
+import { toggleTheme } from '@/store/slices/themeSlice';
+import { toggleMobileMenu, closeMobileMenu } from '@/store/slices/uiSlice';
+import { NAVIGATION_ITEMS, PERSONAL_INFO } from '@shared/constants';
+import { Moon, Sun, Menu, X } from 'lucide-react';
+import { useLocation } from 'wouter';
 
 export function Navbar() {
   const dispatch = useDispatch();
@@ -22,7 +22,6 @@ export function Navbar() {
     dispatch(toggleMobileMenu());
   };
 
-  
   useEffect(() => {
     const handleScroll = () => {
       if (isScrolling) return;
@@ -37,36 +36,34 @@ export function Navbar() {
         const rect = el.getBoundingClientRect();
         return Math.abs(rect.top - navHeight);
       });
-      
+
       const current = offsets.indexOf(Math.min(...offsets));
       setActiveIndex(current);
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, [isScrolling]);
 
-  
   const scrollToSection = (index: number, sectionId: string) => {
     setActiveIndex(index);
     setIsScrolling(true);
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
-    setTimeout(() => setIsScrolling(false), 700); 
-    
-    if (sectionId === "home") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    setTimeout(() => setIsScrolling(false), 700);
+
+    if (sectionId === 'home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       const element = document.getElementById(sectionId);
       if (element) {
-        const navHeight = 80; 
-        const elementPosition =
-          element.getBoundingClientRect().top + window.pageYOffset;
+        const navHeight = 80;
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
         const offsetPosition = elementPosition - navHeight;
 
         window.scrollTo({
           top: offsetPosition,
-          behavior: "smooth",
+          behavior: 'smooth',
         });
       }
     }
@@ -79,7 +76,7 @@ export function Navbar() {
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
             <button
-              onClick={() => scrollToSection(0, "home")}
+              onClick={() => scrollToSection(0, 'home')}
               className="flex items-center space-x-3 cursor-pointer group"
             >
               <img
@@ -102,7 +99,7 @@ export function Navbar() {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(index, item.id)}
-                  className={`font-bold border-b-2 border-transparent transition-all duration-200 text-black dark:text-white ${activeIndex === index ? "border-primary" : ""}`}
+                  className={`font-bold border-b-2 border-transparent transition-all duration-200 text-black dark:text-white ${activeIndex === index ? 'border-primary' : ''}`}
                 >
                   {item.label}
                 </button>
@@ -145,7 +142,7 @@ export function Navbar() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(index, item.id)}
-                className={`block w-full text-left px-3 py-2 text-body-primary hover:text-primary-solid font-medium border-l-4 border-transparent ${activeIndex === index ? "border-primary text-primary font-bold bg-primary/10" : ""}`}
+                className={`block w-full text-left px-3 py-2 text-body-primary hover:text-primary-solid font-medium border-l-4 border-transparent ${activeIndex === index ? 'border-primary text-primary font-bold bg-primary/10' : ''}`}
               >
                 {item.label}
               </button>

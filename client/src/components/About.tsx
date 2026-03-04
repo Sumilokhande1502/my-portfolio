@@ -1,15 +1,10 @@
-
-
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { TEXT, MONTHS } from "@shared/constants";
-import { FiCheck, FiZap, FiUsers, FiHeart, FiDownload } from "react-icons/fi";
-
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { TEXT, MONTHS } from '@shared/constants';
+import { FiCheck, FiZap, FiUsers, FiHeart, FiDownload } from 'react-icons/fi';
 
 export function About() {
-  
   useScrollAnimation();
 
-  
   const getResumeUpdateDate = (): string => {
     const now = new Date();
     return `${MONTHS[now.getMonth()]} ${now.getFullYear()}`;
@@ -37,10 +32,7 @@ export function About() {
               {}
               <div className="space-y-6 max-w-3xl mx-auto">
                 {TEXT.about.paragraphs.map((p) => (
-                  <p
-                    key={p}
-                    className="text-body-primary leading-relaxed text-lg"
-                  >
+                  <p key={p} className="text-body-primary leading-relaxed text-lg">
                     {p}
                   </p>
                 ))}
@@ -99,10 +91,7 @@ export function About() {
                 <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-md">
                   <div className="flex items-center space-x-3">
                     <div className="flex-shrink-0 w-10 h-10 bg-warm/10 rounded-lg flex items-center justify-center">
-                      <FiHeart
-                        className="w-5 h-5 text-orange-500"
-                        aria-hidden
-                      />
+                      <FiHeart className="w-5 h-5 text-orange-500" aria-hidden />
                     </div>
                     <div>
                       <h4 className="font-semibold text-heading-primary">

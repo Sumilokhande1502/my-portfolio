@@ -14,17 +14,15 @@
   SiJest,
   SiWebpack,
   SiJenkins,
-} from "react-icons/si";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { SKILL_CATEGORIES } from "@shared/constants";
+} from 'react-icons/si';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { SKILL_CATEGORIES } from '@shared/constants';
 
 type SkillCategory = (typeof SKILL_CATEGORIES)[number];
 
 export function Skills() {
-  
   useScrollAnimation();
 
-  
   const iconMap: Record<string, JSX.Element> = {
     React: <SiReact className="w-5 h-5 text-[#61DAFB]" aria-hidden />,
     Angular: <SiAngular className="w-5 h-5 text-[#DD0031]" aria-hidden />,
@@ -32,13 +30,8 @@ export function Skills() {
     TypeScript: <SiTypescript className="w-5 h-5 text-[#3178C6]" aria-hidden />,
     HTML: <SiHtml5 className="w-5 h-5 text-[#E34F26]" aria-hidden />,
     CSS: <SiCss3 className="w-5 h-5 text-[#1572B6]" aria-hidden />,
-    "Node.js": <SiNodedotjs className="w-5 h-5 text-[#339933]" aria-hidden />,
-    Express: (
-      <SiExpress
-        className="w-5 h-5 text-slate-600 dark:text-slate-300"
-        aria-hidden
-      />
-    ),
+    'Node.js': <SiNodedotjs className="w-5 h-5 text-[#339933]" aria-hidden />,
+    Express: <SiExpress className="w-5 h-5 text-slate-600 dark:text-slate-300" aria-hidden />,
     MongoDB: <SiMongodb className="w-5 h-5 text-[#47A248]" aria-hidden />,
     Git: <SiGit className="w-5 h-5 text-[#F05032]" aria-hidden />,
     Webpack: <SiWebpack className="w-5 h-5 text-[#8DD6F9]" aria-hidden />,
@@ -54,7 +47,7 @@ export function Skills() {
         Z
       </div>
     ),
-    "CI/CD": (
+    'CI/CD': (
       <div
         className="w-5 h-5 bg-gradient-to-r from-orange-500 to-red-500 rounded flex items-center justify-center text-white text-xs font-bold"
         aria-hidden
@@ -89,12 +82,12 @@ export function Skills() {
           {SKILL_CATEGORIES.map((category: SkillCategory) => (
             <section
               key={category.title}
-              aria-labelledby={`skills-${category.title.replaceAll(/\s+/g, "-").toLowerCase()}-title`}
+              aria-labelledby={`skills-${category.title.replaceAll(/\s+/g, '-').toLowerCase()}-title`}
               className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 scroll-animate"
             >
               {}
               <h3
-                id={`skills-${category.title.replaceAll(/\s+/g, "-").toLowerCase()}-title`}
+                id={`skills-${category.title.replaceAll(/\s+/g, '-').toLowerCase()}-title`}
                 className="text-xl font-bold text-heading-primary border-b border-slate-200 dark:border-slate-600 pb-3 mb-6"
               >
                 {category.title}
@@ -109,15 +102,11 @@ export function Skills() {
                   >
                     {}
                     <div className="flex-shrink-0" aria-hidden>
-                      {iconMap[skillName] ?? (
-                        <span className="w-5 h-5 inline-block" />
-                      )}
+                      {iconMap[skillName] ?? <span className="w-5 h-5 inline-block" />}
                     </div>
 
                     {}
-                    <span className="text-sm text-body-primary">
-                      {skillName}
-                    </span>
+                    <span className="text-sm text-body-primary">{skillName}</span>
                   </li>
                 ))}
               </ul>

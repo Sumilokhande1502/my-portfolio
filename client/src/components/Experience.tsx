@@ -1,13 +1,10 @@
-
-
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { FiChevronRight } from "react-icons/fi";
-import { TEXT, MONTHS, EXPERIENCE_DATA } from "@shared/constants";
-import citiLogo from "@assets/image_1753891620825.png";
-import neosoftLogo from "@assets/image_1753891886557.png";
-import learningmateLogo from "@assets/image_1753892028905.png";
-import aoneLogo from "@assets/image_1753892111185.png";
-
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { FiChevronRight } from 'react-icons/fi';
+import { TEXT, MONTHS, EXPERIENCE_DATA } from '@shared/constants';
+import citiLogo from '@assets/image_1753891620825.png';
+import neosoftLogo from '@assets/image_1753891886557.png';
+import learningmateLogo from '@assets/image_1753892028905.png';
+import aoneLogo from '@assets/image_1753892111185.png';
 
 const logoMap: Record<string, React.ReactNode> = {
   Citi: (
@@ -15,16 +12,12 @@ const logoMap: Record<string, React.ReactNode> = {
       <img src={citiLogo} alt="Citi" className="w-full h-full object-contain" />
     </div>
   ),
-  "NeoSoft Technologies Pvt. Ltd.": (
+  'NeoSoft Technologies Pvt. Ltd.': (
     <div className="w-12 h-12 flex items-center justify-center bg-white rounded-lg p-2">
-      <img
-        src={neosoftLogo}
-        alt="NeoSoft Technologies"
-        className="w-full h-full object-contain"
-      />
+      <img src={neosoftLogo} alt="NeoSoft Technologies" className="w-full h-full object-contain" />
     </div>
   ),
-  "LearningMate Solutions Pvt. Ltd.": (
+  'LearningMate Solutions Pvt. Ltd.': (
     <div className="w-12 h-12 flex items-center justify-center bg-white rounded-lg p-2">
       <img
         src={learningmateLogo}
@@ -33,33 +26,23 @@ const logoMap: Record<string, React.ReactNode> = {
       />
     </div>
   ),
-  "A One Salasar Pvt. Ltd.": (
+  'A One Salasar Pvt. Ltd.': (
     <div className="w-12 h-12 flex items-center justify-center bg-white rounded-lg p-2">
-      <img
-        src={aoneLogo}
-        alt="A One Salasar"
-        className="w-full h-full object-contain"
-      />
+      <img src={aoneLogo} alt="A One Salasar" className="w-full h-full object-contain" />
     </div>
   ),
 };
 
-
 type SharedExperience = (typeof EXPERIENCE_DATA)[number];
 
-
-
-
 export function Experience() {
-  
   useScrollAnimation();
 
-  
   const formatDate = (dateString: string): string => {
-    const [year, month] = dateString.split("-");
-    
+    const [year, month] = dateString.split('-');
+
     const idx = Number.parseInt(month) - 1;
-    const short = MONTHS[idx]?.slice(0, 3) ?? "";
+    const short = MONTHS[idx]?.slice(0, 3) ?? '';
     return `${short} ${year}`;
   };
 
@@ -75,9 +58,7 @@ export function Experience() {
             {TEXT.experience.heading}
           </h2>
           <div className="section-divider decorative"></div>
-          <p className="text-lg sm:text-xl text-body-secondary px-4">
-            {TEXT.experience.intro}
-          </p>
+          <p className="text-lg sm:text-xl text-body-secondary px-4">{TEXT.experience.intro}</p>
         </div>
 
         {}
@@ -91,9 +72,7 @@ export function Experience() {
               <div className="flex items-start gap-4 mb-6">
                 {}
                 {logoMap[experience.company] && (
-                  <div className="flex-shrink-0">
-                    {logoMap[experience.company]}
-                  </div>
+                  <div className="flex-shrink-0">{logoMap[experience.company]}</div>
                 )}
 
                 {}
@@ -108,20 +87,16 @@ export function Experience() {
                     {}
                     <div className="block sm:hidden w-full">
                       <span className="block text-body-secondary text-right font-medium text-xs mt-1">
-                        {formatDate(experience.startDate)} -{" "}
-                        {experience.endDate
-                          ? formatDate(experience.endDate)
-                          : "Present"}
+                        {formatDate(experience.startDate)} -{' '}
+                        {experience.endDate ? formatDate(experience.endDate) : 'Present'}
                       </span>
                     </div>
                   </div>
                   {}
                   <div className="hidden sm:block text-body-secondary text-right ml-4">
                     <span className="font-medium text-base">
-                      {formatDate(experience.startDate)} -{" "}
-                      {experience.endDate
-                        ? formatDate(experience.endDate)
-                        : "Present"}
+                      {formatDate(experience.startDate)} -{' '}
+                      {experience.endDate ? formatDate(experience.endDate) : 'Present'}
                     </span>
                   </div>
                 </div>
@@ -138,9 +113,7 @@ export function Experience() {
                       <span className="text-primary mr-3 mt-0.5 flex-shrink-0">
                         <FiChevronRight className="w-5 h-5" aria-hidden />
                       </span>
-                      <span className="leading-relaxed text-sm sm:text-base">
-                        {item}
-                      </span>
+                      <span className="leading-relaxed text-sm sm:text-base">{item}</span>
                     </div>
                   ))}
                 </div>

@@ -1,10 +1,9 @@
 interface LoaderProps {
   readonly className?: string;
-  readonly size?: "sm" | "md" | "lg";
+  readonly size?: 'sm' | 'md' | 'lg';
 }
 
-export function Loader({ className, size = "lg" }: LoaderProps) {
-
+export function Loader({ className, size = 'lg' }: LoaderProps) {
   return (
     <div className="fixed inset-0 bg-gradient-to-br from-white via-blue-50 to-indigo-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 flex items-center justify-center z-50">
       <div className="flex flex-col items-center justify-center space-y-8 min-h-screen w-full">
