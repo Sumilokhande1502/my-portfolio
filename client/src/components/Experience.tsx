@@ -1,15 +1,4 @@
-/**
- * Experience Component - Professional experience showcase
- *
- * Features:
- * - Clean, simple layout matching deployed version
- * - Professional experience cards with company, role, dates
- * - Technology tags for each position
- * - Responsive design for all screen sizes
- * - Scroll animations for smooth entrance effects
- *
- * Layout matches the deployed portfolio exactly
- */
+
 
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { FiChevronRight } from "react-icons/fi";
@@ -19,7 +8,7 @@ import neosoftLogo from "@assets/image_1753891886557.png";
 import learningmateLogo from "@assets/image_1753892028905.png";
 import aoneLogo from "@assets/image_1753892111185.png";
 
-// Logo mapping (UI-only): map company name to logo JSX
+
 const logoMap: Record<string, React.ReactNode> = {
   Citi: (
     <div className="w-12 h-12 flex items-center justify-center bg-white rounded-lg p-2">
@@ -55,30 +44,20 @@ const logoMap: Record<string, React.ReactNode> = {
   ),
 };
 
-// Type for shared experience entries
+
 type SharedExperience = (typeof EXPERIENCE_DATA)[number];
 
-/**
- * Experience data (moved to shared constants). We use EXPERIENCE_DATA from shared/constants.ts
- * and map company names to local logo JSX via logoMap above.
- */
 
-/**
- * Experience section component
- * @returns JSX element containing the experience showcase
- */
+
+
 export function Experience() {
-  // Enable scroll animations for this component
+  
   useScrollAnimation();
 
-  /**
-   * Format date string to readable format
-   * @param dateString - Date in YYYY-MM format
-   * @returns Formatted date string
-   */
+  
   const formatDate = (dateString: string): string => {
     const [year, month] = dateString.split("-");
-    // Use shared MONTHS (full names) and abbreviate to 3 letters for display
+    
     const idx = Number.parseInt(month) - 1;
     const short = MONTHS[idx]?.slice(0, 3) ?? "";
     return `${short} ${year}`;
@@ -90,7 +69,7 @@ export function Experience() {
       className="py-12 sm:py-20 bg-gradient-to-br from-slate-50 via-indigo-50 to-purple-50 dark:from-slate-900 dark:via-gray-900 dark:to-slate-800 section-transition"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+        {}
         <div className="text-center mb-8 sm:mb-16 stagger-child">
           <h2 className="text-3xl sm:text-4xl text-heading-primary mb-4 section-heading-decoration experience">
             {TEXT.experience.heading}
@@ -101,23 +80,23 @@ export function Experience() {
           </p>
         </div>
 
-        {/* Experience Cards - Simple Layout matching deployed version */}
+        {}
         <div className="space-y-8">
           {EXPERIENCE_DATA.map((experience: SharedExperience) => (
             <div
               key={experience.id}
               className="experience-card bg-white dark:bg-slate-800 rounded-lg p-4 sm:p-8 shadow-lg stagger-child"
             >
-              {/* Header with Logo and Date */}
+              {}
               <div className="flex items-start gap-4 mb-6">
-                {/* Company Logo (mapped from logoMap) */}
+                {}
                 {logoMap[experience.company] && (
                   <div className="flex-shrink-0">
                     {logoMap[experience.company]}
                   </div>
                 )}
 
-                {/* Experience Details */}
+                {}
                 <div className="flex-1 flex justify-between items-start">
                   <div className="w-full sm:w-auto">
                     <h3 className="text-sm sm:text-2xl font-bold text-heading-primary mb-2 leading-tight">
@@ -126,7 +105,7 @@ export function Experience() {
                     <h4 className="text-xs sm:text-xl font-semibold text-accent-emphasis">
                       {experience.company}
                     </h4>
-                    {/* Date on the next line, right-aligned only for mobile */}
+                    {}
                     <div className="block sm:hidden w-full">
                       <span className="block text-body-secondary text-right font-medium text-xs mt-1">
                         {formatDate(experience.startDate)} -{" "}
@@ -136,7 +115,7 @@ export function Experience() {
                       </span>
                     </div>
                   </div>
-                  {/* Date on the right for larger screens */}
+                  {}
                   <div className="hidden sm:block text-body-secondary text-right ml-4">
                     <span className="font-medium text-base">
                       {formatDate(experience.startDate)} -{" "}
@@ -148,7 +127,7 @@ export function Experience() {
                 </div>
               </div>
 
-              {/* Job description */}
+              {}
               <div className="mb-6">
                 <div className="space-y-3">
                   {experience.description.map((item: string) => (
@@ -167,7 +146,7 @@ export function Experience() {
                 </div>
               </div>
 
-              {/* Technologies used */}
+              {}
               <div>
                 <div className="flex flex-wrap gap-2">
                   {experience.technologies.map((tech: string) => (

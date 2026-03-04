@@ -14,7 +14,7 @@ const ToastViewport = React.forwardRef<
   <ToastPrimitives.Viewport
     ref={ref}
     className={cn(
-      // Position to top-right on all breakpoints. Use a compact max width so toasts stack vertically.
+      
       "fixed top-4 right-4 z-[100] flex flex-col p-4 gap-2 md:max-w-[420px]",
       className,
     )}

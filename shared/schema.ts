@@ -21,7 +21,7 @@ export const insertContactSchema = createInsertSchema(contacts).omit({
 export type InsertContact = z.infer<typeof insertContactSchema>;
 export type Contact = typeof contacts.$inferSelect;
 
-// Frontend-only types for portfolio data
+
 export interface Project {
   id: string;
   title: string;

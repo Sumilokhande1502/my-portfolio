@@ -24,7 +24,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate app initialization
+    
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 1500);

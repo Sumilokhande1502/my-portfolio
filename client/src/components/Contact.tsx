@@ -1,19 +1,4 @@
-/**
- * Contact Component - Professional contact form with validation
- *
- * Features:
- * - React Hook Form with Zod validation
- * - Professional email integration
- * - Real-time form validation with error feedback
- * - Success/error toast notifications
- * - Responsive design with accessibility features
- * - Contact information display
- *
- * Layout:
- * - Left side: Contact form with validation
- * - Right side: Contact information and social links
- * - Mobile: Stacked layout for better usability
- */
+
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -37,33 +22,24 @@ import {
 } from "react-icons/hi";
 import { FiLoader, FiSend } from "react-icons/fi";
 
-/**
- * Contact form validation (imported from shared/contactFormSchema)
- */
 
-/**
- * UI-only icon map for contact details. Data (labels/values/urls) live in `shared/constants.ts`.
- */
+
+
 const contactIconMap: Record<string, JSX.Element> = {
   email: <HiOutlineMail className="w-6 h-6" aria-hidden />,
   linkedin: <SiLinkedin className="w-6 h-6" aria-hidden />,
   location: <HiOutlineLocationMarker className="w-6 h-6" aria-hidden />,
 };
 
-/**
- * Contact section component
- * @returns JSX element containing the contact form and information
- */
+
 export function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  // Enable scroll animations
+  
   useScrollAnimation();
 
-  /**
-   * React Hook Form setup with Zod validation
-   */
+  
   const {
     register,
     handleSubmit,
@@ -73,7 +49,7 @@ export function Contact() {
     formState: { errors, isValid },
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
-    // Validate on change so errors clear as the user types correct values
+    
     mode: "onChange",
     reValidateMode: "onChange",
     defaultValues: {
@@ -83,10 +59,8 @@ export function Contact() {
     },
   });
 
-  /**
-   * Submit contact form mutation
-   */
-  // Formspree endpoint for static form submission (moved to shared constants)
+  
+  
   const FORMSPREE_ENDPOINT = FORM_ENDPOINTS.FORMSPREE;
 
   const onSubmit = async (data: ContactFormData) => {
@@ -124,11 +98,8 @@ export function Contact() {
     setIsSubmitting(false);
   };
 
-  /**
-   * Handle form submission
-   * @param data - Validated form data
-   */
-  // ...existing code...
+  
+  
 
   return (
     <section
@@ -136,7 +107,7 @@ export function Contact() {
       className="py-20 bg-gradient-to-br from-purple-50 via-teal-50 to-blue-50 dark:from-slate-900 dark:via-gray-900 dark:to-slate-800 section-transition"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+        {}
         <div className="text-center mb-16 stagger-child">
           <h2 className="text-4xl text-heading-primary mb-4 section-heading-decoration contact">
             {TEXT.contact.sectionHeading}
@@ -148,7 +119,7 @@ export function Contact() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
+          {}
           <div className="scroll-animate">
             <div className="bg-white dark:bg-slate-800 rounded-lg p-8 shadow-lg">
               <h3 className="text-2xl font-bold text-heading-primary mb-6">
@@ -156,7 +127,7 @@ export function Contact() {
               </h3>
 
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                {/* Name field */}
+                {}
                 <div>
                   <Label htmlFor="name" className="text-body-primary">
                     {TEXT.contact.nameLabel}{" "}
@@ -168,9 +139,9 @@ export function Contact() {
                     placeholder="Your full name"
                     {...register("name", {
                       onChange: () => {
-                        // Clear any existing error for this field and trigger validation
+                        
                         clearErrors("name");
-                        // trigger ensures the resolver re-runs for the single field
+                        
                         void trigger("name");
                       },
                     })}
@@ -184,7 +155,7 @@ export function Contact() {
                   )}
                 </div>
 
-                {/* Email field */}
+                {}
                 <div>
                   <Label htmlFor="email" className="text-body-primary">
                     {TEXT.contact.emailLabel}{" "}
@@ -210,7 +181,7 @@ export function Contact() {
                   )}
                 </div>
 
-                {/* Message field */}
+                {}
                 <div>
                   <Label htmlFor="message" className="text-body-primary">
                     {TEXT.contact.messageLabel}{" "}
@@ -236,7 +207,7 @@ export function Contact() {
                   )}
                 </div>
 
-                {/* Submit button */}
+                {}
                 <Button
                   type="submit"
                   className="w-full"
@@ -261,10 +232,10 @@ export function Contact() {
             </div>
           </div>
 
-          {/* Contact Information */}
+          {}
           <div className="scroll-animate">
             <div className="space-y-8">
-              {/* Contact details */}
+              {}
               <div className="bg-white dark:bg-slate-800 rounded-lg p-8 shadow-lg">
                 <h3 className="text-2xl font-bold text-heading-primary mb-6">
                   Contact Information
@@ -283,8 +254,8 @@ export function Contact() {
                         {"href" in item ? (
                           (() => {
                             const href = (item as any).href as string;
-                            const isExternal = typeof href === "string" && /^https?:\/\//.test(href);
-                            // Open external http(s) links in a new tab; keep mailto and other schemes in same context
+                            const isExternal = typeof href === "string" && /^https?:\/\
+                            
                             return (
                               <a
                                 href={href}
@@ -306,7 +277,7 @@ export function Contact() {
                 </div>
               </div>
 
-              {/* Quick response note */}
+              {}
               <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-lg p-6 border border-primary/20">
                 <div className="flex items-start space-x-3">
                   <div className="flex-shrink-0 w-6 h-6 text-primary mt-0.5">

@@ -21,10 +21,10 @@ import { SKILL_CATEGORIES } from "@shared/constants";
 type SkillCategory = (typeof SKILL_CATEGORIES)[number];
 
 export function Skills() {
-  // Enable scroll-triggered animations for this component
+  
   useScrollAnimation();
 
-  // Map plain skill names (from shared constants) to icon elements and accessible labels
+  
   const iconMap: Record<string, JSX.Element> = {
     React: <SiReact className="w-5 h-5 text-[#61DAFB]" aria-hidden />,
     Angular: <SiAngular className="w-5 h-5 text-[#DD0031]" aria-hidden />,
@@ -84,7 +84,7 @@ export function Skills() {
           </p>
         </div>
 
-        {/* Skills Layout - Three separate cards */}
+        {}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {SKILL_CATEGORIES.map((category: SkillCategory) => (
             <section
@@ -92,7 +92,7 @@ export function Skills() {
               aria-labelledby={`skills-${category.title.replaceAll(/\s+/g, "-").toLowerCase()}-title`}
               className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 scroll-animate"
             >
-              {/* Category Title */}
+              {}
               <h3
                 id={`skills-${category.title.replaceAll(/\s+/g, "-").toLowerCase()}-title`}
                 className="text-xl font-bold text-heading-primary border-b border-slate-200 dark:border-slate-600 pb-3 mb-6"
@@ -100,21 +100,21 @@ export function Skills() {
                 {category.title}
               </h3>
 
-              {/* Skills List - semantic list for accessibility */}
+              {}
               <ul className="space-y-2">
                 {category.skills.map((skillName) => (
                   <li
                     key={skillName}
                     className="flex items-center gap-3 p-2 rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400 dark:focus:ring-blue-300"
                   >
-                    {/* Skill Icon (decorative) */}
+                    {}
                     <div className="flex-shrink-0" aria-hidden>
                       {iconMap[skillName] ?? (
                         <span className="w-5 h-5 inline-block" />
                       )}
                     </div>
 
-                    {/* Skill Name */}
+                    {}
                     <span className="text-sm text-body-primary">
                       {skillName}
                     </span>

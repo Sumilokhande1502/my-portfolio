@@ -1,4 +1,4 @@
-// Personal Information Constants
+
 export const PERSONAL_INFO = {
   name: "Sumit Lokhande",
   email: "workwithsumit15@gmail.com",
@@ -10,14 +10,14 @@ export const PERSONAL_INFO = {
   bio: "Delivering high-impact, user-centric web applications. Let’s build something extraordinary together.",
 } as const;
 
-// Social Media Links (Client-safe constants)
+
 export const SOCIAL_LINKS = {
   github: "https://github.com/Sumilokhande1502",
   linkedin: "https://www.linkedin.com/in/sumit-lokhande-0a2380148/",
   portfolio: "https://sumitlokhande.dev",
 } as const;
 
-// UI Constants
+
 export const UI_CONSTANTS = {
   toastRemoveDelay: 5000,
   toastLimit: 1,
@@ -26,7 +26,7 @@ export const UI_CONSTANTS = {
   hoverTransitionDuration: "0.2s",
 } as const;
 
-// Animation Constants
+
 export const ANIMATION_CONSTANTS = {
   delays: {
     delay100: "0.1s",
@@ -49,7 +49,7 @@ export const ANIMATION_CONSTANTS = {
   },
 } as const;
 
-// Loader Colors
+
 export const LOADER_COLORS = {
   rings: {
     outer: "border-t-blue-500 border-r-blue-500",
@@ -64,14 +64,14 @@ export const LOADER_COLORS = {
   center: "bg-gradient-to-r from-blue-500 via-purple-500 to-teal-500",
 } as const;
 
-// Scroll Animation Settings
+
 export const SCROLL_ANIMATION = {
   threshold: 0.1,
   rootMargin: "50px 0px -100px 0px",
-  staggerDelay: 0.2, // seconds between animations
+  staggerDelay: 0.2, 
 } as const;
 
-// Navigation Items
+
 export const NAVIGATION_ITEMS = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
@@ -81,18 +81,18 @@ export const NAVIGATION_ITEMS = [
   { id: "contact", label: "Contact" },
 ] as const;
 
-// API Endpoints
+
 export const API_ENDPOINTS = {
   contacts: "/api/contacts",
 } as const;
 
-// Client Environment Variables (using import.meta.env for Vite)
+
 export const CLIENT_ENV = {
   NODE_ENV:
     globalThis.window === undefined ? "development" : import.meta.env.MODE,
 } as const;
 
-// Skill categories (data-only, UI should map names -> icons locally)
+
 export const SKILL_CATEGORIES = [
   {
     title: "Frontend",
@@ -118,7 +118,7 @@ export const SKILL_CATEGORIES = [
   },
 ] as const;
 
-// Experience data (data-only). Logos/assets are UI concerns and should be mapped in the component.
+
 export const EXPERIENCE_DATA = [
   {
     id: "experience-1",
@@ -182,7 +182,7 @@ export const EXPERIENCE_DATA = [
   },
 ] as const;
 
-// Shared UI text constants (centralize hardcoded content used across components)
+
 export const TEXT = {
   hero: {
     ctaView: "View My Work",
@@ -244,7 +244,7 @@ export const TEXT = {
   },
 } as const;
 
-// Month names used for UI date formatting
+
 export const MONTHS = [
   "January",
   "February",
@@ -260,7 +260,7 @@ export const MONTHS = [
   "December",
 ] as const;
 
-// Contact details (data-only). Icons are intentionally omitted so UI can map names -> icons.
+
 export const CONTACT_DETAILS = [
   {
     id: "email",
@@ -294,12 +294,12 @@ export const SOCIAL_MEDIA = [
   },
 ] as const;
 
-// Form endpoints and third-party integrations (data-only)
+
 export const FORM_ENDPOINTS = {
-  FORMSPREE: "https://formspree.io/f/xlgwqajy", // Replace with your Formspree form ID in deployment
+  FORMSPREE: "https://formspree.io/f/xlgwqajy", 
 } as const;
 
-// Project type and sample projects data
+
 export type Project = {
   id: string;
   title: string;

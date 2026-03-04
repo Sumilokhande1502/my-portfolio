@@ -3,7 +3,7 @@ import { HiOutlineMail } from "react-icons/hi";
 import { SOCIAL_LINKS, PERSONAL_INFO, TEXT } from "@shared/constants";
 
 export function Footer() {
-  // scrollToSection removed (unused) — footer only contains links
+  
 
   return (
     <footer className="bg-slate-900 dark:bg-slate-950 text-white py-12">

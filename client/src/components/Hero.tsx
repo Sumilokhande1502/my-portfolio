@@ -1,19 +1,4 @@
-/**
- * Hero Component - Main landing section of the portfolio
- *
- * Features:
- * - Eye-catching introduction with animated elements
- * - Professional title and experience highlights
- * - Call-to-action buttons for key sections
- * - Responsive design with gradient background
- * - Staggered animations for smooth entrance
- *
- * Layout:
- * - Centered content with hero text
- * - Professional headshot (optional)
- * - Action buttons for navigation
- * - Scroll indicator for user guidance
- */
+
 
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { PERSONAL_INFO, SOCIAL_LINKS, TEXT } from "@shared/constants";
@@ -21,71 +6,64 @@ import { scrollToElement } from "@/utils/helpers";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 import { HiOutlineMail } from "react-icons/hi";
 
-/**
- * Hero section component - the first thing visitors see
- * @returns JSX element containing the hero section
- */
+
 export function Hero() {
-  // Enable scroll animations for this component
+  
   useScrollAnimation();
 
-  /**
-   * Handle smooth scrolling to contact section
-   */
+  
   const handleContactClick = () => {
     scrollToElement("contact", -100);
   };
 
-  /**
-   * Handle smooth scrolling to projects section
-   */
+  
   const handleProjectsClick = () => {
     scrollToElement("projects", -100);
   };
 
   return (
     <section className="min-h-screen flex items-center justify-center hero-gradient relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:bg-gradient-to-br dark:from-white/10 dark:via-gray-700/20 dark:to-gray-900/30">
-      {/* Background decorative elements with parallax - only show in light mode */}
+      {}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Light mode gradient bubbles */}
+        {}
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl dark:hidden"></div>
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-white/10 rounded-full blur-3xl dark:hidden"></div>
-        {/* Dark mode gradient bubbles */}
+        {}
         <div className="absolute -top-40 -right-40 w-80 h-80 hidden dark:block bg-gradient-to-br from-white/10 via-gray-700/20 to-gray-900/30 rounded-full blur-3xl"></div>
         <div className="absolute -bottom-40 -left-40 w-80 h-80 hidden dark:block bg-gradient-to-br from-white/10 via-gray-700/20 to-gray-900/30 rounded-full blur-3xl"></div>
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12 items-center min-h-screen py-20">
-          {/* Left content */}
+          {}
           <div className="text-left">
-            {/* Main heading */}
+            {}
             <div className="scroll-animate" style={{ animationDelay: "0.1s" }}>
               <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white dark:text-slate-100 mb-6 hidden md:block">
                 {PERSONAL_INFO.name}
               </h2>
             </div>
 
-            {/* Professional title */}
+            {}
             <div className="scroll-animate" style={{ animationDelay: "0.2s" }}>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl text-white/90 dark:text-slate-200 mb-8">
                 {PERSONAL_INFO.title}
               </h2>
             </div>
 
-            {/* Professional summary */}
+            {}
             <div className="scroll-animate" style={{ animationDelay: "0.3s" }}>
               <p className="text-xl text-white/90 dark:text-slate-200 mb-12 leading-relaxed font-light">
                 {PERSONAL_INFO.bio}
               </p>
             </div>
 
-            {/* Action buttons */}
+            {}
             <div
               className="scroll-animate flex flex-col sm:flex-row gap-4 mb-8"
               style={{ animationDelay: "0.4s" }}
             >
-              {/* Primary CTA - View Projects */}
+              {}
               <button
                 onClick={handleProjectsClick}
                 className="inline-flex items-center px-8 py-4 bg-white/20 dark:bg-white/25 text-white dark:text-white rounded-lg hover:bg-white/30 dark:hover:bg-white/35 transition-all duration-200 font-medium text-lg shadow-lg backdrop-blur-sm"
@@ -93,7 +71,7 @@ export function Hero() {
                 {TEXT.hero.ctaView}
               </button>
 
-              {/* Secondary CTA - Contact */}
+              {}
               <button
                 onClick={handleContactClick}
                 className="inline-flex items-center px-8 py-4 border-2 border-white/30 dark:border-white/40 text-white dark:text-white hover:bg-white/20 dark:hover:bg-white/25 rounded-lg transition-all duration-200 font-medium text-lg shadow-lg backdrop-blur-sm"
@@ -103,7 +81,7 @@ export function Hero() {
               </button>
             </div>
 
-            {/* Social Links */}
+            {}
             <div
               className="scroll-animate flex space-x-4"
               style={{ animationDelay: "0.5s" }}
@@ -138,7 +116,7 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Right content - Profile Image */}
+          {}
           <div
             className="scroll-animate flex justify-center mt-8 lg:mt-0"
             style={{ animationDelay: "0.3s" }}

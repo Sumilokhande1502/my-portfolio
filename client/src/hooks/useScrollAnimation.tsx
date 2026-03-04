@@ -1,40 +1,12 @@
-/**
- * useScrollAnimation Hook - Reusable scroll-triggered animation logic
- *
- * This custom hook encapsulates the Intersection Observer logic for scroll animations.
- * It provides a clean, reusable way to add scroll-triggered animations to components.
- *
- * Features:
- * - Automatic cleanup to prevent memory leaks
- * - Configurable animation trigger settings
- * - Works with any element that has 'scroll-animate' class
- *
- * Usage:
- * import { useScrollAnimation } from '@/hooks/useScrollAnimation';
- *
- * function MyComponent() {
- *   useScrollAnimation(); // Enables scroll animations for this component
- *   return <div className="scroll-animate">Content</div>;
- * }
- */
+
 
 import { useEffect } from "react";
 import { SCROLL_ANIMATION } from "@shared/constants";
 
-/**
- * Custom hook for scroll-triggered animations
- *
- * Sets up multiple Intersection Observers for different animation types:
- * - Basic scroll animations (.scroll-animate)
- * - Section transitions (.section-transition)
- * - Staggered animations (.stagger-animate)
- * - Parallax effects (.parallax-element)
- *
- * @returns void - This hook doesn't return anything, it sets up side effects
- */
+
 export function useScrollAnimation(): void {
   useEffect(() => {
-    // Observer for basic scroll animations with mobile optimization
+    
     const basicObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -50,7 +22,7 @@ export function useScrollAnimation(): void {
       },
     );
 
-    // Trigger animations for elements already in view on component mount
+    
     const triggerInitialAnimations = () => {
       const animatedElements =
         document.querySelectorAll<HTMLElement>(".scroll-animate");
@@ -63,18 +35,18 @@ export function useScrollAnimation(): void {
       });
     };
 
-    // Observer for section transitions with mobile-optimized threshold
+    
     const sectionObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             (entry.target as HTMLElement).classList.add("section-visible");
-            // Add staggered animation to child elements
+            
             const staggerElements =
               entry.target.querySelectorAll<HTMLElement>(".stagger-child");
             for (let index = 0; index < staggerElements.length; index++) {
               const child = staggerElements[index];
-              const delay = window.innerWidth < 768 ? index * 50 : index * 100; // Faster on mobile
+              const delay = window.innerWidth < 768 ? index * 50 : index * 100; 
               setTimeout(() => {
                 child.classList.add("animate");
               }, delay);
@@ -83,12 +55,12 @@ export function useScrollAnimation(): void {
         });
       },
       {
-        threshold: window.innerWidth < 768 ? 0.1 : 0.2, // Lower threshold on mobile
-        rootMargin: window.innerWidth < 768 ? "-20px 0px" : "-50px 0px", // Smaller margin on mobile
+        threshold: window.innerWidth < 768 ? 0.1 : 0.2, 
+        rootMargin: window.innerWidth < 768 ? "-20px 0px" : "-50px 0px", 
       },
     );
 
-    // Observer for parallax effects (applies small transform while element is in view)
+    
     const parallaxObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -103,7 +75,7 @@ export function useScrollAnimation(): void {
       { threshold: 0 },
     );
 
-    // Find and observe different element types
+    
     const animatedElements =
       document.querySelectorAll<HTMLElement>(".scroll-animate");
     const sectionElements = document.querySelectorAll<HTMLElement>(
@@ -116,14 +88,14 @@ export function useScrollAnimation(): void {
     sectionElements.forEach((el) => sectionObserver.observe(el));
     parallaxElements.forEach((el) => parallaxObserver.observe(el));
 
-    // Trigger initial animations for elements already in view
+    
     triggerInitialAnimations();
 
-    // Handle continuous scroll-based updates (parallax, navbar)
+    
     const handleScroll = () => {
       const scrolled = window.pageYOffset;
 
-      // Apply parallax to hero background elements
+      
       const heroElements =
         document.querySelectorAll<HTMLElement>(".hero-parallax");
       heroElements.forEach((el) => {
@@ -131,7 +103,7 @@ export function useScrollAnimation(): void {
         el.style.transform = `translateY(${rate}px)`;
       });
 
-      // Update navbar transparency based on scroll
+      
       const navbar = document.querySelector<HTMLElement>(".navbar-scroll");
       if (navbar) {
         const opacity = Math.min(scrolled / 100, 1);
@@ -139,10 +111,10 @@ export function useScrollAnimation(): void {
       }
     };
 
-    // Run once to set initial scroll-dependent states
+    
     handleScroll();
 
-    // Throttle scroll events for performance
+    
     let ticking = false;
     const throttledScroll = () => {
       if (!ticking) {
@@ -156,7 +128,7 @@ export function useScrollAnimation(): void {
 
     window.addEventListener("scroll", throttledScroll, { passive: true });
 
-    // Cleanup function
+    
     return () => {
       basicObserver.disconnect();
       sectionObserver.disconnect();
