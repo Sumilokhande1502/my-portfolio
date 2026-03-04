@@ -1,56 +1,57 @@
-import { Github, Linkedin } from 'lucide-react';
-import { SOCIAL_LINKS, PERSONAL_INFO } from '@shared/constants';
+import { SiGithub, SiLinkedin } from "react-icons/si";
+import { HiOutlineMail } from "react-icons/hi";
+import { SOCIAL_LINKS, PERSONAL_INFO, TEXT } from "@shared/constants";
 
 export function Footer() {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  // scrollToSection removed (unused) — footer only contains links
 
   return (
     <footer className="bg-slate-900 dark:bg-slate-950 text-white py-12">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4 text-white">{PERSONAL_INFO.name}</h3>
+            <h3 className="text-xl font-bold mb-4 text-white">
+              {PERSONAL_INFO.name}
+            </h3>
             <p className="text-slate-300 leading-relaxed">
               © 2025 All rights reserved
             </p>
           </div>
           <div className="md:text-right">
-            <h4 className="font-semibold mb-4 text-white">Connect</h4>
+            <h4 className="font-semibold mb-4 text-white">
+              {TEXT.footer.connect}
+            </h4>
             <div className="flex space-x-4 md:justify-end">
-              <a 
-                href={SOCIAL_LINKS.github} 
-                target="_blank" 
+              <a
+                href={SOCIAL_LINKS.github}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-slate-400 hover:text-white transition-colors duration-200"
+                aria-label="GitHub"
               >
-                <Github className="w-6 h-6" />
+                <SiGithub className="w-6 h-6" aria-hidden />
               </a>
-              <a 
-                href={SOCIAL_LINKS.linkedin} 
-                target="_blank" 
+              <a
+                href={SOCIAL_LINKS.linkedin}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-slate-400 hover:text-white transition-colors duration-200"
+                aria-label="LinkedIn"
               >
-                <Linkedin className="w-6 h-6" />
+                <SiLinkedin className="w-6 h-6" aria-hidden />
               </a>
-              <a 
+              <a
                 href={`mailto:${PERSONAL_INFO.email}`}
                 className="text-slate-400 hover:text-white transition-colors duration-200"
+                aria-label="Email"
               >
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M22 4H2C0.9 4 0 4.9 0 6v12c0 1.1 0.9 2 2 2h20c1.1 0 2-0.9 2-2V6C24 4.9 23.1 4 22 4zM22 8l-10 6L2 8V6l10 6 10-6V8z"/>
-                </svg>
+                <HiOutlineMail className="w-6 h-6" aria-hidden />
               </a>
             </div>
           </div>
         </div>
         <div className="border-t border-slate-800 mt-8 pt-8 text-center">
-          <p className="text-slate-400">Crafted with passion using React & TypeScript ✨</p>
+          <p className="text-slate-400">{TEXT.footer.crafted}</p>
         </div>
       </div>
     </footer>

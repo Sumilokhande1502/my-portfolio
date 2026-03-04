@@ -4,7 +4,9 @@ import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
 export const contacts = pgTable("contacts", {
-  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  id: varchar("id")
+    .primaryKey()
+    .default(sql`gen_random_uuid()`),
   name: text("name").notNull(),
   email: text("email").notNull(),
   message: text("message").notNull(),
@@ -28,7 +30,7 @@ export interface Project {
   technologies: string[];
   githubUrl?: string;
   liveUrl?: string;
-  category: 'react' | 'typescript' | 'fullstack' | 'all';
+  category: "react" | "typescript" | "fullstack" | "all";
   featured: boolean;
 }
 
@@ -45,5 +47,5 @@ export interface Experience {
 export interface Skill {
   name: string;
   level: number;
-  category: 'frontend' | 'backend' | 'devops';
+  category: "frontend" | "backend" | "devops";
 }
