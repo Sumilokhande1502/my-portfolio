@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "check": "tsc --noEmit",
-    "remove-comments": "node scripts/remove-comments.cjs"
+    "remove-comments": "node scripts/remove-comments.cjs",
+    "format": "prettier --write \"client/**/*.{js,ts,jsx,tsx,css,scss,html}\" \"shared/**/*.{js,ts,jsx,tsx,css,scss,html}\" \"*.{js,ts,json,md}\""
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

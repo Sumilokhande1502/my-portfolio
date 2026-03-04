@@ -1,0 +1,10 @@
+node_modules
+.dist
+build
+.next
+scripts/*.cjs
+scripts/*.js
+.vscode
+.DS_Store
+README.md
+"
