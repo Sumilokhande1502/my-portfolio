@@ -1,53 +1,21 @@
-/**
- * Projects Component - Portfolio showcase with filtering
- *
- * Features:
- * - Grid layout of project cards
- * - Category filtering functionality
- * - Project details with technologies used
- * - Links to live demos and source code
- * - Responsive design with hover effects
- *
- * Layout:
- * - Filter buttons at the top
- * - Grid of project cards
- * - Each card shows image, title, description, and links
- * - Mobile-friendly responsive layout
- */
-
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { FiExternalLink } from "react-icons/fi";
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { FiExternalLink } from 'react-icons/fi';
 import {
   SOCIAL_LINKS,
   TEXT,
   PROJECT_CATEGORIES,
   PROJECTS_DATA,
   type Project,
-} from "@shared/constants";
+} from '@shared/constants';
 
-/**
- * Project data structure
- */
-// Compute local category counts from shared PROJECT_CATEGORIES and PROJECTS_DATA
 const categories = PROJECT_CATEGORIES.map((c) => ({
   ...c,
   count:
-    c.id === "all"
-      ? PROJECTS_DATA.length
-      : PROJECTS_DATA.filter((p) => p.category === c.id).length,
+    c.id === 'all' ? PROJECTS_DATA.length : PROJECTS_DATA.filter((p) => p.category === c.id).length,
 }));
 
-/**
- * Projects section component
- * @returns JSX element containing the projects showcase
- */
 export function Projects() {
-  // Enable scroll animations
   useScrollAnimation();
-  /**
-   * NOTE: Filtering utilities can be added later when the projects grid is enabled.
-   * This preview is intentionally static for now.
-   */
 
   return (
     <section
@@ -55,18 +23,16 @@ export function Projects() {
       className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-orange-50 dark:from-slate-900 dark:via-gray-900 dark:to-slate-800 section-transition"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+        {}
         <div className="text-center mb-16 stagger-child">
           <h2 className="text-4xl text-heading-primary mb-4 section-heading-decoration projects">
             {TEXT.projects.heading}
           </h2>
           <div className="section-divider decorative"></div>
-          <p className="text-xl text-body-secondary max-w-3xl mx-auto">
-            {TEXT.projects.intro}
-          </p>
+          <p className="text-xl text-body-secondary max-w-3xl mx-auto">{TEXT.projects.intro}</p>
         </div>
 
-        {/* Interactive Projects Preview */}
+        {}
         <div className="text-center mb-16">
           <div className="project-card bg-gradient-to-r from-primary/10 to-secondary/10 rounded-lg p-8 border border-primary/20 max-w-2xl mx-auto group cursor-pointer">
             <div className="text-6xl mb-4 transition-transform duration-300 group-hover:scale-110">

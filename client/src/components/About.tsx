@@ -1,35 +1,10 @@
-/**
- * About Component - Professional introduction and overview
- *
- * Features:
- * - Personal introduction with professional photo
- * - Experience highlights and key achievements
- * - Professional summary with call-to-action
- * - Responsive layout with gradient background
- * - Scroll-triggered animations
- *
- * Layout:
- * - Left side: Professional photo with decorative elements
- * - Right side: Text content with structured information
- * - Mobile: Stacked layout for better readability
- */
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { TEXT, MONTHS } from '@shared/constants';
+import { FiCheck, FiZap, FiUsers, FiHeart, FiDownload } from 'react-icons/fi';
 
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { TEXT, MONTHS } from "@shared/constants";
-import { FiCheck, FiZap, FiUsers, FiHeart, FiDownload } from "react-icons/fi";
-
-/**
- * About section component
- * @returns JSX element containing the about section
- */
 export function About() {
-  // Enable scroll animations for this component
   useScrollAnimation();
 
-  /**
-   * Generate dynamic resume update date
-   * @returns Current month and year string
-   */
   const getResumeUpdateDate = (): string => {
     const now = new Date();
     return `${MONTHS[now.getMonth()]} ${now.getFullYear()}`;
@@ -41,7 +16,7 @@ export function About() {
       className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-gray-900 dark:to-slate-800 section-transition"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+        {}
         <div className="text-center mb-16 stagger-child">
           <h2 className="text-4xl text-heading-primary mb-4 section-heading-decoration about">
             {TEXT.about.heading}
@@ -50,23 +25,20 @@ export function About() {
           <p className="text-xl text-body-secondary">{TEXT.about.subheading}</p>
         </div>
 
-        {/* Main Content - Single Column */}
+        {}
         <div className="max-w-4xl mx-auto">
           <div className="scroll-animate stagger-child">
             <div className="space-y-8 text-center">
-              {/* Professional Summary */}
+              {}
               <div className="space-y-6 max-w-3xl mx-auto">
                 {TEXT.about.paragraphs.map((p) => (
-                  <p
-                    key={p}
-                    className="text-body-primary leading-relaxed text-lg"
-                  >
+                  <p key={p} className="text-body-primary leading-relaxed text-lg">
                     {p}
                   </p>
                 ))}
               </div>
 
-              {/* Key Highlights */}
+              {}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6">
                 <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-md">
                   <div className="flex items-center space-x-3">
@@ -119,10 +91,7 @@ export function About() {
                 <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-md">
                   <div className="flex items-center space-x-3">
                     <div className="flex-shrink-0 w-10 h-10 bg-warm/10 rounded-lg flex items-center justify-center">
-                      <FiHeart
-                        className="w-5 h-5 text-orange-500"
-                        aria-hidden
-                      />
+                      <FiHeart className="w-5 h-5 text-orange-500" aria-hidden />
                     </div>
                     <div>
                       <h4 className="font-semibold text-heading-primary">
@@ -136,7 +105,7 @@ export function About() {
                 </div>
               </div>
 
-              {/* Download Resume Button */}
+              {}
               <div className="pt-6">
                 <a
                   href="/resume.pdf"
