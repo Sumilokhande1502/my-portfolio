@@ -279,7 +279,7 @@ export const SOCIAL_MEDIA = [
 ] as const;
 
 export const FORM_ENDPOINTS = {
-  FORMSPREE: 'https://formspree.io/f/xlgwqajy',
+  FORMSPREE: 'https://formspree.io/f/mzepbdyb',
 } as const;
 
 export type Project = {
