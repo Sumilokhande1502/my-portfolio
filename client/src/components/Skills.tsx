@@ -1,112 +1,79 @@
-﻿import {
-  SiReact,
-  SiAngular,
-  SiTypescript,
-  SiJavascript,
-  SiHtml5,
-  SiCss3,
-  SiStorybook,
-  SiZod,
-  SiNodedotjs,
-  SiExpress,
-  SiMongodb,
-  SiGit,
-  SiJest,
-  SiWebpack,
-  SiJenkins,
-} from 'react-icons/si';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { SKILL_CATEGORIES } from '@shared/constants';
+import { SectionHeading } from '@/components/ui/section-heading';
+import { Icon } from '@/components/ui/icon';
 
 type SkillCategory = (typeof SKILL_CATEGORIES)[number];
 
 export function Skills() {
   useScrollAnimation();
 
-  const iconMap: Record<string, JSX.Element> = {
-    React: <SiReact className="w-5 h-5 text-[#61DAFB]" aria-hidden />,
-    Angular: <SiAngular className="w-5 h-5 text-[#DD0031]" aria-hidden />,
-    JavaScript: <SiJavascript className="w-5 h-5 text-[#F7DF1E]" aria-hidden />,
-    TypeScript: <SiTypescript className="w-5 h-5 text-[#3178C6]" aria-hidden />,
-    HTML: <SiHtml5 className="w-5 h-5 text-[#E34F26]" aria-hidden />,
-    CSS: <SiCss3 className="w-5 h-5 text-[#1572B6]" aria-hidden />,
-    'Node.js': <SiNodedotjs className="w-5 h-5 text-[#339933]" aria-hidden />,
-    Express: <SiExpress className="w-5 h-5 text-slate-600 dark:text-slate-300" aria-hidden />,
-    MongoDB: <SiMongodb className="w-5 h-5 text-[#47A248]" aria-hidden />,
-    Git: <SiGit className="w-5 h-5 text-[#F05032]" aria-hidden />,
-    Webpack: <SiWebpack className="w-5 h-5 text-[#8DD6F9]" aria-hidden />,
-    Jenkins: <SiJenkins className="w-5 h-5 text-[#D33833]" aria-hidden />,
-    Jest: <SiJest className="w-5 h-5 text-[#C21325]" aria-hidden />,
-    Storybook: <SiStorybook className="w-5 h-5 text-[#FF4785]" aria-hidden />,
-    Zod: <SiZod className="w-5 h-5 text-[#2F74C0]" aria-hidden />,
-    Zustand: (
-      <div
-        className="w-5 h-5 rounded flex items-center justify-center bg-[#00C7B7] text-white text-xs font-semibold"
-        aria-hidden
-      >
-        Z
-      </div>
-    ),
-    'CI/CD': (
-      <div
-        className="w-5 h-5 bg-gradient-to-r from-orange-500 to-red-500 rounded flex items-center justify-center text-white text-xs font-bold"
-        aria-hidden
-      >
-        ⚡
-      </div>
-    ),
+  const iconMap: Record<string, { name: string; brand?: boolean; className: string }> = {
+    React: { name: 'react', brand: true, className: 'h-5 w-5 text-[#61DAFB]' },
+    Angular: { name: 'angular', brand: true, className: 'h-5 w-5 text-[#DD0031]' },
+    JavaScript: { name: 'js', brand: true, className: 'h-5 w-5 text-[#F7DF1E]' },
+    TypeScript: { name: 'typescript', brand: true, className: 'h-5 w-5 text-[#3178C6]' },
+    HTML: { name: 'html5', brand: true, className: 'h-5 w-5 text-[#E34F26]' },
+    CSS: { name: 'css3-alt', brand: true, className: 'h-5 w-5 text-[#1572B6]' },
+    'Node.js': { name: 'node-js', brand: true, className: 'h-5 w-5 text-[#339933]' },
+    Express: { name: 'server', className: 'h-5 w-5 text-slate-300' },
+    MongoDB: { name: 'database', className: 'h-5 w-5 text-[#47A248]' },
+    Git: { name: 'git-alt', brand: true, className: 'h-5 w-5 text-[#F05032]' },
+    Webpack: { name: 'cubes', className: 'h-5 w-5 text-[#8DD6F9]' },
+    Jenkins: { name: 'jenkins', brand: true, className: 'h-5 w-5 text-[#D33833]' },
+    Jest: { name: 'vial', className: 'h-5 w-5 text-[#C21325]' },
+    Storybook: { name: 'storybook', brand: true, className: 'h-5 w-5 text-[#FF4785]' },
+    Zod: { name: 'cube', className: 'h-5 w-5 text-[#2F74C0]' },
+    Zustand: { name: 'circle-nodes', className: 'h-5 w-5 text-[#00C7B7]' },
+    'CI/CD': { name: 'bolt', className: 'h-5 w-5 text-orange-300' },
   };
 
   return (
     <section
       id="skills"
       aria-labelledby="skills-heading"
-      className="py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-slate-800 dark:via-gray-800 dark:to-slate-900 section-transition"
+      className="section-transition relative py-10 text-white sm:py-14"
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 stagger-child">
-          <h2
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(14,165,233,0.13),transparent_24%),radial-gradient(circle_at_bottom,_rgba(168,85,247,0.12),transparent_30%)]" />
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-16 text-center stagger-child">
+          <SectionHeading
             id="skills-heading"
-            className="text-4xl text-heading-primary mb-4 section-heading-decoration skills"
-          >
-            Skills & Technologies
-          </h2>
-          <div className="section-divider decorative" aria-hidden></div>
-          <p className="text-xl text-body-secondary">
-            The tools and technologies I work with every day
-          </p>
+            eyebrow="Toolkit"
+            title="Skills & Technologies"
+            description="The tools and technologies I work with every day"
+            tone="violet"
+            descriptionClassName="max-w-3xl"
+          />
         </div>
 
-        {}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-3">
           {SKILL_CATEGORIES.map((category: SkillCategory) => (
             <section
               key={category.title}
               aria-labelledby={`skills-${category.title.replaceAll(/\s+/g, '-').toLowerCase()}-title`}
-              className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 scroll-animate"
+              className="scroll-animate rounded-3xl border border-white/10 bg-slate-900/60 p-6 shadow-[0_24px_70px_rgba(15,23,42,0.35)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/40"
             >
-              {}
               <h3
                 id={`skills-${category.title.replaceAll(/\s+/g, '-').toLowerCase()}-title`}
-                className="text-xl font-bold text-heading-primary border-b border-slate-200 dark:border-slate-600 pb-3 mb-6"
+                className="mb-6 border-b border-white/10 pb-3 text-xl font-bold text-white"
               >
                 {category.title}
               </h3>
 
-              {}
-              <ul className="space-y-2">
+              <ul className="space-y-3">
                 {category.skills.map((skillName) => (
                   <li
                     key={skillName}
-                    className="flex items-center gap-3 p-2 rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400 dark:focus:ring-blue-300"
+                    className="flex items-center gap-3 rounded-2xl border border-white/5 bg-white/5 p-2.5 text-slate-200 transition-all duration-200 hover:border-cyan-400/40 hover:bg-slate-800/80"
                   >
-                    {}
-                    <div className="flex-shrink-0" aria-hidden>
-                      {iconMap[skillName] ?? <span className="w-5 h-5 inline-block" />}
+                    <div className="flex-shrink-0" aria-hidden="true">
+                      <Icon
+                        {...(iconMap[skillName] ?? { name: 'code', className: 'h-5 w-5 text-slate-300' })}
+                      />
                     </div>
 
-                    {}
-                    <span className="text-sm text-body-primary">{skillName}</span>
+                    <span className="text-sm text-slate-200">{skillName}</span>
                   </li>
                 ))}
               </ul>

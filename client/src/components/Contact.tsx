@@ -5,18 +5,18 @@ import { contactFormSchema, type ContactFormData } from '@shared/contactFormSche
 import { useToast } from '@/hooks/use-toast';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { TEXT, CONTACT_DETAILS, FORM_ENDPOINTS } from '@shared/constants';
+import { EMAIL_ADDRESS_REGEX } from '@shared/contactFormSchema';
+import { SectionHeading } from '@/components/ui/section-heading';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import { SiLinkedin } from 'react-icons/si';
-import { HiOutlineMail, HiOutlineLocationMarker, HiOutlineInformationCircle } from 'react-icons/hi';
-import { FiLoader, FiSend } from 'react-icons/fi';
+import { Icon } from '@/components/ui/icon';
 
-const contactIconMap: Record<string, JSX.Element> = {
-  email: <HiOutlineMail className="w-6 h-6" aria-hidden />,
-  linkedin: <SiLinkedin className="w-6 h-6" aria-hidden />,
-  location: <HiOutlineLocationMarker className="w-6 h-6" aria-hidden />,
+const contactIconMap: Record<string, { name: string; brand?: boolean }> = {
+  email: { name: 'envelope' },
+  linkedin: { name: 'linkedin', brand: true },
+  location: { name: 'location-dot' },
 };
 
 export function Contact() {
@@ -100,30 +100,32 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="py-20 bg-gradient-to-br from-purple-50 via-teal-50 to-blue-50 dark:from-slate-900 dark:via-gray-900 dark:to-slate-800 section-transition"
+      className="section-transition relative py-10 text-white sm:py-14"
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {}
-        <div className="text-center mb-16 stagger-child">
-          <h2 className="text-4xl text-heading-primary mb-4 section-heading-decoration contact">
-            {TEXT.contact.sectionHeading}
-          </h2>
-          <div className="section-divider decorative"></div>
-          <p className="text-xl text-body-secondary max-w-3xl mx-auto">{TEXT.contact.intro}</p>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(45,212,191,0.11),transparent_22%),radial-gradient(circle_at_bottom,_rgba(96,165,250,0.12),transparent_30%)]" />
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-16 text-center stagger-child">
+          <SectionHeading
+            id="contact-heading"
+            eyebrow="Reach Out"
+            title={TEXT.contact.sectionHeading}
+            description={TEXT.contact.intro}
+            tone="rose"
+            titleClassName="text-4xl sm:text-5xl lg:text-6xl"
+          />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {}
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
           <div className="scroll-animate">
-            <div className="bg-white dark:bg-slate-800 rounded-lg p-8 shadow-lg">
-              <h3 className="text-2xl font-bold text-heading-primary mb-6">
+            <div className="rounded-[2rem] border border-white/10 bg-slate-900/65 p-8 shadow-[0_30px_80px_rgba(15,23,42,0.35)] backdrop-blur-xl">
+              <h3 className="mb-6 text-2xl font-bold text-white">
                 {TEXT.contact.formHeading}
               </h3>
 
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 {}
                 <div>
-                  <Label htmlFor="name" className="text-body-primary">
+                  <Label htmlFor="name" className="text-slate-200">
                     {TEXT.contact.nameLabel} <span className="text-red-500">*</span>
                   </Label>
                   <Input
@@ -134,7 +136,7 @@ export function Contact() {
                     onBlur={() => {
                       void handleFieldBlur('name');
                     }}
-                    className={`mt-1 ${errors.name ? 'border-red-500' : ''}`}
+                    className={`mt-2 rounded-2xl border border-white/10 bg-slate-950/80 text-white placeholder:text-slate-500 ${errors.name ? 'border-red-500' : ''}`}
                     disabled={isSubmitting}
                   />
                   {errors.name && (
@@ -144,18 +146,21 @@ export function Contact() {
 
                 {}
                 <div>
-                  <Label htmlFor="email" className="text-body-primary">
+                  <Label htmlFor="email" className="text-slate-200">
                     {TEXT.contact.emailLabel} <span className="text-red-500">*</span>
                   </Label>
                   <Input
                     id="email"
                     type="email"
                     placeholder="your.email@example.com"
+                    autoComplete="email"
+                    inputMode="email"
+                    pattern={EMAIL_ADDRESS_REGEX.source}
                     {...register('email')}
                     onBlur={() => {
                       void handleFieldBlur('email');
                     }}
-                    className={`mt-1 ${errors.email ? 'border-red-500' : ''}`}
+                    className={`mt-2 rounded-2xl border border-white/10 bg-slate-950/80 text-white placeholder:text-slate-500 ${errors.email ? 'border-red-500' : ''}`}
                     disabled={isSubmitting}
                   />
                   {errors.email && (
@@ -165,7 +170,7 @@ export function Contact() {
 
                 {}
                 <div>
-                  <Label htmlFor="message" className="text-body-primary">
+                  <Label htmlFor="message" className="text-slate-200">
                     {TEXT.contact.messageLabel} <span className="text-red-500">*</span>
                   </Label>
                   <Textarea
@@ -176,7 +181,7 @@ export function Contact() {
                     onBlur={() => {
                       void handleFieldBlur('message');
                     }}
-                    className={`mt-1 resize-none ${errors.message ? 'border-red-500' : ''}`}
+                    className={`mt-2 resize-none rounded-2xl border border-white/10 bg-slate-950/80 text-white placeholder:text-slate-500 ${errors.message ? 'border-red-500' : ''}`}
                     disabled={isSubmitting}
                   />
                   {errors.message && (
@@ -185,16 +190,16 @@ export function Contact() {
                 </div>
 
                 {}
-                <Button type="submit" className="w-full" disabled={isSubmitting}>
+                <Button type="submit" className="w-full rounded-full bg-gradient-to-r from-cyan-400 to-violet-500 text-slate-950 hover:opacity-95" disabled={isSubmitting}>
                   {isSubmitting ? (
                     <>
-                      <FiLoader className="animate-spin -ml-1 mr-3 h-5 w-5" aria-hidden />
+                      <Icon name="spinner" className="-ml-1 mr-3 h-5 w-5 animate-spin" />
                       {TEXT.contact.submit.sending}
                     </>
                   ) : (
                     <>
                       {TEXT.contact.submit.send}
-                      <FiSend className="ml-2 w-4 h-4" aria-hidden />
+                      <Icon name="paper-plane" className="ml-2 h-4 w-4" />
                     </>
                   )}
                 </Button>
@@ -202,23 +207,24 @@ export function Contact() {
             </div>
           </div>
 
-          {}
           <div className="scroll-animate">
             <div className="space-y-8">
-              {}
-              <div className="bg-white dark:bg-slate-800 rounded-lg p-8 shadow-lg">
-                <h3 className="text-2xl font-bold text-heading-primary mb-6">
+              <div className="rounded-[2rem] border border-white/10 bg-slate-900/65 p-8 shadow-[0_30px_80px_rgba(15,23,42,0.35)] backdrop-blur-xl">
+                <h3 className="mb-6 text-2xl font-bold text-white">
                   Contact Information
                 </h3>
 
                 <div className="space-y-6">
                   {CONTACT_DETAILS.map((item) => (
-                    <div key={item.id} className="flex items-center space-x-4">
-                      <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
-                        {contactIconMap[item.id] ?? null}
+                    <div key={item.id} className="flex items-center space-x-4 rounded-2xl border border-white/5 bg-white/5 p-3">
+                      <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-cyan-500/10 text-cyan-300">
+                        <Icon
+                          {...(contactIconMap[item.id] ?? { name: 'circle-question' })}
+                          className="h-6 w-6"
+                        />
                       </div>
                       <div>
-                        <p className="text-sm font-medium text-heading-secondary">{item.label}</p>
+                        <p className="text-sm font-medium text-slate-300">{item.label}</p>
                         {'href' in item ? (
                           (() => {
                             const href = (item as any).href as string;
@@ -227,7 +233,7 @@ export function Contact() {
                             return (
                               <a
                                 href={href}
-                                className="text-body-primary hover:text-primary transition-colors duration-200"
+                                className="text-base text-white transition-colors duration-200 hover:text-cyan-300"
                                 {...(isExternal
                                   ? { target: '_blank', rel: 'noopener noreferrer' }
                                   : {})}
@@ -237,7 +243,7 @@ export function Contact() {
                             );
                           })()
                         ) : (
-                          <p className="text-body-primary">{item.value}</p>
+                          <p className="text-base text-white">{item.value}</p>
                         )}
                       </div>
                     </div>
@@ -245,17 +251,16 @@ export function Contact() {
                 </div>
               </div>
 
-              {}
-              <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-lg p-6 border border-primary/20">
+              <div className="rounded-[2rem] border border-cyan-400/20 bg-gradient-to-r from-cyan-500/10 to-violet-500/10 p-6">
                 <div className="flex items-start space-x-3">
-                  <div className="flex-shrink-0 w-6 h-6 text-primary mt-0.5">
-                    <HiOutlineInformationCircle className="w-6 h-6" aria-hidden />
+                  <div className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center text-cyan-300">
+                    <Icon name="circle-info" className="h-6 w-6" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-heading-primary mb-1">
+                    <h4 className="mb-1 font-semibold text-white">
                       {TEXT.contact.quickResponseTitle}
                     </h4>
-                    <p className="text-sm text-body-secondary">{TEXT.contact.quickResponseText}</p>
+                    <p className="text-sm text-slate-300">{TEXT.contact.quickResponseText}</p>
                   </div>
                 </div>
               </div>

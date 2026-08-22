@@ -1,22 +1,15 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '@/store';
-import { toggleTheme } from '@/store/slices/themeSlice';
 import { toggleMobileMenu, closeMobileMenu } from '@/store/slices/uiSlice';
 import { NAVIGATION_ITEMS, PERSONAL_INFO } from '@shared/constants';
-import { Moon, Sun, Menu, X } from 'lucide-react';
-import { useLocation } from 'wouter';
+import { Icon } from '@/components/ui/icon';
 
 export function Navbar() {
   const dispatch = useDispatch();
-  const { isDarkMode } = useSelector((state: RootState) => state.theme);
   const { isMobileMenuOpen } = useSelector((state: RootState) => state.ui);
   const [activeIndex, setActiveIndex] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
-
-  const handleThemeToggle = () => {
-    dispatch(toggleTheme());
-  };
 
   const handleMobileMenuToggle = () => {
     dispatch(toggleMobileMenu());
@@ -71,35 +64,37 @@ export function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-gradient-to-r from-white/90 via-blue-50/80 to-indigo-50/80 dark:from-slate-900/90 dark:via-slate-800/80 dark:to-gray-900/80 backdrop-blur-md z-50 border-b border-slate-200/50 dark:border-slate-700/50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <nav className="fixed top-4 left-1/2 z-50 w-[calc(100%-1.5rem)] max-w-6xl -translate-x-1/2 rounded-full border border-white/10 bg-slate-900/70 shadow-[0_20px_50px_rgba(15,23,42,0.35)] backdrop-blur-xl">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
           <div className="flex-shrink-0">
             <button
               onClick={() => scrollToSection(0, 'home')}
-              className="flex items-center space-x-3 cursor-pointer group"
+              className="group flex cursor-pointer items-center space-x-3"
             >
               <img
                 src={PERSONAL_INFO.profileImage}
                 alt={`${PERSONAL_INFO.name} Logo`}
-                className="w-10 h-10 rounded-full object-cover border-2 border-primary/20 group-hover:border-primary transition-all duration-200"
+                className="h-10 w-10 rounded-full border border-white/10 object-cover shadow-lg shadow-cyan-500/10 transition-all duration-200 group-hover:border-cyan-400"
               />
-              <span className="text-xl font-bold">
-                <span className="md:hidden text-heading-primary font-semibold tracking-tight">
-                  {PERSONAL_INFO.name}
-                </span>
+              <span className="text-lg font-semibold tracking-tight text-white">
+                {PERSONAL_INFO.name}
               </span>
             </button>
           </div>
 
           {}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+            <div className="flex items-center gap-2 rounded-full border border-white/5 bg-white/5 p-1.5">
               {NAVIGATION_ITEMS.slice(0, 6).map((item, index) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(index, item.id)}
-                  className={`font-bold border-b-2 border-transparent transition-all duration-200 text-black dark:text-white ${activeIndex === index ? 'border-primary' : ''}`}
+                  className={`rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 ${
+                    activeIndex === index
+                      ? 'bg-gradient-to-r from-cyan-500/20 via-sky-500/20 to-violet-500/20 text-white shadow-[0_0_20px_rgba(56,189,248,0.2)]'
+                      : 'text-slate-300 hover:bg-white/5 hover:text-white'
+                  }`}
                 >
                   {item.label}
                 </button>
@@ -108,26 +103,15 @@ export function Navbar() {
           </div>
 
           <div className="flex items-center space-x-4">
-            <button
-              onClick={handleThemeToggle}
-              className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors duration-200"
-            >
-              {isDarkMode ? (
-                <Sun className="w-5 h-5 text-body-primary" />
-              ) : (
-                <Moon className="w-5 h-5 text-body-primary" />
-              )}
-            </button>
-
             {}
             <button
               onClick={handleMobileMenuToggle}
-              className="md:hidden p-2 rounded-lg bg-slate-100 dark:bg-slate-800"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-200 md:hidden"
             >
               {isMobileMenuOpen ? (
-                <X className="w-5 h-5 text-body-primary" />
+                <Icon name="xmark" className="h-4 w-4" />
               ) : (
-                <Menu className="w-5 h-5 text-body-primary" />
+                <Icon name="bars" className="h-4 w-4" />
               )}
             </button>
           </div>
@@ -136,13 +120,17 @@ export function Navbar() {
 
       {}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-700">
-          <div className="px-2 pt-2 pb-3 space-y-1">
+        <div className="border-t border-white/10 bg-slate-900/90 md:hidden">
+          <div className="space-y-1 px-3 py-3">
             {NAVIGATION_ITEMS.slice(0, 6).map((item, index) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(index, item.id)}
-                className={`block w-full text-left px-3 py-2 text-body-primary hover:text-primary-solid font-medium border-l-4 border-transparent ${activeIndex === index ? 'border-primary text-primary font-bold bg-primary/10' : ''}`}
+                className={`block w-full rounded-xl px-3 py-2 text-left text-sm font-medium transition-all ${
+                  activeIndex === index
+                    ? 'bg-cyan-500/15 text-white'
+                    : 'text-slate-300 hover:bg-white/5 hover:text-white'
+                }`}
               >
                 {item.label}
               </button>

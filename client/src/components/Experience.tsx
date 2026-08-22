@@ -1,10 +1,11 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { FiChevronRight } from 'react-icons/fi';
 import { TEXT, MONTHS, EXPERIENCE_DATA } from '@shared/constants';
 import citiLogo from '@assets/image_1753891620825.png';
 import neosoftLogo from '@assets/image_1753891886557.png';
 import learningmateLogo from '@assets/image_1753892028905.png';
 import aoneLogo from '@assets/image_1753892111185.png';
+import { SectionHeading } from '@/components/ui/section-heading';
+import { Icon } from '@/components/ui/icon';
 
 const logoMap: Record<string, React.ReactNode> = {
   Citi: (
@@ -49,52 +50,52 @@ export function Experience() {
   return (
     <section
       id="experience"
-      className="py-12 sm:py-20 bg-gradient-to-br from-slate-50 via-indigo-50 to-purple-50 dark:from-slate-900 dark:via-gray-900 dark:to-slate-800 section-transition"
+      className="section-transition relative py-10 text-white sm:py-14"
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {}
-        <div className="text-center mb-8 sm:mb-16 stagger-child">
-          <h2 className="text-3xl sm:text-4xl text-heading-primary mb-4 section-heading-decoration experience">
-            {TEXT.experience.heading}
-          </h2>
-          <div className="section-divider decorative"></div>
-          <p className="text-lg sm:text-xl text-body-secondary px-4">{TEXT.experience.intro}</p>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(168,85,247,0.12),transparent_24%),radial-gradient(circle_at_bottom,_rgba(34,211,238,0.12),transparent_32%)]" />
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-8 text-center sm:mb-16 stagger-child">
+          <SectionHeading
+            id="experience-heading"
+            eyebrow="Career"
+            title={TEXT.experience.heading}
+            description={TEXT.experience.intro}
+            tone="emerald"
+            titleClassName="text-3xl sm:text-4xl lg:text-5xl"
+            descriptionClassName="px-4 text-lg sm:text-xl"
+          />
         </div>
 
-        {}
         <div className="space-y-8">
           {EXPERIENCE_DATA.map((experience: SharedExperience) => (
             <div
               key={experience.id}
-              className="experience-card bg-white dark:bg-slate-800 rounded-lg p-4 sm:p-8 shadow-lg stagger-child"
+              className="stagger-child rounded-[2rem] border border-white/10 bg-slate-900/65 p-4 shadow-[0_25px_80px_rgba(15,23,42,0.35)] backdrop-blur-xl sm:p-8"
             >
-              {}
-              <div className="flex items-start gap-4 mb-6">
-                {}
+              <div className="mb-6 flex items-start gap-4">
                 {logoMap[experience.company] && (
-                  <div className="flex-shrink-0">{logoMap[experience.company]}</div>
+                  <div className="flex-shrink-0 rounded-2xl border border-white/10 bg-white/5 p-2">{logoMap[experience.company]}</div>
                 )}
 
-                {}
-                <div className="flex-1 flex justify-between items-start">
+                <div className="flex flex-1 items-start justify-between">
                   <div className="w-full sm:w-auto">
-                    <h3 className="text-sm sm:text-2xl font-bold text-heading-primary mb-2 leading-tight">
+                    <h3 className="mb-2 text-sm font-bold leading-tight text-white sm:text-2xl">
                       {experience.position}
                     </h3>
-                    <h4 className="text-xs sm:text-xl font-semibold text-accent-emphasis">
+                    <h4 className="text-xs font-semibold text-cyan-300 sm:text-xl">
                       {experience.company}
                     </h4>
                     {}
-                    <div className="block sm:hidden w-full">
-                      <span className="block text-body-secondary text-right font-medium text-xs mt-1">
+                    <div className="block w-full sm:hidden">
+                      <span className="mt-1 block text-right text-xs font-medium text-slate-300">
                         {formatDate(experience.startDate)} -{' '}
                         {experience.endDate ? formatDate(experience.endDate) : 'Present'}
                       </span>
                     </div>
                   </div>
                   {}
-                  <div className="hidden sm:block text-body-secondary text-right ml-4">
-                    <span className="font-medium text-base">
+                  <div className="ml-4 hidden text-right text-slate-300 sm:block">
+                    <span className="text-base font-medium">
                       {formatDate(experience.startDate)} -{' '}
                       {experience.endDate ? formatDate(experience.endDate) : 'Present'}
                     </span>
@@ -102,30 +103,28 @@ export function Experience() {
                 </div>
               </div>
 
-              {}
               <div className="mb-6">
                 <div className="space-y-3">
                   {experience.description.map((item: string) => (
                     <div
                       key={item}
-                      className="text-body-primary flex items-start text-sm sm:text-base"
+                      className="flex items-start text-sm text-slate-200 sm:text-base"
                     >
-                      <span className="text-primary mr-3 mt-0.5 flex-shrink-0">
-                        <FiChevronRight className="w-5 h-5" aria-hidden />
+                      <span className="mr-3 mt-0.5 flex-shrink-0 text-cyan-300">
+                        <Icon name="chevron-right" className="h-5 w-5" />
                       </span>
-                      <span className="leading-relaxed text-sm sm:text-base">{item}</span>
+                      <span className="text-sm leading-relaxed text-slate-200 sm:text-base">{item}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {}
               <div>
                 <div className="flex flex-wrap gap-2">
                   {experience.technologies.map((tech: string) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full hover:bg-primary/20 transition-colors duration-200"
+                      className="rounded-full border border-cyan-400/20 bg-cyan-500/10 px-3 py-1 text-sm font-medium text-cyan-100 transition-colors duration-200 hover:bg-cyan-500/20"
                     >
                       {tech}
                     </span>

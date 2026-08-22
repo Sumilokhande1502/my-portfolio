@@ -9,13 +9,6 @@ export interface AnimatedComponentProps extends BaseComponentProps {
   enableAnimation?: boolean;
 }
 
-export type ThemeMode = 'light' | 'dark';
-
-export interface ThemeContextType {
-  theme: ThemeMode;
-  toggleTheme: () => void;
-}
-
 export interface Skill {
   name: string;
   icon: React.ReactNode;
@@ -127,9 +120,6 @@ export interface ScrollAnimationConfig {
 }
 
 export interface RootState {
-  theme: {
-    isDarkMode: boolean;
-  };
   ui: {
     sidebarOpen: boolean;
     loading: boolean;
