@@ -225,7 +225,7 @@ export const TEXT = {
   },
   footer: {
     connect: 'Connect',
-    rights: '©2026 All rights reserved',
+    rights: '© 2026 All rights reserved',
     crafted: 'Crafted with passion using React & TypeScript ✨',
   },
 } as const;

@@ -1,5 +1,4 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { FiExternalLink } from 'react-icons/fi';
 import {
   SOCIAL_LINKS,
   TEXT,
@@ -7,6 +6,8 @@ import {
   PROJECTS_DATA,
   type Project,
 } from '@shared/constants';
+import { SectionHeading } from '@/components/ui/section-heading';
+import { Icon } from '@/components/ui/icon';
 
 const categories = PROJECT_CATEGORIES.map((c) => ({
   ...c,
@@ -20,42 +21,44 @@ export function Projects() {
   return (
     <section
       id="projects"
-      className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-orange-50 dark:from-slate-900 dark:via-gray-900 dark:to-slate-800 section-transition"
+      className="section-transition relative py-10 text-white sm:py-14"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {}
-        <div className="text-center mb-16 stagger-child">
-          <h2 className="text-4xl text-heading-primary mb-4 section-heading-decoration projects">
-            {TEXT.projects.heading}
-          </h2>
-          <div className="section-divider decorative"></div>
-          <p className="text-xl text-body-secondary max-w-3xl mx-auto">{TEXT.projects.intro}</p>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(96,165,250,0.12),transparent_24%),radial-gradient(circle_at_bottom,_rgba(249,115,22,0.12),transparent_32%)]" />
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-16 text-center stagger-child">
+          <SectionHeading
+            id="projects-heading"
+            eyebrow="Selected Work"
+            title={TEXT.projects.heading}
+            description={TEXT.projects.intro}
+            tone="amber"
+            titleClassName="text-4xl sm:text-5xl lg:text-6xl"
+          />
         </div>
 
-        {}
-        <div className="text-center mb-16">
-          <div className="project-card bg-gradient-to-r from-primary/10 to-secondary/10 rounded-lg p-8 border border-primary/20 max-w-2xl mx-auto group cursor-pointer">
-            <div className="text-6xl mb-4 transition-transform duration-300 group-hover:scale-110">
+        <div className="mb-16 text-center">
+          <div className="project-card group mx-auto max-w-2xl cursor-pointer rounded-[2rem] border border-white/10 bg-slate-900/60 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.35)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/40">
+            <div className="mb-4 text-6xl transition-transform duration-300 group-hover:scale-110">
               🚧
             </div>
-            <h3 className="text-2xl font-bold text-heading-primary mb-4 group-hover:text-primary transition-colors duration-300">
+            <h3 className="mb-4 text-2xl font-bold text-white transition-colors duration-300 group-hover:text-cyan-300">
               {TEXT.projects.previewTitle}
             </h3>
-            <p className="text-body-secondary leading-relaxed mb-6">
+            <p className="mb-6 leading-relaxed text-slate-300">
               {TEXT.projects.previewDescription}
             </p>
             <a
               href={SOCIAL_LINKS.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 font-medium shadow-lg hover:shadow-xl transform hover:scale-105 relative overflow-hidden group"
+              className="group relative inline-flex items-center overflow-hidden rounded-full bg-gradient-to-r from-cyan-400 to-violet-500 px-6 py-3 font-semibold text-slate-950 shadow-[0_20px_45px_rgba(59,130,246,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_25px_50px_rgba(59,130,246,0.4)]"
             >
               <span className="relative z-10">{TEXT.projects.previewCTA}</span>
-              <FiExternalLink
-                className="ml-2 w-5 h-5 relative z-10 transition-transform duration-300 group-hover:translate-x-1"
-                aria-hidden
+              <Icon
+                name="arrow-up-right-from-square"
+                className="relative z-10 ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+              <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
             </a>
           </div>
         </div>
