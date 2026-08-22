@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, type SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { contactFormSchema, type ContactFormData } from '@shared/contactFormSchema';
 import { useToast } from '@/hooks/use-toast';
@@ -29,14 +29,14 @@ export function Contact() {
     register,
     handleSubmit,
     reset,
-    clearErrors,
     trigger,
-    formState: { errors, isValid },
+    clearErrors,
+    getValues,
+    formState: { errors },
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
-
-    mode: 'onChange',
-    reValidateMode: 'onChange',
+    mode: 'onSubmit',
+    reValidateMode: 'onSubmit',
     defaultValues: {
       name: '',
       email: '',
@@ -44,9 +44,25 @@ export function Contact() {
     },
   });
 
+  const handleFieldBlur = async (field: keyof ContactFormData) => {
+    const value = getValues(field);
+
+    if (!value || value.trim() === '') {
+      clearErrors(field);
+      return;
+    }
+
+    try {
+      await trigger(field);
+    } catch {
+      // react-hook-form/zod can reject the validation promise for invalid touched fields;
+      // we intentionally keep the error in the form state and avoid crashing the console.
+    }
+  };
+
   const FORMSPREE_ENDPOINT = FORM_ENDPOINTS.FORMSPREE;
 
-  const onSubmit = async (data: ContactFormData) => {
+  const onSubmit: SubmitHandler<ContactFormData> = async (data) => {
     setIsSubmitting(true);
     try {
       const response = await fetch(FORMSPREE_ENDPOINT, {
@@ -114,13 +130,10 @@ export function Contact() {
                     id="name"
                     type="text"
                     placeholder="Your full name"
-                    {...register('name', {
-                      onChange: () => {
-                        clearErrors('name');
-
-                        void trigger('name');
-                      },
-                    })}
+                    {...register('name')}
+                    onBlur={() => {
+                      void handleFieldBlur('name');
+                    }}
                     className={`mt-1 ${errors.name ? 'border-red-500' : ''}`}
                     disabled={isSubmitting}
                   />
@@ -138,12 +151,10 @@ export function Contact() {
                     id="email"
                     type="email"
                     placeholder="your.email@example.com"
-                    {...register('email', {
-                      onChange: () => {
-                        clearErrors('email');
-                        void trigger('email');
-                      },
-                    })}
+                    {...register('email')}
+                    onBlur={() => {
+                      void handleFieldBlur('email');
+                    }}
                     className={`mt-1 ${errors.email ? 'border-red-500' : ''}`}
                     disabled={isSubmitting}
                   />
@@ -161,12 +172,10 @@ export function Contact() {
                     id="message"
                     placeholder="Tell me about your project, ideas, or just say hello!"
                     rows={6}
-                    {...register('message', {
-                      onChange: () => {
-                        clearErrors('message');
-                        void trigger('message');
-                      },
-                    })}
+                    {...register('message')}
+                    onBlur={() => {
+                      void handleFieldBlur('message');
+                    }}
                     className={`mt-1 resize-none ${errors.message ? 'border-red-500' : ''}`}
                     disabled={isSubmitting}
                   />
@@ -176,7 +185,7 @@ export function Contact() {
                 </div>
 
                 {}
-                <Button type="submit" className="w-full" disabled={isSubmitting || !isValid}>
+                <Button type="submit" className="w-full" disabled={isSubmitting}>
                   {isSubmitting ? (
                     <>
                       <FiLoader className="animate-spin -ml-1 mr-3 h-5 w-5" aria-hidden />

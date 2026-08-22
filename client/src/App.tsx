@@ -15,6 +15,7 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/portfolio" component={Home} />
       <Route component={NotFound} />
     </Switch>
   );
@@ -24,6 +25,10 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    if (window.location.pathname === '/') {
+      window.history.replaceState(null, '', '/portfolio');
+    }
+
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 1500);

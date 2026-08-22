@@ -1,6 +1,6 @@
 export const PERSONAL_INFO = {
   name: 'Sumit Lokhande',
-  email: 'workwithsumit15@gmail.com',
+  email: 'hello.sumit.dev@gmail.com',
   phone: '+91 9021181123',
   location: 'Maharashtra, India',
   title: 'Software Engineer',
@@ -225,7 +225,7 @@ export const TEXT = {
   },
   footer: {
     connect: 'Connect',
-    rights: '© 2025 All rights reserved',
+    rights: '©2026 All rights reserved',
     crafted: 'Crafted with passion using React & TypeScript ✨',
   },
 } as const;

@@ -9,7 +9,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-8">
           <div>
             <h3 className="text-xl font-bold mb-4 text-white">{PERSONAL_INFO.name}</h3>
-            <p className="text-slate-300 leading-relaxed">© 2025 All rights reserved</p>
+            <p className="text-slate-300 leading-relaxed">{TEXT.footer.rights}</p>
           </div>
           <div className="md:text-right">
             <h4 className="font-semibold mb-4 text-white">{TEXT.footer.connect}</h4>

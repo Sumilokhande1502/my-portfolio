@@ -7,9 +7,9 @@ interface ThemeState {
 const getInitialTheme = (): boolean => {
   if (typeof window !== 'undefined') {
     const savedTheme = localStorage.getItem('darkMode');
-    return savedTheme !== null ? savedTheme === 'true' : true;
+    return savedTheme !== null ? savedTheme === 'true' : false;
   }
-  return true;
+  return false;
 };
 
 const initialState: ThemeState = {
@@ -35,7 +35,7 @@ const themeSlice = createSlice({
     initializeTheme: (state) => {
       const savedTheme = localStorage.getItem('darkMode');
 
-      state.isDarkMode = savedTheme !== null ? savedTheme === 'true' : true;
+      state.isDarkMode = savedTheme !== null ? savedTheme === 'true' : false;
 
       document.documentElement.classList.remove('light', 'dark');
       if (state.isDarkMode) {
